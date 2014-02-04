@@ -1,0 +1,47 @@
+Ti.UI.setBackgroundColor('White');
+
+var mWin = Ti.UI.createWindow({
+	title: "Data, Data, Data"
+});
+var navWindow = Ti.UI.IOS.createNavigationWindow({
+	window: mWin
+});
+
+var objectData = require('object_data');
+
+var aTable = Ti.UI.createTableView;
+
+var objectTableData = [];
+
+//Table Sections
+var mangaSection = Ti.UI.createTableViewSection ({
+	headerTitle: "Rurouni Kenshin Manga",
+	footerTitle: "Hope you enjoyed the Information"
+});
+var bookSection = Ti.UI.createTableViewSection ({
+	headerTitle: "Book information",
+	footerTitle: "Hope you enjoyed the Information"
+});
+var theDataSections = [mangaSection, bookSection];
+aTable.setData(theDataSections);
+
+//Table Rows
+var objectMangaRows = function(){
+	for (i=0; j=objectData.manga.length; i<j, i++) {
+		var tableRow = Ti.UI.createTableRow ({
+			height: 100
+		});
+		var objectLabel = Ti.UI.createLabel({
+			top:0,
+			left: 5,
+			color: '#fff',
+			text: objectData.manga[1].name,
+			font: {fontFamily: 'Helvetica', fontSize:'18', fontColor: "'#000"}	
+		});
+	}
+};
+
+
+//Main Code
+mWin.add(table);
+navWindow.open();

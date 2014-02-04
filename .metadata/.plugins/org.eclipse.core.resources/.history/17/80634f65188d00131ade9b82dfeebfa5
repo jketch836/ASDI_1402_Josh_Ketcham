@@ -1,0 +1,23 @@
+Ti.UI.setBackgroundColor('White');
+
+var mWin = Ti.UI.createWindow({});
+var navWindow = Ti.UI.createNavigationWindow({
+	window: mWin
+});
+
+var objectData = require('object_data.js');
+
+var aTable = Ti.UI.createTableView;
+
+var objectTableData = [];
+
+var objectMangaRows = function(){
+	for (i=0; j=objectData.manga.length; i<j, i++) {
+		
+	}
+};
+
+
+//Main Code
+
+navWindow.open();

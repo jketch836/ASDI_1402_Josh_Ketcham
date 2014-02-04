@@ -1,0 +1,108 @@
+//Dot Notations Rurouni Kenshin Manga
+var manga = new object();
+	manga.author = 'Nobuhiro Watsuki';
+	manga.publisher = 'Shueisha';
+	manga.magazine = 'Weekly Shonen Jump'; 
+	manga.name = 'Rurouni Kenshin';
+	manga.volumes = 28;
+	manga.chapters = 255;
+
+var storyBackground = new object();
+	storyBackground.era = 'Meiji Era';
+	storyBackground.year = 1878;
+	storyBackground.country = 'Japan';
+	storyBackground.city = 'Tokyo';
+	
+var protagonist = new object();
+	protagonist.name = 'Kenshin';
+	protagonist.nickname = 'Hitokiri Battosai';
+	protagonist.hairColor = 'Red';
+	protagonist.phase = 'Oro';
+	protagonist.robe = 'Blue';
+	protagonist.skill = 85;
+	protagonist.age = 28;
+	protagonist.friends ['Karou','Sanosuke', 'Yahiko', 'Megumi'];
+	
+var pSword = new object();
+	pSword.name = 'Reverse Blade';
+	pSword.hilt = ['grip', 'dark grey', '10cm'];
+	pSword.blade = '60cm';
+	pSword.color = 'grey';
+	pSword.weight = '2LB';
+	pSword.cutthrough = false;
+	pSword.info = function(){
+		return 'This sword is a ' + pSword.name + ' sword. It is a fictional sword.';
+	};
+	pSword.about = function (){
+		return protagonist.name + "'s" + " sword is a " + pSword.name + ". The hilt is"  + pSword.hilt[0] + ", and is " + pSword.hilt[1] + " long. The blade itself is " + pSword.blade + ". It weights " + pSword.weight + ', and it is ' + pSword.cutthrough + ' that it can cut.';
+	};	
+
+var antagonist = new object ();
+	antagonist.name = 'Shishio';
+	antagonist.burned = true;
+	antagonist.robe = 'Purple';
+	antagonist.skill = 80;
+	antagonist.age = 30;
+	antagonist.bandages = true;
+	
+var aSword = new object();
+	aSword.name = 'Wakizashi';
+	aSword.hilt = ['dark grey', '8cm'];
+	aSword.blade = '55cm';
+	aSword.weight = '1.5LB';
+	aSword.cutthrough = true;
+	aSword.info = function(){
+		return 'This sword is a ' + aSword.name + '. It is usually defined by the blade which is usually ' + aSword.blade + '.';
+	};
+	aSword.about = function (){
+		return antagonist.name + "'s" + " sword is a " + aSword.name + ". The hilt is"  + aSword.hilt[0] + ", and is " + aSword.hilt[1] + " long. The blade itself is " + aSword.blade + ". It weights " + aSword.weight + ', and it is ' + aSword.cutthrough + ' that it can cut deeply.';
+	};
+// Character information gotten from http://kenshin.wikia.com/
+// Sword information gotten from http://books.google.com/books?id=zPyswmGDBFkC&pg=PA48&dq=wakizashi&hl=en&ei=KZYsTo-EIqTd0QGXndDkDg&sa=X&oi=book_result&ct=result&resnum=5&ved=0CDkQ6AEwBA#v=onepage&q=wakizashi&f=true
+
+
+//Literal Notations Books 
+var ASOIAFinfo = {
+	author: 'George R.R. Martin',
+	publisher: 'Bantam Books',
+	series: 'A Song of Ice and Fire',
+	numBooks: 7
+};
+
+var ASOIAFbook1Info = {
+	name: 'A Game of Thrones',
+	media: ['hardback', 'paperback', 'auido', 'e-book'],
+	releaseDate: "Aug 6, 1996",
+	stars: 4.5,
+	pages: 720
+};
+
+var ASOIAFmChar = {
+	name: 'Ned Stark',
+	position: 'Lord of Winterfell/Hand of the King',
+	wife: 'Catleyn Tully',
+	numOfKids: 5
+};
+
+var LORinfo = {
+	author: 'J.R.R. Tolkein',
+	publisher: 'George Allen & Unwin, Ltd.',
+	series: 'Lord of the Rings',
+	volumes: 3,
+	numBooks: 6
+};
+
+var LORvol1Info = {
+	name: 'Lord of the Rings',
+	media: ['hardback', 'paperback'],
+	releaseDate: "Jul 24, 1954",
+	stars: 4.5,
+	pages: 531
+};
+
+var LORmChar = {
+	name: 'Frodo Baggins',
+	position: 'Heir to Bag End',
+	hasRing: true
+};
+//Movie info found at http://www.barnesandnoble.com/

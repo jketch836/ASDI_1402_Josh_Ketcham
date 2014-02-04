@@ -1,0 +1,32 @@
+Ti.UI.setBackgroundColor('White');
+
+var mWin = Ti.UI.createWindow({});
+var navWindow = Ti.UI.createNavigationWindow({
+	window: mWin
+});
+
+var objectData = require('object_data.js');
+
+var aTable = Ti.UI.createTableView;
+
+var objectTableData = [];
+
+var objectMangaRows = function(){
+	for (i=0; j=objectData.manga.length; i<j, i++) {
+		var tableRow = Ti.UI.createTableRow ({
+			height: 100
+		});
+		var objectLabel = Ti.UI.createLabel({
+			top:0,
+			left: 5,
+			color: '#fff'
+			text: objectData.manga[i].name,
+			font: {fontFamily: 'Helvetica', fontSize:'18', fontColor: "'#000"}	
+		});
+	}
+};
+
+
+//Main Code
+
+navWindow.open();

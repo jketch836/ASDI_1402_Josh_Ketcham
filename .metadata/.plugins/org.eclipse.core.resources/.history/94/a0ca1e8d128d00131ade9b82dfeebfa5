@@ -1,0 +1,3 @@
+Ti.UI.setBackgroundColor('White');
+
+var objectData = require('object_data.js');

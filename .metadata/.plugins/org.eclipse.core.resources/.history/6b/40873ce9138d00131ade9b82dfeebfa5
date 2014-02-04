@@ -1,0 +1,9 @@
+Ti.UI.setBackgroundColor('White');
+
+mWin = Ti.UI.createWindow({});
+var objectData = require('object_data.js');
+
+var aTable = Ti.UI.createTableView;
+
+var objectTableData = [];
+

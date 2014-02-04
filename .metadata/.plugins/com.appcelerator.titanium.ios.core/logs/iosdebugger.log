@@ -1,0 +1,51 @@
+Logger started at: Tuesday, February 4, 2014 4:29:04 PM EST
+Component: com.appcelerator.titanium.ios.core
+Version: 1.0.0.1387331057
+[29:4.848] Sent: >21*1391549344819*version<
+[29:4.849] Recv: >1391549344819*2*3.2.0.GA<
+[29:5.130] Sent: >20*1391549344820*update<
+[29:5.131] Recv: >1391549344820*3.2.0.GA<
+[29:5.131] Sent: >45*1391549344821*option*stepFiltersEnabled*false<
+[29:5.132] Recv: >1391549344821<
+[29:5.132] Sent: >36*1391549344822*option*monitorXHR*true<
+[29:5.132] Recv: >1391549344822<
+[29:5.133] Sent: >45*1391549344823*option*suspendOnFirstLine*false<
+[29:5.133] Recv: >1391549344823<
+[29:5.133] Sent: >46*1391549344824*option*suspendOnExceptions*false<
+[29:5.133] Recv: >1391549344824<
+[29:5.134] Sent: >41*1391549344825*option*suspendOnErrors*true<
+[29:5.134] Recv: >1391549344825<
+[29:5.134] Sent: >43*1391549344826*option*suspendOnKeywords*true<
+[29:5.134] Recv: >1391549344826<
+[29:5.134] Sent: >45*1391549344827*option*bypassConstructors*false<
+[29:5.135] Recv: >1391549344827<
+[29:5.135] Sent: >45*1391549344828*option*stepFiltersEnabled*false<
+[29:5.135] Recv: >1391549344828<
+[29:5.135] Sent: >30*1391549344829*detailFormatters<
+[29:5.136] Recv: >1391549344829<
+[29:5.136] Sent: >20*1391549344830*enable<
+[29:5.137] Recv: >1391549344830<
+[29:5.138] Recv: >threads*created*0*kroll$1<
+[29:5.140] Recv: >log*out*[DEBUG] Analytics is enabled = YES<
+[29:5.141] Recv: >log*out*[DEBUG] Loading: /Users/jketch/Library/Application Support/iPhone Simulator/7.0.3-64/Applications/C387E267-2C17-4609-BBE7-D88B665C31D6/asdi.lab1.app/app.js, Resource: app_js<
+[29:5.141] Recv: >scripts*created*329308480|app:/app.js||1|47<
+[29:5.142] Recv: >resumed*0*started<
+[29:5.142] Recv: >log*out*[DEBUG] Loading: /Users/jketch/Library/Application Support/iPhone Simulator/7.0.3-64/Applications/C387E267-2C17-4609-BBE7-D88B665C31D6/asdi.lab1.app/object_data.js, Resource: object_data_js<
+[29:5.142] Recv: >scripts*created*329308864|app:/object_data.js||1|140<
+[29:5.143] Recv: >suspended*0*exception*app:/app.js*46<
+[29:5.171] Sent: >22*1391549344831*frames*0<
+[29:5.171] Recv: >1391549344831*0|||app:/app.js|46|false|0|0<
+[29:15.24] Sent: >34*1391549344832*variables*0*frame[0]<
+[29:15.25] Recv: >1391549344832*navWindow|object|nov|[object TiUIiOSNavWindow]*bookSection|object|nov|[object TiUITableViewSection]*objectData|object|ov|[object Object]*mWin|object|nov|[object TiUIWindow]*aTable|object|nov|[object UIModule]*objectMangaRows|object|v|[object Function]*mangaSection|object|nov|[object TiUITableViewSection]*theDataSections|object|wnov|[object Array]*objectTableData|object|wnov|[object Array]*console|object|nov|[object TiConsole]<
+[29:56.874] Sent: >21*1391549344833*disable<
+[29:56.874] Recv: >1391549344833<
+[29:56.874] Recv: >log*out*[ERROR] Script Error {
+    backtrace = "#00 () at :0";
+    line = 46;
+    message = "-[UIModule setParent:]: unrecognized selector sent to instance 0xcf6e410";
+    sourceId = 329308480;
+    sourceURL = "file:///Users/jketch/Library/Application%20Support/iPhone%20Simulator/7.0.3-64/Applications/C387E267-2C17-4609-BBE7-D88B665C31D6/asdi.lab1.app/app.js";
+}<
+[29:56.875] Recv: >log*out*[DEBUG] Application booted in 52194.694996 ms<
+[29:56.875] Sent: >10**terminate<
+----------End of file----------

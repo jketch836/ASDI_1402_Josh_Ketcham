@@ -1,0 +1,67 @@
+Ti.UI.setBackgroundColor('White');
+
+var objectData = require('object_data.js');
+
+
+objectDataTemplate = {
+	properties:
+		{
+		height: 75	
+		},
+	childTemplates:
+	[
+		{
+			type: "Ti.UI.Label",
+			bindId: 'name',
+			properties:
+			{
+				color: "black",
+				font: {fontSize: 18, fontFamily: "Arial", fontWeight: "bold"},
+				left: 60,
+				top: 0
+			}
+		},
+		{
+			type: "Ti.UI.Label",
+			bindId: 'release',
+			properties:
+			{
+				color: "grey",
+				font: {fontSize: 14, fontFamily: "Arial"},
+				left: 60,
+				top: 40
+			}
+		},
+		{
+			type: "Ti.UI.Label",
+			bindId: 'rating',
+			properties:
+			{
+				color: "grey",
+				font: {fontSize: 12, fontFamily: "Arial"},
+				right: 5,
+				top: 5
+			}
+		},
+		{
+			type: "Ti.UI.Label",
+			bindId: 'score',
+			properties:
+			{
+				color: "grey",
+				font: {fontSize: 12, fontFamily: "Arial"},
+				right: 5,
+				top: 40
+			}
+		},
+	],
+};
+
+//Avengers Object Info
+var listSection = Ti.UI.createListSection({
+});
+var objectDataView = Ti.UI.createListView({	
+	top:0,
+	templates:{'defaultTemplate': moiveListTemplate},
+	defaultItemTemplate: 'defaultTemplate'
+	});

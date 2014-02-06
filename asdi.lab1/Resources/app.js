@@ -1,7 +1,7 @@
 //Main Window and Table
 
 var mWin = Titanium.UI.createWindow({
-	title: "Object Data",
+	title: "Characters and Books",
 	backgroundColor: "#fff"
 });
 var navWindow = Ti.UI.iOS.createNavigationWindow({
@@ -49,19 +49,30 @@ var charObjectRows = function () {
 				height: 'auto',
 				width: 320,
 				backgroundColor: "#C1CDCD"
+			});			
+			var charaImage = Ti.UI.createImageView({
+				image: objectData.chara[a.index].image,
+				top: 20,
+				height: '200dp',
+				width: '175dp'
 			});
-			var aboutLabel = Ti.UI.createLabel({
-				text: objectData.chara[a.index].about(),
+			var statsLabel = Ti.UI.createLabel({
+				text: objectData.chara[a.index].stats(),
 				color: "#000",
-				top: 180
-			});		
+				top: 230
+			});	
 			var infoLabel = Ti.UI.createLabel({
 				text: objectData.chara[a.index].info(),
 				color: "#000",
-				top: 50
+				top: 340
+			});			
+			var aboutLabel = Ti.UI.createLabel({
+				text: objectData.chara[a.index].about(),
+				color: "#000",
+				top: 400
 			});
 			console.log(objectData.chara[a.index].about());			
-			winView.add(aboutLabel, infoLabel);
+			winView.add(statsLabel, aboutLabel, infoLabel, charaImage);
 			cInfoWindow.add(winView);	
 			navWindow.openWindow(cInfoWindow, {animated:true});
 		});	
@@ -84,38 +95,43 @@ var bookObjectRows = function () {
 			font: {fontSize: "18dp",fontWeight: "bold"}
 		});
 		
-		bookRow.addEventListener("click",function(e){
+		bookRow.addEventListener("click",function(c){
 			var bInfoWindow = Ti.UI.createWindow({
 				backgroundColor: "#fff"
 			});	
 			var bWinView = Ti.UI.createView({
 				top: 0,
 				borderRadius: 10,
-				height: 'auto',
+				height: 520,
 				width: 320,
 				backgroundColor: "#EEE8CD"
 			});
-//			console.log(objectData.books[e.index].about());
+			var bookImage = Ti.UI.createImageView({
+				image: objectData.books[c.index].image,
+				top: 20,
+				height: '200dp',
+				width: '175dp'
+			});			
 			var bAboutLabel = Ti.UI.createLabel({
-				text: objectData.books[e.index].about(),
-				color: "#000",
-				top: 180
-			});		
-			var bInfoLabel = Ti.UI.createLabel({
-				text: objectData.books[e.index].info(),
+				text: objectData.books[c.index].about(),
 				color: "#000",
 				top: 50
+			});		
+			var bInfoLabel = Ti.UI.createLabel({
+				text: objectData.books[c.index].info(),
+				color: "#000",
+				top: 180
 			});
-			bWinView.add(bAboutLabel, bInfoLabel);
+			console.log(objectData.books[c.index].about());
+			bWinView.add(bAboutLabel, bInfoLabel, bookImage);
 			bInfoWindow.add(bWinView);	
 			navWindow.openWindow(bInfoWindow, {animated:true});
-		});	
+		});
 		bookRow.add(bookNameLabel);
 		bookSection.add(bookRow);
 		objectTable.push(bookRow);
 	};
 };
-
 
 //Main Code
 bookObjectRows();

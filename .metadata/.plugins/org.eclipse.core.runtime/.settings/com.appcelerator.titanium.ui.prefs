@@ -1,5 +1,7 @@
 =run
-LAST_LAUNCH_TIMESTAMP=1391549431746
+LAST_LAUNCH_TIMESTAMP=1391661071068
+asd_week1_rich\:launchMode=run
+asd_week1_rich\:launchShortcut=com.appcelerator.titanium.mobile.ui.ios.simulator.iphone.launchShortcut.iPhone Retina (3.5 inch)
 asdi.lab1\:launchMode=run
 asdi.lab1\:launchShortcut=com.appcelerator.titanium.mobile.ui.ios.simulator.iphone.launchShortcut.iPhone Retina (4 inch 64-bit)
 eclipse.preferences.version=1

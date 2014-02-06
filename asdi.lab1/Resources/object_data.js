@@ -17,9 +17,9 @@
 		zanza.aka = 'Zanza';
 		zanza.robe = 'white';
 		zanza.age = 19;
-		zanza.weapon = " his fists";
+		zanza.weapon = "his fists";
 		zanza.info = function(){
-			return zanza.name + "'s weapon is a " + zanza.weapon + '.';
+			return zanza.name + "'s weapon is " + zanza.weapon + '.';
 		};
 		zanza.about = function (){
 			return zanza.name + " was an underground fighter called " + zanza.aka + ". By the time the manga starts " + zanza.name + " is " + zanza.age + ", and wears a " + zanza.robe + " robe.";
@@ -74,12 +74,11 @@
 			return hiko.name + "'s weapon is a " + hiko.weapon + ". It is a weapon that samurai's used.";
 		};
 		hiko.about = function (){
-			return hiko.name + " is a deadly assassin nicknamed the " + hiko.aka + ". By the time the manga starts " + hiko.name + " is " + hiko.age + ", and wears a " + hiko.robe + " robe.";
+			return hiko.name + " is a deadly assassin nicknamed " + hiko.aka + ". By the time the manga starts " + hiko.name + " is " + hiko.age + ", and wears a " + hiko.robe + " robe.";
 		};
 	
-var mangaInfo = [battosai, karou, zanza, yahiko, Shishio, hiko];
 // Character information gotten from http://kenshin.wikia.com/
-// Sword information gotten from http://books.google.com/books?id=zPyswmGDBFkC&pg=PA48&dq=wakizashi&hl=en&ei=KZYsTo-EIqTd0QGXndDkDg&sa=X&oi=book_result&ct=result&resnum=5&ved=0CDkQ6AEwBA#v=onepage&q=wakizashi&f=true
+// Sword information gotten from http://books.google.com/books id=zPyswmGDBFkC&pg=PA48&dq=wakizashi&hl=en&ei=KZYsTo-EIqTd0QGXndDkDg&sa=X&oi=book_result&ct=result&resnum=5&ved=0CDkQ6AEwBA#v=onepage&q=wakizashi&f=true
 
 
 //Literal Notations Book Information
@@ -88,13 +87,13 @@ var mangaInfo = [battosai, karou, zanza, yahiko, Shishio, hiko];
 		publisher: 'Bantam Books',
 		series: 'A Song of Ice and Fire',
 		numBooks: 7,
-		books:["A Game of Thrones", "A Clash of Kings", "A Storm of Swords", "A Feast for Crows", "A Dance wtih Dragons", "The Winds of Winter", "A Dream of Spring"]
-		info = function(){
-			return hiko.name + "'s weapon is a " + hiko.weapon + ". It is a weapon that samurai's used.";
-		};
-		hiko.about = function (){
-			return hiko.name + " is a deadly assassin nicknamed the " + hiko.aka + ". By the time the manga starts " + hiko.name + " is " + hiko.age + ", and wears a " + hiko.robe + " robe.";
-		};
+		book:["A Game of Thrones", "A Clash of Kings", "A Storm of Swords", "A Feast for Crows", "A Dance wtih Dragons", "The Winds of Winter", "A Dream of Spring"],
+		info: function(){
+			return this.author + " is the creator of a the " + this.series + " series.";
+		},
+		about: function(){
+			return "There are [going to be] " + this.numBooks + " that are named " + this.book + " that are published by " + this.publisher;
+		}
 	};
 	
 	var LORinfo = {
@@ -102,7 +101,13 @@ var mangaInfo = [battosai, karou, zanza, yahiko, Shishio, hiko];
 		publisher: 'George Allen & Unwin, Ltd.',
 		series: 'Lord of the Rings',
 		numBooks: 6,
-		books:["The Ring Sets Out", "The Ring Goes South", "The Treason of Isengard", "The Journey to Mordor", "The War of the Ring", "The Return of the King"]
+		book:["The Ring Sets Out", "The Ring Goes South", "The Treason of Isengard", "The Journey to Mordor", "The War of the Ring", "The Return of the King"],
+		info: function(){
+			return LORinfo.author + " is the creator of a the " + LORinfo.series + " series.";
+		},
+		about: function(){
+			return "There are " + LORinfo.numBooks + " that are named " + LORinfo.book + " that are published by " + LORinfo.publisher;
+		}		
 	};
 
 	var HGRinfo = {
@@ -110,7 +115,13 @@ var mangaInfo = [battosai, karou, zanza, yahiko, Shishio, hiko];
 		publisher: 'Scholastic Inc.',
 		series: 'Hunger Games Series',
 		numBooks: 3,
-		books:["The Hunger Games", "Catching Fire", "Mockingjay"]		
+		book:["The Hunger Games", "Catching Fire", "Mockingjay"],
+		info: function(){
+			return HGRinfo.author + " is the creator of a the " + HGRinfo.series + " series.";
+		},
+		about: function(){
+			return "There are " + HGRinfo.numBooks + " that are named " + HGRinfo.book + " that are published by " + HGRinfo.publisher;
+		}				
 	};
 	
 	var HPinfo = {
@@ -118,7 +129,13 @@ var mangaInfo = [battosai, karou, zanza, yahiko, Shishio, hiko];
 		publisher: 'Scholastic Inc.',
 		series: 'Harry Potter',
 		numBooks: 7,
-		books:["The Sorcerer's Stone", "The Chamber of Secrets", "The Prizoner of Askaban", "The Goblet of Fire", "The Order of the Phoenix", "The Half-Blood Prince", "The Deathly Hallows"]
+		book:["The Sorcerer's Stone", "The Chamber of Secrets", "The Prizoner of Askaban", "The Goblet of Fire", "The Order of the Phoenix", "The Half-Blood Prince", "The Deathly Hallows"],
+		info: function(){
+			return "The " + this.series + " series was created by " + this.author;
+		},
+		about: function(){
+			return "There are " + this.numBooks + " that are named " + this.book + " that are published by " + this.publisher;
+		}
 	};
 	
 	var InheritanceInfo = {
@@ -126,7 +143,13 @@ var mangaInfo = [battosai, karou, zanza, yahiko, Shishio, hiko];
 		publisher: "Random House Children's Books",
 		series: 'Inheritance Cycle',
 		numBooks: 4,
-		books:["Eragon", "Eldest", "Brisingr", "Inheritance"]		
+		book:["Eragon", "Eldest", "Brisingr", "Inheritance"],	
+		info: function(){
+			return this.author + " is the creator of a the " + this.series + " series.";
+		},
+		about: function(){
+			return "There are " + this.numBooks + " that are named " + this.book + " that are published by " + this.publisher;
+		}			
 	};
 	
 	var LangdonInfo = {
@@ -134,13 +157,22 @@ var mangaInfo = [battosai, karou, zanza, yahiko, Shishio, hiko];
 		publisher: 'Penguin Group Inc.',
 		series: 'Robert Langdon Series',
 		numBooks: 4,
-		books:["Angels and Demons", "The Davinci Code", "The Lost Symbol", "Inferno"]		
-
+		book:["Angels and Demons", "The Davinci Code", "The Lost Symbol", "Inferno"],
+		info: function(){
+			return this.author + " is the creator of a the " + this.series + " series.";
+		},
+		about: function(){
+			return "There are " + this.numBooks + " that are named " + this.book + " that are published by " + this.publisher;
+		}				
 	};
+
+//Movie info found at http://www.barnesandnoble.com/
 
 
 var booksInfo = [ASOIAFinfo, LORinfo, HGRinfo, HPinfo, InheritanceInfo, LangdonInfo];
-//Movie info found at http://www.barnesandnoble.com/
 
-exports.manga = mangaInfo;
 exports.books = booksInfo;
+
+
+var charInfo = [battosai, karou, zanza, yahiko, Shishio, hiko];
+exports.chara = charInfo;

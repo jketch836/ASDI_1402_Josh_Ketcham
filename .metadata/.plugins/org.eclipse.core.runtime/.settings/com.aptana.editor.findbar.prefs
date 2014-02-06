@@ -1,0 +1,3 @@
+FIND_BAR_DECORATOR_FIND_ENTRIES=\#\n\#Wed Feb 05 17\:44\:06 EST 2014\n4\=object_Data\n3\=myData\n2\=table\n1\=data\n0\=chara\n
+FIND_BAR_DECORATOR_REPLACE_ENTRIES=\#\n\#Wed Feb 05 17\:44\:06 EST 2014\n4\=object_data\n3\=data\n2\=objectData\n1\=aTable\n0\=books\n
+eclipse.preferences.version=1

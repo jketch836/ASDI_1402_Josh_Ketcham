@@ -11,4 +11,15 @@
 		<item value="org.eclipse.platform:4.3.1.v20130911-1000"/>
 		<item value="org.eclipse.rcp:4.3.1.v20130911-1000"/>
 	</list>
+	<section name="BasicNewProjectResourceWizard">
+	</section>
+	<section name="CleanDialogSettings">
+		<item value="484" key="DIALOG_WIDTH"/>
+		<item value="225" key="DIALOG_Y_ORIGIN"/>
+		<item value="479" key="DIALOG_X_ORIGIN"/>
+		<item value="354" key="DIALOG_HEIGHT"/>
+		<item value="false" key="TOGGLE_SELECTED"/>
+	</section>
+	<section name="NewWizardAction">
+	</section>
 </section>

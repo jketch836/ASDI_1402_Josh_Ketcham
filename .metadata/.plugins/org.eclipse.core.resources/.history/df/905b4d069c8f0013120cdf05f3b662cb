@@ -1,0 +1,98 @@
+//Literal Notations Book Information
+	var ASOIAFinfo = {
+		author: 'George R.R. Martin',
+		publisher: 'Bantam Books',
+		series: 'A Song of Ice and Fire',
+		numBooks: 7,
+		'image': 'pictures/ASOIAF.jpg',		
+		book:["A Game of Thrones", "A Clash of Kings", "A Storm of Swords", "A Feast for Crows", "A Dance wtih Dragons", "The Winds of Winter", "A Dream of Spring"],
+		info: function(){
+			return this.author + " is the creator of a the " + this.series + " series.";
+		},
+		'about': function(){
+			return "There are [going to be] " + this.numBooks + " that are named " + this.book + " that are published by " + this.publisher;
+		}
+	};
+	
+	var LORinfo = {
+		author: 'J.R.R. Tolkein',
+		publisher: 'George Allen & Unwin, Ltd.',
+		series: 'Lord of the Rings',
+		numBooks: 6,
+		'image': 'pictures/LOR.jpg',		
+		book:["The Ring Sets Out", "The Ring Goes South", "The Treason of Isengard", "The Journey to Mordor", "The War of the Ring", "The Return of the King"],
+		info: function(){
+			return LORinfo.author + " is the creator of a the " + LORinfo.series + " series.";
+		},
+		'about': function(){
+			return "There are " + LORinfo.numBooks + " that are named " + LORinfo.book + " that are published by " + LORinfo.publisher;
+		}		
+	};
+
+	var HGRinfo = {
+		author: 'Suzanne Collins',
+		publisher: 'Scholastic Inc.',
+		series: 'Hunger Games Series',
+		numBooks: 3,
+		'image': 'pictures/hungerGames.jpg',		
+		book:["The Hunger Games", "Catching Fire", "Mockingjay"],
+		info: function(){
+			return HGRinfo.author + " is the creator of a the " + HGRinfo.series + " series.";
+		},
+		'about': function(){
+			return "There are " + HGRinfo.numBooks + " that are named " + HGRinfo.book + " that are published by " + HGRinfo.publisher;
+		}				
+	};
+	
+	var HPinfo = {
+		author: 'J.K. Rowling',
+		publisher: 'Scholastic Inc.',
+		series: 'Harry Potter',
+		numBooks: 7,
+		image: 'pictures/hp.jpg',		
+		book:["The Sorcerer's Stone", "The Chamber of Secrets", "The Prizoner of Askaban", "The Goblet of Fire", "The Order of the Phoenix", "The Half-Blood Prince", "The Deathly Hallows"],
+		info: function(){
+			return "The " + this.series + " series was created by " + this.author;
+		},
+		'about': function(){
+			return "There are " + this.numBooks + " that are named " + this.book + " that are published by " + this.publisher;
+		}
+	};
+	
+	var InheritanceInfo = {
+		author: 'Christopher Paolini',
+		publisher: "Random House Children's Books",
+		series: 'Inheritance Cycle',
+		numBooks: 4,
+		'image': 'pictures/inheritance.jpg',		
+		book:["Eragon", "Eldest", "Brisingr", "Inheritance"],	
+		info: function(){
+			return this.author + " is the creator of a the " + this.series + " series.";
+		},
+		'about': function(){
+			return "There are " + this.numBooks + " that are named " + this.book + " that are published by " + this.publisher;
+		}			
+	};
+	
+	var LangdonInfo = {
+		author: 'Dan Brown',
+		publisher: 'Penguin Group Inc.',
+		series: 'Robert Langdon Series',
+		numBooks: 4,
+		'image': 'pictures/langdon.jpg',		
+		book:["Angels and Demons", "The Davinci Code", "The Lost Symbol", "Inferno"],
+		info: function(){
+			return this.author + " is the creator of a the " + this.series + " series.";
+		},
+		'about': function(){
+			return "There are " + this.numBooks + " that are named " + this.book + " that are published by " + this.publisher;
+		}				
+	};
+
+//Movie info found at http://www.barnesandnoble.com/
+//Pictures found on various websites from google.com
+
+
+var booksInfo = [ASOIAFinfo, LORinfo, HGRinfo, HPinfo, InheritanceInfo, LangdonInfo];
+
+exports.books = booksInfo;

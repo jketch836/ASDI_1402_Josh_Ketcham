@@ -100,7 +100,11 @@
 		hiko.stats = function (){
 			return "Name: " + hiko.name + '\nAlias: '  + hiko.aka + "\nAge: " + hiko.age + "\nRobe Color:  " + hiko.robe + "\nWeapon: " + hiko.weapon;
 		};
-	
+
+
+var charInfo = [battosai, karou, zanza, yahiko, Shishio, hiko];
+
+exports.chara = charInfo;	
 // Character information and pictures found at http://kenshin.wikia.com/
 // Sword information gotten from http://books.google.com/books id=zPyswmGDBFkC&pg=PA48&dq=wakizashi&hl=en&ei=KZYsTo-EIqTd0QGXndDkDg&sa=X&oi=book_result&ct=result&resnum=5&ved=0CDkQ6AEwBA#v=onepage&q=wakizashi&f=true
 
@@ -112,12 +116,12 @@
 		series: 'A Song of Ice and Fire',
 		numBooks: 7,
 		image: 'pictures/ASOIAF.jpg',		
-//		book:["A Game of Thrones", "A Clash of Kings", "A Storm of Swords", "A Feast for Crows", "A Dance wtih Dragons", "The Winds of Winter", "A Dream of Spring"],
+		book:["A Game of Thrones", " A Clash of Kings", " A Storm of Swords", " A Feast for Crows", " A Dance wtih Dragons", " The Winds of Winter", " and A Dream of Spring"],
 		info: function(){
 			return this.author + " is the creator of a the " + this.series + " series.";
 		},
 		about: function(){
-			return "There are [going to be] " + this.numBooks /* + " that are named " + this.book*/ + " that are published by " + this.publisher;
+			return "There are [going to be] " + this.numBooks + " that are named " + this.book + " that are published by " + this.publisher;
 		}
 	};
 	
@@ -127,12 +131,12 @@
 		series: 'Lord of the Rings',
 		numBooks: 6,
 		image: 'pictures/LOR.jpg',		
-//		book:["The Ring Sets Out", "The Ring Goes South", "The Treason of Isengard", "The Journey to Mordor", "The War of the Ring", "The Return of the King"],
+		book:["The Ring Sets Out", " The Ring Goes South", " The Treason of Isengard", " The Journey to Mordor", " The War of the Ring", " and The Return of the King"],
 		info: function(){
 			return LORinfo.author + " is the creator of a the " + LORinfo.series + " series.";
 		},
 		about: function(){
-			return "There are " + LORinfo.numBooks /*+ " that are named " + LORinfo.book*/ + " that are published by " + LORinfo.publisher;
+			return "There are " + LORinfo.numBooks + " that are named " + LORinfo.book + " that are published by " + LORinfo.publisher;
 		}		
 	};
 
@@ -142,12 +146,12 @@
 		series: 'Hunger Games Series',
 		numBooks: 3,
 		image: 'pictures/hungerGames.jpg',		
-//		book:["The Hunger Games", "Catching Fire", "Mockingjay"],
+		book:["The Hunger Games", " Catching Fire", " and Mockingjay"],
 		info: function(){
-			return HGRinfo.author + " is the creator of a the " + HGRinfo.series + " series.";
+			return HGRinfo.author + " is the creator of a the " + HGRinfo.series + ".";
 		},
 		about: function(){
-			return "There are " + HGRinfo.numBooks /*+ " that are named " + HGRinfo.book*/ + " that are published by " + HGRinfo.publisher;
+			return "There are " + HGRinfo.numBooks + " that are named " + HGRinfo.book + " that are published by " + HGRinfo.publisher;
 		}				
 	};
 	
@@ -157,12 +161,12 @@
 		series: 'Harry Potter',
 		numBooks: 7,
 		image: 'pictures/hp.jpg',		
-//		book:["The Sorcerer's Stone", "The Chamber of Secrets", "The Prizoner of Askaban", "The Goblet of Fire", "The Order of the Phoenix", "The Half-Blood Prince", "The Deathly Hallows"],
+		book:["The Sorcerer's Stone", " The Chamber of Secrets", " The Prizoner of Askaban", " The Goblet of Fire", " The Order of the Phoenix", " The Half-Blood Prince", " and The Deathly Hallows"],
 		info: function(){
 			return "The " + this.series + " series was created by " + this.author;
 		},
 		about: function(){
-			return "There are " + this.numBooks /*+ " that are named " + this.book*/ + " that are published by " + this.publisher;
+			return "There are " + this.numBooks + " that are named " + this.book + " that are published by " + this.publisher;
 		}
 	};
 	
@@ -172,12 +176,12 @@
 		series: 'Inheritance Cycle',
 		numBooks: 4,
 		image: 'pictures/inheritance.jpg',		
-//		book:["Eragon", "Eldest", "Brisingr", "Inheritance"],	
+		book:["Eragon", " Eldest", " Brisingr", " and Inheritance"],	
 		info: function(){
-			return this.author + " is the creator of a the " + this.series + " series.";
+			return this.author + " is the creator of a the " + this.series + ".";
 		},
 		about: function(){
-			return "There are " + this.numBooks /*+ " that are named " + this.book*/ + " that are published by " + this.publisher;
+			return "There are " + this.numBooks + " that are named " + this.book + " that are published by " + this.publisher;
 		}			
 	};
 	
@@ -187,12 +191,12 @@
 		series: 'Robert Langdon Series',
 		numBooks: 4,
 		image: 'pictures/langdon.jpg',		
-//		book:["Angels and Demons", "The Davinci Code", "The Lost Symbol", "Inferno"],
+		book:["Angels and Demons", " The Davinci Code", " The Lost Symbol", " and Inferno"],
 		info: function(){
-			return this.author + " is the creator of a the " + this.series + " series.";
+			return this.author + " is the creator of a the " + this.series + ".";
 		},
 		about: function(){
-			return "There are " + this.numBooks + " that are named " + /*this.book*/ + " that are published by " + this.publisher;
+			return "There are " + this.numBooks + " that are named " + this.book + " that are published by " + this.publisher;
 		}				
 	};
 
@@ -203,8 +207,3 @@
 var booksInfo = [ASOIAFinfo, LORinfo, HGRinfo, HPinfo, InheritanceInfo, LangdonInfo];
 
 exports.books = booksInfo;
-
-
-var charInfo = [battosai, karou, zanza, yahiko, Shishio, hiko];
-
-exports.chara = charInfo;

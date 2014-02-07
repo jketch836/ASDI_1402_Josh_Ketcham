@@ -24,6 +24,7 @@ var bookSection = Ti.UI.createTableViewSection ({
 	headerTitle: "Book Series Information",
 	footerTitle: "Hope you enjoyed the Information"
 });
+
 var objectTableSec = [charSection, bookSection];
 
 
@@ -39,13 +40,18 @@ var charObjectRows = function () {
 			left: 20
 		});
 		
-		charaRow.addEventListener("click",function(a){
+		charaRow.addEventListener("click", function(a){
+			// console.log(a.index);
+			// console.log(objectData.chara[a.index]);
+			// console.log(objectData.chara[a.index].weapon);
+			// console.log(objectData.chara[a.index].stats);
 			var cInfoWindow = Ti.UI.createWindow({
+				title: objectData.chara[a.index].name,
 				backgroundColor: "#fff"
 			});	
 			var winView = Ti.UI.createView({
 				top: 0,
-				borderRadius: 10,
+				borderRadius: 20,
 				height: 'auto',
 				width: 320,
 				backgroundColor: "#C1CDCD"
@@ -70,11 +76,11 @@ var charObjectRows = function () {
 				text: objectData.chara[a.index].about(),
 				color: "#000",
 				top: 400
-			});
-			console.log(objectData.chara[a.index].about());			
+			});			
 			winView.add(statsLabel, aboutLabel, infoLabel, charaImage);
 			cInfoWindow.add(winView);	
 			navWindow.openWindow(cInfoWindow, {animated:true});
+//			mWin.openWindow(cInfoWindow, {animated:true});
 		});	
 		charaRow.add(charNameLabel);
 		charSection.add(charaRow);
@@ -85,48 +91,57 @@ var charObjectRows = function () {
 
 var bookObjectRows = function () {
 	for (i = 0; i < objectData.books.length; i++) {	
+		// Set a new variable here for some shortening later on.
+		var book = objectData.books[i];
+
 		var bookRow = Ti.UI.createTableViewRow({
 			top: 20,
-			height: "40dp"
+			height: "40dp",
+			bookData: book // Setting a custom property on thr bookRow object to be passed to the click event.
 		});
 		var bookNameLabel = Ti.UI.createLabel({
 			left: 20,
 			text: objectData.books[i].author,
 			font: {fontSize: "18dp",fontWeight: "bold"}
 		});
-		
-		bookRow.addEventListener("click",function(c){
+				
+		bookRow.addEventListener("click",function(e){
+			// console.log('Event fired.');
+			// console.log(objectData.books);
+			// console.log(e.row.myData);
+			// console.log(e.row.myData.author); 	// Use e.row.myData.author to return the value of objectData.books[i].author
 			var bInfoWindow = Ti.UI.createWindow({
+				title: e.row.bookData.author,
 				backgroundColor: "#fff"
 			});	
 			var bWinView = Ti.UI.createView({
 				top: 0,
-				borderRadius: 10,
-				height: 520,
+				borderRadius: 20,
+				height: 'auto',
 				width: 320,
 				backgroundColor: "#EEE8CD"
 			});
 			var bookImage = Ti.UI.createImageView({
-				image: objectData.books[c.index].image,
+				image: e.row.bookData.image,
 				top: 20,
 				height: '200dp',
-				width: '175dp'
+				width: '225dp'
 			});			
 			var bAboutLabel = Ti.UI.createLabel({
-				text: objectData.books[c.index].about(),
+				text: e.row.bookData.about(),
 				color: "#000",
-				top: 50
+				top: 300
 			});		
 			var bInfoLabel = Ti.UI.createLabel({
-				text: objectData.books[c.index].info(),
+				text: e.row.bookData.info(),
 				color: "#000",
-				top: 180
+				top: 245
 			});
-			console.log(objectData.books[c.index].about());
 			bWinView.add(bAboutLabel, bInfoLabel, bookImage);
 			bInfoWindow.add(bWinView);	
 			navWindow.openWindow(bInfoWindow, {animated:true});
-		});
+//			mWin.openWindow(bInfoWindow, {animated:true});
+		});	
 		bookRow.add(bookNameLabel);
 		bookSection.add(bookRow);
 		objectTable.push(bookRow);
@@ -139,3 +154,4 @@ charObjectRows();
 aTable.setData(objectTableSec);
 mWin.add(aTable);
 navWindow.open();
+//mWin.open();

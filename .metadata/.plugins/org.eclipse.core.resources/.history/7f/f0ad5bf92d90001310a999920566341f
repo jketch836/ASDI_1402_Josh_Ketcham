@@ -1,0 +1,4 @@
+var mWin = Ti.UI.createWindow();
+
+
+mWin.open();

@@ -1,0 +1,18 @@
+var lycanURL = 'http://us.battle.net/api/wow/character/the-venture-co/Lycanthrop';
+var havenURL = 'http://us.battle.net/api/wow/character/the-venture-co/Haven';
+var vennURL = 'http://us.battle.net/api/wow/character/the-venture-co/Vennigi';
+
+
+function remoteResponse () {
+	console.log(lycanURL);
+}
+var xml = Ti.Network.createHTTPClient({ 
+	onerror: function(e){ 
+    	Ti.API.debug(e.error); 
+		alert('There was an error during the connection'); 
+    }, 
+    timeout:1000, 
+});             
+
+remoteResponse();
+xml.open('GET', lycanURL, havenURL, vennURL);

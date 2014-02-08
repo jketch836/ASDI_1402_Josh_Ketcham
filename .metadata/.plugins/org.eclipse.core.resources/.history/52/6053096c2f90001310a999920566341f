@@ -1,0 +1,8 @@
+var mWin = Ti.UI.createWindow();
+var remote = require('remoteAPI');
+
+
+
+
+
+mWin.open();

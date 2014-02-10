@@ -1,322 +1,68 @@
-Logger started at: Wednesday, February 5, 2014 2:44:22 PM EST
+Logger started at: Monday, February 10, 2014 4:11:09 PM EST
 Component: com.appcelerator.titanium.ios.core
 Version: 1.0.0.1387331057
-[44:22.24] Sent: >21*1391629462024*version<
-[44:22.25] Recv: >1391629462024*2*3.2.0.GA<
-[44:22.26] Sent: >36*1391629462025*option*monitorXHR*true<
-[44:22.26] Recv: >1391629462025<
-[44:22.26] Sent: >45*1391629462026*option*stepFiltersEnabled*false<
-[44:22.27] Recv: >1391629462026<
-[44:22.27] Sent: >45*1391629462027*option*suspendOnFirstLine*false<
-[44:22.27] Recv: >1391629462027<
-[44:22.28] Sent: >46*1391629462028*option*suspendOnExceptions*false<
-[44:22.28] Recv: >1391629462028<
-[44:22.28] Sent: >41*1391629462029*option*suspendOnErrors*true<
-[44:22.29] Recv: >1391629462029<
-[44:22.29] Sent: >43*1391629462030*option*suspendOnKeywords*true<
-[44:22.29] Recv: >1391629462030<
-[44:22.29] Sent: >45*1391629462031*option*bypassConstructors*false<
-[44:22.30] Recv: >1391629462031<
-[44:22.30] Sent: >45*1391629462032*option*stepFiltersEnabled*false<
-[44:22.30] Recv: >1391629462032<
-[44:22.30] Sent: >30*1391629462033*detailFormatters<
-[44:22.31] Recv: >1391629462033<
-[44:22.31] Sent: >20*1391629462034*enable<
-[44:22.31] Recv: >1391629462034<
-[44:22.33] Recv: >threads*created*0*kroll$1<
-[44:22.34] Recv: >log*out*[DEBUG] Analytics is enabled = YES<
-[44:22.34] Recv: >log*out*[DEBUG] Loading: /Users/jketch/Library/Application Support/iPhone Simulator/7.0.3/Applications/C9FEA54A-5667-4AFB-9E23-305EA2C40B97/asdi.lab1.app/app.js, Resource: app_js<
-[44:22.35] Recv: >scripts*created*327211488|app:/app.js||1|57<
-[44:22.36] Recv: >resumed*0*started<
-[44:22.38] Recv: >log*out*[DEBUG] Loading: /Users/jketch/Library/Application Support/iPhone Simulator/7.0.3/Applications/C9FEA54A-5667-4AFB-9E23-305EA2C40B97/asdi.lab1.app/object_data.js, Resource: object_data_js<
-[44:22.38] Recv: >scripts*created*327211328|app:/object_data.js||1|177<
-[44:22.41] Recv: >log*out*[INFO] (
-        {
-        about = "<KrollCallback: 0x1414f8e0>";
-        age = 28;
-        aka = "Hitokiri Battosai";
-        info = "<KrollCallback: 0x1414f730>";
-        name = "Himura Kenshin";
-        robe = Red;
-        weapon = "Reverse Blade Katana";
-    },
-        {
-        about = "<KrollCallback: 0x1414fb40>";
-        age = 17;
-        aka = "Kenjutsu Princess";
-        info = "<KrollCallback: 0x1414fad0>";
-        name = "Kamiya Karou";
-        robe = "Light Blue";
-        weapon = Bokken;
-    },
-        {
-        about = "<KrollCallback: 0x1414fd80>";
-        age = 19;
-        aka = Zanza;
-        info = "<KrollCallback: 0x1414fd10>";
-        name = "Sagara Sanosuke";
-        robe = white;
-        weapon = " his fists";
-    },
-        {
-        about = "<KrollCallback: 0x1414ffe0>";
-        age = 10;
-        aka = "Tokyo Shizoku";
-        info = "<KrollCallback: 0x1414ff70>";
-        name = "Myojin Yahiko";
-        robe = Green;
-        weapon = Bokken;
-    },
-        {
-        about = "<...446<
-[44:22.43] Recv: >log*out*[INFO] (
-        {
-        about = "<KrollCallback: 0x14150510>";
-        age = 28;
-        aka = "Hitokiri Battosai";
-        info = "<KrollCallback: 0x141501e0>";
-        name = "Himura Kenshin";
-        robe = Red;
-        weapon = "Reverse Blade Katana";
-    },
-        {
-        about = "<KrollCallback: 0x141508c0>";
-        age = 17;
-        aka = "Kenjutsu Princess";
-        info = "<KrollCallback: 0x14150850>";
-        name = "Kamiya Karou";
-        robe = "Light Blue";
-        weapon = Bokken;
-    },
-        {
-        about = "<KrollCallback: 0x14150b00>";
-        age = 19;
-        aka = Zanza;
-        info = "<KrollCallback: 0x14150a90>";
-        name = "Sagara Sanosuke";
-        robe = white;
-        weapon = " his fists";
-    },
-        {
-        about = "<KrollCallback: 0x14150d40>";
-        age = 10;
-        aka = "Tokyo Shizoku";
-        info = "<KrollCallback: 0x14150cd0>";
-        name = "Myojin Yahiko";
-        robe = Green;
-        weapon = Bokken;
-    },
-        {
-        about = "<...446<
-[44:22.44] Recv: >log*out*[INFO] (
-        {
-        about = "<KrollCallback: 0x14150b80>";
-        age = 28;
-        aka = "Hitokiri Battosai";
-        info = "<KrollCallback: 0x14150b10>";
-        name = "Himura Kenshin";
-        robe = Red;
-        weapon = "Reverse Blade Katana";
-    },
-        {
-        about = "<KrollCallback: 0x14150dd0>";
-        age = 17;
-        aka = "Kenjutsu Princess";
-        info = "<KrollCallback: 0x14150d60>";
-        name = "Kamiya Karou";
-        robe = "Light Blue";
-        weapon = Bokken;
-    },
-        {
-        about = "<KrollCallback: 0x14151010>";
-        age = 19;
-        aka = Zanza;
-        info = "<KrollCallback: 0x14150fa0>";
-        name = "Sagara Sanosuke";
-        robe = white;
-        weapon = " his fists";
-    },
-        {
-        about = "<KrollCallback: 0x14151250>";
-        age = 10;
-        aka = "Tokyo Shizoku";
-        info = "<KrollCallback: 0x141511e0>";
-        name = "Myojin Yahiko";
-        robe = Green;
-        weapon = Bokken;
-    },
-        {
-        about = "<...446<
-[44:22.45] Recv: >log*out*[INFO] (
-        {
-        about = "<KrollCallback: 0x14151080>";
-        age = 28;
-        aka = "Hitokiri Battosai";
-        info = "<KrollCallback: 0x14151010>";
-        name = "Himura Kenshin";
-        robe = Red;
-        weapon = "Reverse Blade Katana";
-    },
-        {
-        about = "<KrollCallback: 0x141512d0>";
-        age = 17;
-        aka = "Kenjutsu Princess";
-        info = "<KrollCallback: 0x14151260>";
-        name = "Kamiya Karou";
-        robe = "Light Blue";
-        weapon = Bokken;
-    },
-        {
-        about = "<KrollCallback: 0x141516a0>";
-        age = 19;
-        aka = Zanza;
-        info = "<KrollCallback: 0x14151630>";
-        name = "Sagara Sanosuke";
-        robe = white;
-        weapon = " his fists";
-    },
-        {
-        about = "<KrollCallback: 0x141518e0>";
-        age = 10;
-        aka = "Tokyo Shizoku";
-        info = "<KrollCallback: 0x14151870>";
-        name = "Myojin Yahiko";
-        robe = Green;
-        weapon = Bokken;
-    },
-        {
-        about = "<...446<
-[44:22.46] Recv: >log*out*[INFO] (
-        {
-        about = "<KrollCallback: 0x14151710>";
-        age = 28;
-        aka = "Hitokiri Battosai";
-        info = "<KrollCallback: 0x141516a0>";
-        name = "Himura Kenshin";
-        robe = Red;
-        weapon = "Reverse Blade Katana";
-    },
-        {
-        about = "<KrollCallback: 0x14151960>";
-        age = 17;
-        aka = "Kenjutsu Princess";
-        info = "<KrollCallback: 0x141518f0>";
-        name = "Kamiya Karou";
-        robe = "Light Blue";
-        weapon = Bokken;
-    },
-        {
-        about = "<KrollCallback: 0x14151ba0>";
-        age = 19;
-        aka = Zanza;
-        info = "<KrollCallback: 0x14151b30>";
-        name = "Sagara Sanosuke";
-        robe = white;
-        weapon = " his fists";
-    },
-        {
-        about = "<KrollCallback: 0x14151de0>";
-        age = 10;
-        aka = "Tokyo Shizoku";
-        info = "<KrollCallback: 0x14151d70>";
-        name = "Myojin Yahiko";
-        robe = Green;
-        weapon = Bokken;
-    },
-        {
-        about = "<...446<
-[44:22.47] Recv: >log*out*[INFO] (
-        {
-        about = "<KrollCallback: 0x14151cb0>";
-        age = 28;
-        aka = "Hitokiri Battosai";
-        info = "<KrollCallback: 0x14151c40>";
-        name = "Himura Kenshin";
-        robe = Red;
-        weapon = "Reverse Blade Katana";
-    },
-        {
-        about = "<KrollCallback: 0x14151f00>";
-        age = 17;
-        aka = "Kenjutsu Princess";
-        info = "<KrollCallback: 0x14151e90>";
-        name = "Kamiya Karou";
-        robe = "Light Blue";
-        weapon = Bokken;
-    },
-        {
-        about = "<KrollCallback: 0x14152140>";
-        age = 19;
-        aka = Zanza;
-        info = "<KrollCallback: 0x141520d0>";
-        name = "Sagara Sanosuke";
-        robe = white;
-        weapon = " his fists";
-    },
-        {
-        about = "<KrollCallback: 0x14152380>";
-        age = 10;
-        aka = "Tokyo Shizoku";
-        info = "<KrollCallback: 0x14152310>";
-        name = "Myojin Yahiko";
-        robe = Green;
-        weapon = Bokken;
-    },
-        {
-        about = "<...446<
-[44:22.48] Recv: >log*out*[INFO] (
-        {
-        about = "<KrollCallback: 0x14152190>";
-        age = 28;
-        aka = "Hitokiri Battosai";
-        info = "<KrollCallback: 0x14152120>";
-        name = "Himura Kenshin";
-        robe = Red;
-        weapon = "Reverse Blade Katana";
-    },
-        {
-        about = "<KrollCallback: 0x141523e0>";
-        age = 17;
-        aka = "Kenjutsu Princess";
-        info = "<KrollCallback: 0x14152370>";
-        name = "Kamiya Karou";
-        robe = "Light Blue";
-        weapon = Bokken;
-    },
-        {
-        about = "<KrollCallback: 0x14152620>";
-        age = 19;
-        aka = Zanza;
-        info = "<KrollCallback: 0x141525b0>";
-        name = "Sagara Sanosuke";
-        robe = white;
-        weapon = " his fists";
-    },
-        {
-        about = "<KrollCallback: 0x14152860>";
-        age = 10;
-        aka = "Tokyo Shizoku";
-        info = "<KrollCallback: 0x141527f0>";
-        name = "Myojin Yahiko";
-        robe = Green;
-        weapon = Bokken;
-    },
-        {
-        about = "<...446<
-[44:22.49] Recv: >suspended*0*exception*app:/app.js*34<
-[44:22.50] Sent: >22*1391629462035*frames*0<
-[44:22.50] Recv: >1391629462035*0|||app:/app.js|34|false|0|0*1|||app:/app.js|54|false|0|0<
-[44:22.680] Sent: >34*1391629462036*variables*0*frame[0]<
-[44:22.681] Recv: >1391629462036*arguments|object|opnl|[object Arguments]*objectWindow|object|nol|[object TiUIWindow]*objectLabel|object|nol|[object TiUILabel]*tableRow|undefined|wv|undefined*navWindow|object|nov|[object TiUIiOSNavWindow]*bookSection|object|nov|[object TiUITableViewSection]*objectData|object|ov|[object Object]*mWin|object|nov|[object TiUIWindow]*objectCharRows|object|v|[object Function]*aTable|object|nov|[object TiUITableView]*objectTable|object|wnov|[object Array]*charSection|object|nov|[object TiUITableViewSection]*objectTableSec|object|wnov|[object Array]*console|object|nov|[object TiConsole]*i|number|wv|6*j|number|wv|6<
-[44:39.474] Sent: >21*1391629462037*disable<
-[44:39.475] Recv: >1391629462037<
-[44:39.475] Recv: >log*out*[ERROR] Script Error {
-    backtrace = "#00 () at file:///Users/jketch/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/C9FEA54A-5667-4AFB-9E23-305EA2C40B97/asdi.lab1.app/app.js:54";
-    line = 34;
-    message = "'undefined' is not an object (evaluating 'objectData.chara[i].name')";
-    name = TypeError;
-    sourceId = 327211488;
-    sourceURL = "file:///Users/jketch/Library/Application%20Support/iPhone%20Simulator/7.0.3/Applications/C9FEA54A-5667-4AFB-9E23-305EA2C40B97/asdi.lab1.app/app.js";
-}<
-[44:39.475] Sent: >10**terminate<
+[11:9.801] Sent: >21*1392066669801*version<
+[11:9.802] Recv: >1392066669801*2*3.2.0.GA<
+[11:9.803] Sent: >36*1392066669802*option*monitorXHR*true<
+[11:9.804] Recv: >1392066669802<
+[11:9.804] Sent: >45*1392066669803*option*stepFiltersEnabled*false<
+[11:9.804] Recv: >1392066669803<
+[11:9.805] Sent: >45*1392066669804*option*suspendOnFirstLine*false<
+[11:9.805] Recv: >1392066669804<
+[11:9.805] Sent: >46*1392066669805*option*suspendOnExceptions*false<
+[11:9.806] Recv: >1392066669805<
+[11:9.806] Sent: >41*1392066669806*option*suspendOnErrors*true<
+[11:9.807] Recv: >1392066669806<
+[11:9.807] Sent: >43*1392066669807*option*suspendOnKeywords*true<
+[11:9.808] Recv: >1392066669807<
+[11:9.808] Sent: >45*1392066669808*option*bypassConstructors*false<
+[11:9.809] Recv: >1392066669808<
+[11:9.809] Sent: >45*1392066669809*option*stepFiltersEnabled*false<
+[11:9.809] Recv: >1392066669809<
+[11:9.809] Sent: >30*1392066669810*detailFormatters<
+[11:9.809] Recv: >1392066669810<
+[11:9.809] Sent: >20*1392066669811*enable<
+[11:9.810] Recv: >1392066669811<
+[11:9.812] Recv: >threads*created*0*kroll$1<
+[11:9.813] Recv: >log*out*[DEBUG] Analytics is enabled = YES<
+[11:9.813] Recv: >log*out*[DEBUG] Loading: /Users/jketch/Library/Application Support/iPhone Simulator/7.0.3-64/Applications/434805F2-2BF5-4C58-86AB-780C4833919B/asdi.lab2.app/app.js, Resource: app_js<
+[11:9.814] Recv: >scripts*created*318007584|app:/app.js||1|65<
+[11:9.814] Recv: >resumed*0*started<
+[11:9.816] Recv: >log*out*[DEBUG] Loading: /Users/jketch/Library/Application Support/iPhone Simulator/7.0.3-64/Applications/434805F2-2BF5-4C58-86AB-780C4833919B/asdi.lab2.app/_app_props_.json, Resource: _app_props__json<
+[11:9.900] Recv: >log*out*[DEBUG] Application booted in 139.563978 ms<
+[11:10.632] Recv: >log*out*[WARN] OPEN ABORTED. _handleOpen returned NO<
+[11:10.632] Recv: >threads*created*1*kroll$2<
+[11:10.633] Recv: >log*out*[DEBUG] Loading: /Users/jketch/Library/Application Support/iPhone Simulator/7.0.3-64/Applications/434805F2-2BF5-4C58-86AB-780C4833919B/asdi.lab2.app/main_menu.js, Resource: main_menu_js<
+[11:10.633] Recv: >scripts*created*318264160|app:/main_menu.js||1|140<
+[11:10.633] Recv: >resumed*1*started<
+[11:10.633] Recv: >log*out*[DEBUG] Loading: /Users/jketch/Library/Application Support/iPhone Simulator/7.0.3-64/Applications/434805F2-2BF5-4C58-86AB-780C4833919B/asdi.lab2.app/remoteAPI.js, Resource: remoteAPI_js<
+[11:10.634] Recv: >scripts*created*318264096|app:/remoteAPI.js||1|201<
+[11:11.266] Recv: >log*out*[INFO] Destruction<
+[11:11.266] Recv: >log*out*[INFO] Marksmanship<
+[11:11.266] Recv: >log*out*[INFO] Subtlety<
+[11:11.267] Recv: >log*out*[INFO] Protection<
+[11:11.267] Recv: >log*out*[INFO] Survival<
+[11:11.267] Recv: >log*out*[INFO] Frost<
+[11:11.267] Recv: >log*out*[INFO] Arms<
+[11:11.267] Recv: >log*out*[INFO] Frost<
+[11:11.267] Recv: >log*out*[INFO] Holy<
+[11:11.267] Recv: >log*out*[INFO] Fury<
+[11:11.267] Recv: >log*out*[INFO] Beast Mastery<
+[11:11.268] Recv: >log*out*[INFO] Beast Mastery<
+[11:11.268] Recv: >log*out*[INFO] Protection<
+[11:11.268] Recv: >log*out*[INFO] Enhancement<
+[11:11.268] Recv: >log*out*[INFO] Shadow<
+[11:11.268] Recv: >log*out*[INFO] Assassination<
+[11:11.268] Recv: >log*out*[INFO] Combat<
+[11:11.268] Recv: >log*out*[INFO] Retribution<
+[11:11.268] Recv: >log*out*[INFO] Balance<
+[11:11.269] Recv: >log*out*[INFO] Frost<
+[11:11.269] Recv: >log*out*[INFO] Balance<
+[11:11.269] Recv: >log*out*[INFO] Assassination<
+[11:11.269] Recv: >log*out*[INFO] Retribution<
+[11:11.269] Recv: >suspended*1*exception*app:/remoteAPI.js*99<
+[11:11.269] Sent: >22*1392066669812*frames*1<
+[11:11.270] Recv: >1392066669812*0|||app:/remoteAPI.js|99|false|0|0<
+[11:11.440] Sent: >34*1392066669813*variables*1*frame[0]<
+[11:11.441] Recv: >1392066669813*this|object|no|[object TiNetworkHTTPClientResult]*apiListView|object|nol|[object TiUIListView]*secList|object|nol|[object TiUIListSection]*win|object|nol|[object TiUIWindow]*data|object|wnol|[object Array]*characterScroll|object|nol|[object TiUIScrollView]*arguments|object|opnl|[object Arguments]*i|number|wl|23*__OXP|object|ol|[object Object]*wowAPI|undefined|wl|undefined*json|object|ol|[object Object]*remoteError|object|rl|[object Error]*remoteResponse|object|l|[object Function]*module|object|ol|[object Object]*exports|object|ol|[object Object]*xhr|object|nol|[object TiNetworkClient]*councilURL|string|wl|"http://us.battle.net/api/wow/guild/the-venture-co/The%20Council%20of%20judgement?fields=members"*remote|object|ov|[object Object]*curWin|object|nov|[object TiUIWindow]*console|object|nov|[object TiConsole]*wowListTemplate|object|ov|[object Object]*name|string|wv|"Itrus"*specName|string|wv|"Retribution"*race|number|wv|1*level|number|wv|90*thumbnail|string|wv|"http://us.battle.net/static-render/...42<
 ----------End of file----------

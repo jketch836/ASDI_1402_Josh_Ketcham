@@ -1,0 +1,15 @@
+var curWin = Ti.UI.currentWindow;
+
+
+var remote = require('remoteAPI');
+
+
+
+
+
+
+
+//Main Code
+// characterScroll.add(apiListView);
+// curWin.add(characterScroll);
+curWin.open();

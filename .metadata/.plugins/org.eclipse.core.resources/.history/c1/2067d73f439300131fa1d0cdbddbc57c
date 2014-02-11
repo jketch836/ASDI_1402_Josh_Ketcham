@@ -1,0 +1,7 @@
+var curWin = Ti.UI.currentWindow;
+
+var remote1 = require('remoteAPImem');
+
+var remote2 = require('remoteAPIguild');
+//Main Code
+curWin.open();

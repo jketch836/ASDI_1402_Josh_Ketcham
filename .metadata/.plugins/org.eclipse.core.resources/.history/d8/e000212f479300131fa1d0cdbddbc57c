@@ -1,0 +1,45 @@
+var curWin = Ti.UI.currentWindow;
+
+
+var guildMemView = Ti.UI.createView({
+	backgroundColor: "#333",
+	borderRadius: 10,
+	height: '250dp',
+	width: 'auto',
+	top: '340dp',
+	center: 0,
+	file: 'remoteAPImem.js'
+});
+
+var guildMemLabel = Ti.UI.createLabel({
+	text: "Council Members",
+	font: {fontSize: 14, fontFamily: "Helvetica", fontWeight: "bold"},
+	color: "#000",
+	center: 0,
+	file: 'remoteAPImem.js'
+});
+guildMemView.add(guildMemLabel);
+
+
+var aboutGuildView = Ti.UI.createView({
+	backgroundColor: "#333",
+	borderRadius: 10,
+	height: '250dp',
+	width: 'auto',
+	top: '340dp',
+	center: 0,
+	file: 'remoteAPIguild.js'
+});
+
+var aboutGuildLabel = Ti.UI.createLabel({
+	text: "About the Council",
+	font: {fontSize: 14, fontFamily: "Helvetica", fontWeight: "bold"},
+	color: "#000",
+	center: 0,
+	file: 'remoteAPIguild.js'
+});
+aboutGuildView.add(aboutGuildLabel);
+
+//Main Code
+curWin.add(guildMemView, aboutGuildView);
+curWin.open();

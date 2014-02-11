@@ -1,0 +1,57 @@
+var curWin = Ti.UI.currentWindow;
+
+
+var guildMemView = Ti.UI.createView({
+	backgroundColor: "#333",
+	borderRadius: 10,
+	opacity: .8,
+	height: '150dp',
+	width: 'auto',
+	top: '100dp',
+	center: 0,
+	file: 'remoteAPImem.js'
+});
+
+var guildMemLabel = Ti.UI.createLabel({
+	text: "Council Members",
+	font: {fontSize: 14, fontFamily: "Helvetica", fontWeight: "bold"},
+	color: '#fff',
+	center: 0,
+	file: 'remoteAPImem.js'
+});
+guildMemView.add(guildMemLabel);
+
+guildMemView.addEventListener('click', function(){
+   		// var mWin = Titanium.UI.createWindow({  
+			// title:'Main Menu',
+			// backgroundImage:'backgroundlion.png',
+			// url:'remoteAPImem.js'
+		// });
+		// mWin.open(mWin, {animate: true});
+	var remote = require('remoteAPImem');
+});
+
+
+var aboutGuildView = Ti.UI.createView({
+	backgroundColor: "#333",
+	borderRadius: 10,
+	opacity: .8,
+	height: '150dp',
+	width: 'auto',
+	top: '270dp',
+	center: 0,
+	file: 'remoteAPIguild.js'
+});
+
+var aboutGuildLabel = Ti.UI.createLabel({
+	text: "About the Council",
+	font: {fontSize: 14, fontFamily: "Helvetica", fontWeight: "bold"},
+	color: "#fff",
+	center: 0,
+	file: 'remoteAPIguild.js'
+});
+aboutGuildView.add(aboutGuildLabel);
+
+//Main Code
+curWin.add(guildMemView, aboutGuildView);
+curWin.open();

@@ -26,7 +26,7 @@ var user = Ti.UI.createTextField({
     hintText:'Username',
     value: '',
     font:{fontSize:15, fontWeight:'bold', fontFamily:'Helvetica'},
-    borderStyle:Titanium.UI.INPUT_BORDERSTYLE_ROUNDED
+    borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED
 });
 
 var pass = Ti.UI.createTextField({
@@ -39,20 +39,30 @@ var pass = Ti.UI.createTextField({
     passwordMask: true,
     value: '',
     font:{fontSize:15, fontWeight:'bold', fontFamily:'Helvetica'},
-    borderStyle: Titanium.UI.INPUT_BORDERSTYLE_ROUNDED
+    borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED
 });
 
-var signIn = Ti.UI.createButton({
-    top:'340dp',
-    width:90,
-    height:35,
-    borderRadius:5,
-    title:'Sign In',
-   	font:{fontWeight:'bold',fontSize:16, fontFamily:'Helvetica'},
-   	file: 'main_menu.js'
+//Enter App
+var enterView = Ti.UI.createView({
+	backgroundColor: "#a0a6a2",
+	borderRadius: 5,
+	height: 40,
+	width: 100,
+	top: '350dp',
+	center: 0,
+	file: 'main_menu.js'
 });
+
+var enterLabel = Ti.UI.createLabel({
+	text: "Enter",
+	font: {fontSize: 15, fontFamily: "Helvetica", fontWeight: "bold"},
+	color: "#000",
+	center: 0,
+	file: 'main_menu.js'
+});
+enterView.add(enterLabel);
  
-signIn.addEventListener('click', function(){
+enterView.addEventListener('click', function(){
 	// if (user.value != '' & pass.value != ''){
 		// var alertDialog = Ti.UI.createAlertDialog({
         	// title: 'Login Successful',
@@ -60,7 +70,7 @@ signIn.addEventListener('click', function(){
    		// });
    		var mainWindow = Titanium.UI.createWindow({  
 			title:'Main Menu',
-			backgroundColor:'#fff',
+			backgroundColor: '#fff',
 			url:'main_menu.js'
 		});
 		mainWindow.open(mainWindow, {animate: true});
@@ -75,6 +85,6 @@ signIn.addEventListener('click', function(){
 });
 
 //Main Code
-view.add(pic, user, pass, signIn);
+view.add(pic, user, pass, enterView);
 mWin.add(view);
 mWin.open();

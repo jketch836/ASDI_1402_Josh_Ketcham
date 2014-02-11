@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;asdi.lab2/Resources/listView.js&apos; to &apos;backup.js&apos;" description="Rename resource &apos;listView.js&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Resources/listView.js" name="backup.js" stamp="1392077791595" updateReferences="true"/>
+</session>

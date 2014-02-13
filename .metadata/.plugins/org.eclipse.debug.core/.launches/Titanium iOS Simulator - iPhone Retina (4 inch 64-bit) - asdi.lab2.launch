@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="com.appcelerator.titanium.mobile.ui.ios.simulator.launchConfigurationType">
-<stringAttribute key="ATTR_LOG_LEVEL" value="Info"/>
+<stringAttribute key="ATTR_LOG_LEVEL" value="Debug"/>
 <stringAttribute key="ATTR_PROJECT_NAME" value="asdi.lab2"/>
 <stringAttribute key="device_id" value="iPhone Retina (4 inch 64-bit)"/>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
@@ -11,6 +11,6 @@
 </listAttribute>
 <stringAttribute key="process_factory_id" value="com.appcelerator.titanium.ui.logLevelFilteringProcessFactory"/>
 <stringAttribute key="sdk_version" value="7.0.3"/>
-<stringAttribute key="simulator_debug_config" value="10.63.63.61:53251"/>
+<stringAttribute key="simulator_debug_config" value="10.63.40.177:56590"/>
 <stringAttribute key="simulator_version" value="7.0.3"/>
 </launchConfiguration>

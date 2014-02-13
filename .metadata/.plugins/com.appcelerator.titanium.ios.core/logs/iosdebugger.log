@@ -1,40 +1,65 @@
-Logger started at: Monday, February 10, 2014 4:55:00 PM EST
+Logger started at: Wednesday, February 12, 2014 2:48:18 PM EST
 Component: com.appcelerator.titanium.ios.core
 Version: 1.0.0.1387331057
-[55:0.906] Sent: >21*1392069300907*version<
-[55:0.907] Recv: >1392069300907*2*3.2.0.GA<
-[55:0.908] Sent: >36*1392069300908*option*monitorXHR*true<
-[55:0.909] Recv: >1392069300908<
-[55:0.909] Sent: >45*1392069300909*option*stepFiltersEnabled*false<
-[55:0.909] Recv: >1392069300909<
-[55:0.910] Sent: >45*1392069300910*option*suspendOnFirstLine*false<
-[55:0.913] Recv: >1392069300910<
-[55:0.913] Sent: >46*1392069300911*option*suspendOnExceptions*false<
-[55:0.914] Recv: >1392069300911<
-[55:0.914] Sent: >41*1392069300912*option*suspendOnErrors*true<
-[55:0.915] Recv: >1392069300912<
-[55:0.915] Sent: >43*1392069300913*option*suspendOnKeywords*true<
-[55:0.916] Recv: >1392069300913<
-[55:0.916] Sent: >45*1392069300914*option*bypassConstructors*false<
-[55:0.917] Recv: >1392069300914<
-[55:0.917] Sent: >45*1392069300915*option*stepFiltersEnabled*false<
-[55:0.918] Recv: >1392069300915<
-[55:0.918] Sent: >30*1392069300916*detailFormatters<
-[55:0.918] Recv: >1392069300916<
-[55:0.918] Sent: >20*1392069300917*enable<
-[55:0.919] Recv: >1392069300917<
-[55:0.922] Recv: >threads*created*0*kroll$1<
-[55:0.925] Recv: >log*out*[DEBUG] Analytics is enabled = YES<
-[55:0.925] Recv: >log*out*[DEBUG] Loading: /Users/jketch/Library/Application Support/iPhone Simulator/7.0.3-64/Applications/434805F2-2BF5-4C58-86AB-780C4833919B/asdi.lab2.app/app.js, Resource: app_js<
-[55:0.927] Recv: >scripts*created*329435424|app:/app.js||1|65<
-[55:0.928] Recv: >resumed*0*started<
-[55:0.929] Recv: >log*out*[DEBUG] Loading: /Users/jketch/Library/Application Support/iPhone Simulator/7.0.3-64/Applications/434805F2-2BF5-4C58-86AB-780C4833919B/asdi.lab2.app/_app_props_.json, Resource: _app_props__json<
-[55:1.38] Recv: >log*out*[DEBUG] Application booted in 167.645991 ms<
-[55:7.545] Recv: >log*out*[WARN] OPEN ABORTED. _handleOpen returned NO<
-[55:7.546] Recv: >threads*created*1*kroll$2<
-[55:7.546] Recv: >log*out*[DEBUG] Loading: /Users/jketch/Library/Application Support/iPhone Simulator/7.0.3-64/Applications/434805F2-2BF5-4C58-86AB-780C4833919B/asdi.lab2.app/main_menu.js, Resource: main_menu_js<
-[55:7.547] Recv: >scripts*created*329692000|app:/main_menu.js||1|140<
-[55:7.548] Recv: >resumed*1*started<
-[55:7.548] Recv: >log*out*[DEBUG] Loading: /Users/jketch/Library/Application Support/iPhone Simulator/7.0.3-64/Applications/434805F2-2BF5-4C58-86AB-780C4833919B/asdi.lab2.app/remoteAPI.js, Resource: remoteAPI_js<
-[55:7.548] Recv: >scripts*created*329691936|app:/remoteAPI.js||1|203<
+[48:18.253] Sent: >21*1392234498253*version<
+[48:18.254] Recv: >1392234498253*2*3.2.0.GA<
+[48:18.254] Sent: >45*1392234498254*option*stepFiltersEnabled*false<
+[48:18.256] Recv: >1392234498254<
+[48:18.256] Sent: >36*1392234498255*option*monitorXHR*true<
+[48:18.256] Recv: >1392234498255<
+[48:18.257] Sent: >45*1392234498256*option*suspendOnFirstLine*false<
+[48:18.257] Recv: >1392234498256<
+[48:18.257] Sent: >46*1392234498257*option*suspendOnExceptions*false<
+[48:18.257] Recv: >1392234498257<
+[48:18.257] Sent: >41*1392234498258*option*suspendOnErrors*true<
+[48:18.258] Recv: >1392234498258<
+[48:18.258] Sent: >43*1392234498259*option*suspendOnKeywords*true<
+[48:18.258] Recv: >1392234498259<
+[48:18.258] Sent: >45*1392234498260*option*bypassConstructors*false<
+[48:18.258] Recv: >1392234498260<
+[48:18.259] Sent: >45*1392234498261*option*stepFiltersEnabled*false<
+[48:18.259] Recv: >1392234498261<
+[48:18.259] Sent: >30*1392234498262*detailFormatters<
+[48:18.259] Recv: >1392234498262<
+[48:18.260] Sent: >20*1392234498263*enable<
+[48:18.260] Recv: >1392234498263<
+[48:18.262] Recv: >threads*created*0*kroll$1<
+[48:18.263] Recv: >log*out*[DEBUG] Analytics is enabled = YES<
+[48:18.263] Recv: >log*out*[DEBUG] Loading: /Users/jketch/Library/Application Support/iPhone Simulator/7.0.3-64/Applications/434805F2-2BF5-4C58-86AB-780C4833919B/asdi.lab2.app/app.js, Resource: app_js<
+[48:18.264] Recv: >scripts*created*329099424|app:/app.js||1|62<
+[48:18.264] Recv: >resumed*0*started<
+[48:18.331] Recv: >log*out*[DEBUG] Application booted in 103.739977 ms<
+[48:19.864] Recv: >log*out*[DEBUG] Loading: /Users/jketch/Library/Application Support/iPhone Simulator/7.0.3-64/Applications/434805F2-2BF5-4C58-86AB-780C4833919B/asdi.lab2.app/remoteAPImem.js, Resource: remoteAPImem_js<
+[48:19.865] Recv: >scripts*created*329101152|app:/remoteAPImem.js||1|300<
+[48:20.531] Recv: >log*out*[DEBUG] Loading: /Users/jketch/Library/Application Support/iPhone Simulator/7.0.3-64/Applications/434805F2-2BF5-4C58-86AB-780C4833919B/asdi.lab2.app/_app_props_.json, Resource: _app_props__json<
+[48:20.532] Recv: >log*out*[INFO] DPS<
+[48:20.532] Recv: >log*out*[INFO] DPS<
+[48:20.533] Recv: >log*out*[INFO] DPS<
+[48:20.533] Recv: >log*out*[INFO] TANK<
+[48:20.533] Recv: >log*out*[INFO] DPS<
+[48:20.533] Recv: >log*out*[INFO] DPS<
+[48:20.533] Recv: >log*out*[INFO] DPS<
+[48:20.533] Recv: >log*out*[INFO] DPS<
+[48:20.533] Recv: >log*out*[INFO] HEALING<
+[48:20.533] Recv: >log*out*[INFO] DPS<
+[48:20.534] Recv: >log*out*[INFO] DPS<
+[48:20.534] Recv: >log*out*[INFO] DPS<
+[48:20.534] Recv: >log*out*[INFO] TANK<
+[48:20.534] Recv: >log*out*[INFO] DPS<
+[48:20.534] Recv: >log*out*[INFO] DPS<
+[48:20.534] Recv: >log*out*[INFO] DPS<
+[48:20.534] Recv: >log*out*[INFO] DPS<
+[48:20.534] Recv: >log*out*[INFO] DPS<
+[48:20.534] Recv: >log*out*[INFO] DPS<
+[48:20.534] Recv: >log*out*[INFO] DPS<
+[48:20.534] Recv: >log*out*[INFO] DPS<
+[48:20.535] Recv: >log*out*[INFO] DPS<
+[48:20.535] Recv: >log*out*[INFO] DPS<
+[48:20.535] Recv: >suspended*0*exception*app:/remoteAPImem.js*167<
+[48:20.535] Sent: >22*1392234498264*frames*0<
+[48:20.535] Recv: >1392234498264*0|||app:/remoteAPImem.js|167|false|0|0<
+[48:21.219] Sent: >34*1392234498265*variables*0*frame[0]<
+[48:21.221] Recv: >1392234498265*this|object|no|[object TiNetworkHTTPClientResult]*secList|object|nol|[object TiUIListSection]*apiListView|object|nol|[object TiUIListView]*councilRoster|object|nol|[object TiUILabel]*win|object|nol|[object TiUIWindow]*data|object|wnol|[object Array]*characterScroll|object|nol|[object TiUIScrollView]*backView|object|nol|[object TiUIView]*arguments|object|opnl|[object Arguments]*backLabel|object|nol|[object TiUILabel]*topView|object|nol|[object TiUIView]*role|string|wl|"DPS"*i|number|wl|23*__OXP|object|ol|[object Object]*json|object|ol|[object Object]*remoteError|object|rl|[object Error]*remoteResponse|object|l|[object Function]*module|object|ol|[object Object]*exports|object|ol|[object Object]*xhr|object|nol|[object TiNetworkClient]*councilURL|string|wl|"http://us.battle.net/api/wow/guild/the-venture-co/The%20Council%20of%20judgement?fields=members"*mWin|object|nov|[object TiUIWindow]*aboutGuildView|object|nov|[object TiUIView]*guildMemView|object|nov|[object TiUIView]*lionPic|object|nov|[object ...365<
+[48:21.373] Sent: >37*1392234498266*eval*0*frame[0]*comment<
+[48:21.374] Recv: >1392234498266*exception*Can't find variable: comment<
 ----------End of file----------

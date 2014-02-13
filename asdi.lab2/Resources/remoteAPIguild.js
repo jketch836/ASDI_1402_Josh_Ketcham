@@ -58,7 +58,7 @@ var remoteResponse = function() {
 		top: '95dp',
 		height: '155dp',
 		width: '155dp',
-		image: 'guild_tabard.jpg'
+		image: 'guild_tabard.png'
 	});
 	
 	var councilLVL = Ti.UI.createLabel({
@@ -69,8 +69,16 @@ var remoteResponse = function() {
 		font: {fontSize: 18, fontFamily: "Helvetica", fontStyle: 'bold'}
 	});
 	
-	var councilRealm = Ti.UI.createLabel({
+	var councilmem = Ti.UI.createLabel({
 		top: '300dp',
+		left: '30dp',
+		text: 'NUMBER OF MEMBERS: ' + json.members.length,
+		color: '#fff',
+		font: {fontSize: 18, fontFamily: "Helvetica", fontStyle: 'bold'}
+	});
+	
+	var councilRealm = Ti.UI.createLabel({
+		top: '340dp',
 		left: '30dp',
 		text: 'GUILD REALM: ' + json.realm,
 		color: '#fff',
@@ -78,7 +86,7 @@ var remoteResponse = function() {
 	});
 	
 	var councilAcheive = Ti.UI.createLabel({
-		top: '340dp',
+		top: '380dp',
 		left: '30dp',
 		text: 'ACHIEVEMENT POINTS: ' + json.achievementPoints,
 		color: '#fff',
@@ -86,7 +94,7 @@ var remoteResponse = function() {
 	});
 
 	var councilGroup = Ti.UI.createLabel({
-		top: '380dp',
+		top: '420dp',
 		left: '30dp',
 		text: 'BATTLE GROUP: ' + json.battlegroup,
 		color: '#fff',
@@ -94,13 +102,13 @@ var remoteResponse = function() {
 	});
 
 	var councilSide = Ti.UI.createLabel({
-		top: '420dp',
+		top: '460dp',
 		left: '30dp',
 		text: 'GUILD SIDE: Alliance',
 		color: '#fff',
 		font: {fontSize: 18, fontFamily: "Helvetica", fontStyle: 'bold'}
 	});
-	topView.add(backView, councilName, picTabard, councilLVL, councilRealm, councilAcheive, councilGroup, councilSide);
+	topView.add(backView, councilName, picTabard, councilLVL, councilmem, councilRealm, councilAcheive, councilGroup, councilSide);
 	win.add(topView);
 	win.open();
 };

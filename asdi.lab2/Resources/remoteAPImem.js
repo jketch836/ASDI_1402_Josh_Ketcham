@@ -2,9 +2,8 @@ var councilURL = 'http://us.battle.net/api/wow/guild/the-venture-co/The%20Counci
 
 // var racesURL = 'http://us.battle.net/api/wow/data/character/races';
 
-var json;
 var remoteResponse = function() {
-	json = JSON.parse(this.responseText);
+	var json = JSON.parse(this.responseText);
     
 	var win = Ti.UI.createWindow({
 	});
@@ -102,34 +101,34 @@ var remoteResponse = function() {
 					color: "grey",
 					font: {fontSize: 14, fontFamily: "Arial"},
 					left: 85,
-					top: 35
+					top: 40
 				}
 			},
 			{
 				type: "Ti.UI.Label",
-				bindId: 'description',
+				bindId: 'division',
 				properties:
 				{
 					color: "black",
-					font: {fontSize: 8, fontFamily: "Arial"},
-					left: 5,
-					bottom: 5
+					font: {fontSize: 14, fontFamily: "Arial"},
+					left: 200,
+					top: 40
 				},
 			},	
+			// {
+				// type: "Ti.UI.Label",
+				// bindId: 'role',
+				// properties:
+				// {
+					// color: "grey",
+					// font: {fontSize: 14, fontFamily: "Arial"},
+					// right: 10,
+					// top: 40
+				// }
+			// },
 			{
 				type: "Ti.UI.Label",
 				bindId: 'level',
-				properties:
-				{
-					color: "grey",
-					font: {fontSize: 14, fontFamily: "Arial"},
-					right: 10,
-					top: 10
-				}
-			},
-			{
-				type: "Ti.UI.Label",
-				bindId: 'role',
 				properties:
 				{
 					color: "grey",
@@ -161,95 +160,122 @@ var remoteResponse = function() {
 	for (var i=0; i < json.members.length; i++){
 			name = json.members[i].character.name;
 			race = json.members[i].character.race;
-			// division = json.members[i].character['class'];
+			division = json.members[i].character['class'];
 			level = json.members[i].character.level;
 			thumbnail = 'http://us.battle.net/static-render/us/' + json.members[i].character.thumbnail;
-			// role = json.members[i].character.spec.role;
-		// console.log(desc);
-		data.push
-		({
-				properties:
-				{
-					name: name,
-					race: race,
-					level: level,
-					thumbnail: thumbnail,
-					// division: division,		
-					// desc: desc,
-					// role: role
-				},	
-					name:
-						{
-							text: name
-						},	
-					race:
-						{
-							text: 'RACE: ' + race
-						},									
-					level:
-						{
-							text: 'LVL: ' + level
-						},
-					thumbnail:
-						{
-							image: thumbnail
-						},
-					// division:
-						// {
-							// text: division
-						// },						
-					// desc:
-						// {
-							// text: desc
-						// },					
-					// role:
-						// {
-							// text: 'ROLE: ' + role
-						// }					
-			});
-	
+			//role = json.members[i].character.spec.role;
 			
-		// if (json.members[i].character.race == 1){
-			 // return 'Human';
-		// } else if (json.members[i].character.race == 3){
-			// return 'Dwarf';
-		// } else if (json.members[i].character.race == 4){
-			// return 'Night Elf';
-		// } else if (json.members[i].character.race == 7){
-			// return 'Gnome';
-		// } else if (json.members[i].character.race == 11){
-			// return 'Draenei';		
-		// } else if (json.members[i].character.race == 22){
-			// return 'Worgen';
-		// } else if (json.members[i].character.race == 25){
-			// return 'Pandaren';	
-		// }	
+			// console.log(role);
+					
+		switch (race)
+		{    
+		    case 1:
+		        race = 'Human';
+		        break;
+		    case 3:
+		        race = 'Dwarf';
+		        break;
+		    case 4:
+		        race = 'Night Elf';
+		        break;
+		    case 7:
+		        race = 'Gnome';
+		        break;
+		    case 11:
+		        race = 'Draenei';
+		        break;
+		    case 22:
+		        race = 'Worgen';
+		        break;
+		    case 25:
+		        race = 'Pandaren';
+		        break;
+		    default: 
+		    	race = 'Not a Race';
+		    	break;
+		}
+
 		
-			// if (json.members[i].character['class'] == 0){
-			 // return 'No Class';
-		// } else if (json.members[i].character['class'] == 1){
-			// return 'Warrior';
-		// } else if (json.members[i].character['class'] == 2){
-			// return 'Paladin';
-		// } else if (json.members[i].character['class'] == 3){
-			// return 'Hunter';
-		// } else if (json.members[i].character['class'] == 4){
-			// return 'Rogue';		
-		// } else if (json.members[i].character['class'] == 5){
-			// return 'Priest';
-		// } else if (json.members[i].character['class'] == 6){
-			// return 'Death Knight';	
-		// } else if (json.members[i].character['class'] == 7){
-			// return 'Shaman';	
-		// } else if (json.members[i].character['class'] == 8){
-			// return 'Mage';	
-		// } else if (json.members[i].character['class'] == 9){
-			// return 'Warlock';	
-		// } else if (json.members[i].character['class'] == 10){
-			// return 'Monk';	
-		// } else if (json.members[i].character['class'] == 11){
-			// return 'Druid';	
-		// }						
+		switch (division)
+		{    
+		    case 1:
+		        division = 'Warrior';
+		        break;
+		    case 2:
+		        division = 'Paladin';
+		        break;
+		    case 3:
+		        division = 'Hunter';
+		        break;
+		    case 4:
+		        division = 'Rogue';
+		        break;
+		    case 5:
+		        division = 'Priest';
+		        break;
+		    case 6:
+		        division = 'Death Knight';
+		        break;
+		    case 7:
+		        division = 'Shaman';
+		        break;
+		    case 8:
+		        division = 'Mage';
+		        break;
+		    case 9:
+		        division = 'Warlock';
+		        break;
+		    case 10:
+		        division = 'Monk';
+		        break;
+		    case 11:
+		        division = 'Druid';
+		        break;
+		    default: 
+		    	division = 'Null';
+		    	break;
+		}
+		data.push({
+			properties: {
+				name: name,
+				race: race,
+				level: level,
+				thumbnail: thumbnail,
+				division: division,
+				// role: role
+			},	
+			name: {
+				text: name
+			},
+			race: {
+				text: race
+			},
+			level: {
+				text: 'LVL: ' + level
+			},
+			thumbnail: {
+				image: thumbnail
+			},
+			division: {
+				text: division
+			},
+			// role: {
+				// text: role
+			// }
+		});
+		
+		// for (var e=0; e < json.members[i].character.length; e++){
+				// specName = members[i].character[e].spec.name;
+				// console.log(specName);
+			// data.push({
+				// properties: {
+					// specName: specName
+				// },	
+				// specName: {
+					// text: specName
+				// }		
+			// });
+		// };
 	};
 		//console.log(specName);
 		// console.log(json);
@@ -263,7 +289,6 @@ var remoteResponse = function() {
 };
 
 
-
 var remoteError = function(e) {
     Ti.API.debug("Status: " + this.status);
     Ti.API.debug("Text: " + this.responseText);
@@ -271,11 +296,13 @@ var remoteError = function(e) {
     alert("There's a problem pulling remote data");
 };
 
+
 var xhr = Ti.Network.createHTTPClient({
     onload: remoteResponse,
     onerror: remoteError,
     timeout:5000
 });
+
 
 //Main Code
 xhr.open('GET', councilURL);

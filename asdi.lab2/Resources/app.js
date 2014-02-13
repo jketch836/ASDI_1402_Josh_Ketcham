@@ -2,89 +2,61 @@ var mWin = Ti.UI.createWindow({
 	backgroundColor: "#fff"
 });
 
-var view = Ti.UI.createView({
-	top:20,
-	height:'auto',
+var lionPic = Ti.UI.createImageView({
+	top: '65dp',
+	height: 'auto',
+	width: '385dp',
+	image: 'backgroundlion.png'
+});
+
+var guildMemView = Ti.UI.createView({
+	backgroundColor: "#022d5a",
+	borderRadius: 10,
+	opacity: .8,
+	height: '150dp',
 	width: 'auto',
-	backgroundColor: "#333"
+	top: '100dp',
+	center: 0
 });
 
-var pic = Ti.UI.createImageView({
-	top: '40dp',
-	height: '200dp',
-	width: '300dp',
-	image: 'guild_pic.jpg'
+var guildMemLabel = Ti.UI.createLabel({
+	text: "Council Roster",
+	font: {fontSize: 24, fontFamily: "Helvetica", fontWeight: "bold"},
+	color: '#fff',
+	center: 0
+});
+guildMemView.add(guildMemLabel);
+
+guildMemView.addEventListener('click', function(){
+	var remote1 = require('remoteAPImem');
 });
 
 
-var user = Ti.UI.createTextField({
-    top:'250dp',
-    left:10,    
-    height:40,
-    width:300,
-    color:'#000',    
-    hintText:'Username',
-    value: '',
-    font:{fontSize:15, fontWeight:'bold', fontFamily:'Helvetica'},
-    borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED
-});
-
-var pass = Ti.UI.createTextField({
-    top:'300dp',
-    left:10,
-    height:40,
-    width:300,
-    color:'#000',
-    hintText:'Password',
-    passwordMask: true,
-    value: '',
-    font:{fontSize:15, fontWeight:'bold', fontFamily:'Helvetica'},
-    borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED
-});
-
-//Enter App
-var enterView = Ti.UI.createView({
-	backgroundColor: "#a0a6a2",
-	borderRadius: 5,
-	height: 40,
-	width: 100,
-	top: '350dp',
+var aboutGuildView = Ti.UI.createView({
+	backgroundColor: "#c48c1b",
+	borderRadius: 10,
+	opacity: .8,
+	height: '150dp',
+	width: 'auto',
+	top: '270dp',
 	center: 0,
-	file: 'main_menu.js'
+	file: 'remoteAPIguild.js'
 });
 
-var enterLabel = Ti.UI.createLabel({
-	text: "Enter",
-	font: {fontSize: 15, fontFamily: "Helvetica", fontWeight: "bold"},
-	color: "#000",
+var aboutGuildLabel = Ti.UI.createLabel({
+	text: "About the Council",
+	font: {fontSize: 24, fontFamily: "Helvetica", fontWeight: "bold"},
+	color: "#fff",
 	center: 0,
-	file: 'main_menu.js'
+	file: 'remoteAPIguild.js'
 });
-enterView.add(enterLabel);
- 
-enterView.addEventListener('click', function(){
-	// if (user.value != '' & pass.value != ''){
-		// var alertDialog = Ti.UI.createAlertDialog({
-        	// title: 'Login Successful',
-        	// buttonNames: ['OK']
-   		// });
-   		var mainWindow = Titanium.UI.createWindow({  
-			title:'Main Menu',
-			backgroundColor: '#fff',
-			url:'main_menu.js'
-		});
-		mainWindow.open(mainWindow, {animate: true});
-		// alertDialog.show();
-	// } else {
-		// var alertDialogPTA = Ti.UI.createAlertDialog({
-    		// title: 'Please try agin',
-        	// buttonNames: ['OK']
-    	// });	
-    	// alertDialogPTA.show();
-	// }
+aboutGuildView.add(aboutGuildLabel);
+
+aboutGuildView.addEventListener('click', function(){
+	var remote2 = require('remoteAPIguild');
 });
+
 
 //Main Code
-view.add(pic, user, pass, enterView);
-mWin.add(view);
+mWin.add(lionPic, guildMemView, aboutGuildView);
 mWin.open();

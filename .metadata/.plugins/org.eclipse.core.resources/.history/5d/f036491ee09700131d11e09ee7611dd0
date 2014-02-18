@@ -1,0 +1,122 @@
+
+var db = Ti.Database.open('contact');
+var sData = Ti.App.Properties.getString('sData');
+db.execute('CREATE TABLE IF NOT EXISTS contact (id INTEGER PRIMARY KEY, fname TEXT, email TEXT, age INTEGER, phone INTEGER)');
+
+var info = [];
+
+var dataRows = db.execute('SELECT * FROM contact');
+
+Ti.API.debug("Data rows:" + dataRows.getFieldName(1));
+Ti.API.debug("Data rows:" + dataRows.getFieldName(2));
+Ti.API.debug("Data rows:" + dataRows.getFieldName(3));
+Ti.API.debug("Data rows:" + dataRows.getFieldName(4));
+
+while (dataRows.isValidRow()) {
+	var fName = dataRows.fieldByName('fName');
+	var email = dataRows.fieldByName('email');	
+	var age = dataRows.fieldByName('age');
+	var phone = dataRows.fieldByName('phone');
+	
+	info.push({
+		title: dataRows.fName,
+		id: dataRows.fieldByName('id')
+	});
+	console.log(email);
+	dataRows.next();
+};
+dataRows.close();
+
+console.log(dataRows);
+// saveBTN.addEventListener('click', function(){
+	// // var saveData = "test";
+	// if (inputContact.fName === '' || inputContact.phone === '') {
+		// alert('Please Enter Name and Phone Number');
+	// } else if (inputContact.fName === '') {
+		// alert('Please Enter Name');
+	// } else if (inputContact.phone === '') {
+		// alert('Please Enter Phone Number');
+	// } else {
+// 		
+	 	// var inputContact = {};
+	 		// inputContact.fName = fName.value;
+	 		// inputContact.email = email.value;
+	 		// inputContact.age = age.value;
+	 		// inputContact.phone = phone.value;
+// 	 		
+	 		// //Clear Feilds and drop Keyboard
+	 		// fName.value = '';
+	 		// email.value = '';
+	 		// age.value = '';
+	 		// phone.value = '';
+// 	 		
+	 		// fName.blur();
+	 		// email.blur();
+	 		// age.blur();
+	 		// phone.blur();
+	// db.execute('INSERT INTO contact (fName, email, phone, age) VALUES (?,?,?,?)', fName, email, age, phone);
+	// }
+// });
+
+// //var curWin = Ti.UI.currentWindow();
+
+// // var tableData = Ti.UI.createTableView({
+	// // top: 0,
+	// // data: info,
+	// // editable: true
+// // });
+// // 
+// // tableData.setData(info);
+
+// tableData.addEventListener('click', function(a){
+// //Get stored data in dataRows
+// 
+// var presentRow = db.execute('SELECT * fROM contact WHERE id=?', a.dataRows.id);
+// 
+// 
+	// var id = presentRow.fieldByName('id');
+	// var fName = presentRow.fieldByName('fName');
+	// var age = presentRow.fieldByName('age');
+	// var phone = presentRow.fieldByName('phone');
+	// var email = presentRow.fieldByName('email');
+// 		
+		// var opts = {
+		  // title: 'Edit/Delete Info',		
+		  // options: ['Edit', 'Delete', 'Cancel'],
+		  // selectedIndex: 1,
+		  // cancel: 2,
+		  // destructive: 1
+		// };
+// 		
+		// opts.addEventListener('click', function(b){
+			// if(b.index === 0) {
+// 				
+				// editfName.value = fName;
+				// editemail.value = email;
+				// editage.value = age;
+				// editphone.value = phone;
+// 				
+				// editWindow.open();
+// 				
+				// var editfunc = funtion(){
+					   // db.execute("UPDATE contact SET fName=?, email=?, age=?, phone=? WHERE id=?’, fName, email, age, phone);			
+					   // }	
+			// } else if (b.index === 1){
+				// var alertDialog = Ti.UI.createAlertDialog({
+	        	// title: 'Are you sure?',
+	        	// buttonNames: ['OK']
+	   		// });
+	   			// var deleteOk = function () {
+	   				// db.execute("DELETE contact SET fName=?, email=?, age=?, phone=? WHERE id = ?", fName, email, age, phone);
+	   			// };
+			// alertDialog.addEventListener('click', deleteOk);
+			
+			// } else {
+// 					
+			// }
+// 			
+// });
+// 
+// 
+// //Main Code
+//curWin.add(tableData);

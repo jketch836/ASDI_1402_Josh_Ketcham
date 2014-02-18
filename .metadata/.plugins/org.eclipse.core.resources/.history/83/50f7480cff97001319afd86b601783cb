@@ -1,0 +1,119 @@
+var addContactWin = Ti.UI.createWindow({
+	title: 'Add New Contact',
+	backgroundColor: '#F8F8FF'
+});
+
+var navWin = Ti.UI.iOS.createNavigationWindow({
+	window: addContactWin
+});
+
+
+var crud = require('CRUD');
+
+var cancel = Ti.UI.createButton({
+	height: '15dp',
+	width:  '15dp',
+	title: 'Cancel'
+});
+addContactWin.setLeftNavButton(cancel);
+
+cancel.addEventListener('click', function(){
+// var contact = require('app');
+var contact = navWin.close();
+});
+
+
+var fName = Ti.UI.createTextField({
+    top: '75dp',
+    center: 0,    
+    height: 50,
+    width: 250,
+    color: '#000',    
+    hintText: 'Full Name',
+    autocorret: false,
+    font:{fontSize:15, fontWeight:'bold', fontFamily:'Helvetica'},
+    borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+    borderColor: "#000"
+});
+
+var email = Ti.UI.createTextField({
+    top: '133dp',
+    center: 0,    
+    height: 50,
+    width: 250,
+    color: '#000',    
+    hintText: 'Email Address',
+    autocorret: false,
+    font:{fontSize:15, fontWeight:'bold', fontFamily:'Helvetica'},
+    borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+    borderColor: "#000"
+});
+
+var age = Ti.UI.createTextField({
+    top:'190dp',
+    right: 35,
+    height: 50,
+    width: 75,
+    color: '#000',
+    hintText: 'Age',
+    font:{fontSize:15, fontWeight:'bold', fontFamily:'Helvetica'},
+    borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+    borderColor: "#000",
+    keyboardType: Ti.UI.KEYBOARD_NUMBER_PAD
+});
+
+var phone = Ti.UI.createTextField({
+    top:'190dp',
+    left: 35,
+    height: 50,
+    width: 145,
+    color: '#000',
+    hintText: 'Phone Number',
+    font:{fontSize:15, fontWeight:'bold', fontFamily:'Helvetica'},
+    borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+    borderColor: "#000",
+    keyboardType: Ti.UI.KEYBOARD_PHONE_PAD
+});
+
+
+var save = Ti.UI.createButton({
+	height: '15dp',
+	width:  '15dp',
+	title: 'Save'
+});
+addContactWin.setRightNavButton(save);
+
+save.addEventListener('click', function(){
+	var inputContact = {};
+ 	inputContact.fName = fName.value;
+	inputContact.email = email.value;
+	inputContact.age = age.value;
+	inputContact.phone = phone.value;
+		 		// Ti.API.info(inputContact);
+	if (inputContact.fName == '' && inputContact.phone == '') {
+		alert('Please Enter Full Name and Phone Number');
+	} else if (inputContact.fName == '') {
+		alert('Please Enter Name');
+	} else if (inputContact.phone == '') {
+		alert('Please Enter Phone Number');
+	} else {
+	 		//Clear Feilds and drop Keyboard
+	 		fName.value = '';
+	 		email.value = '';
+	 		age.value = '';
+	 		phone.value = '';
+	 		
+	 		fName.blur();
+	 		email.blur();
+	 		age.blur();
+	 		phone.blur();
+	}
+	db.execute('INSERT INTO contact (fname, email, phone, age) VALUES (?,?,?,?)', inputContact.fName, inputContact.email, inputContact.age, inputContact.phone);
+tableData.setData(crud.buildRows);
+crud.save;
+
+});
+
+//Main Code
+addContactWin.add(fName, email, age, phone);
+navWin.open();

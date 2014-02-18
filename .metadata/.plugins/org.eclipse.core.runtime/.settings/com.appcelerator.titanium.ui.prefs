@@ -1,6 +1,6 @@
 =run
 Android\ Emulator\ Process\:ConsoleLogLevel=Info
-LAST_LAUNCH_TIMESTAMP=1392307473711
+LAST_LAUNCH_TIMESTAMP=1392661536375
 asd_week1_rich\:launchMode=run
 asd_week1_rich\:launchShortcut=com.appcelerator.titanium.mobile.ui.ios.simulator.iphone.launchShortcut.iPhone Retina (3.5 inch)
 asdi.lab1\:launchMode=run
@@ -8,6 +8,9 @@ asdi.lab1\:launchShortcut=com.appcelerator.titanium.mobile.ui.ios.simulator.ipho
 asdi.lab2\:ConsoleLogLevel=Debug
 asdi.lab2\:launchMode=run
 asdi.lab2\:launchShortcut=com.appcelerator.titanium.mobile.ui.ios.simulator.iphone.launchShortcut.iPhone Retina (4 inch 64-bit)
+asdi.lab3\:ConsoleLogLevel=Debug
+asdi.lab3\:launchMode=run
+asdi.lab3\:launchShortcut=com.appcelerator.titanium.mobile.ui.ios.simulator.iphone.launchShortcut.iPhone Retina (4 inch 64-bit)
 eclipse.preferences.version=1
 iOS\ build\ and\ deploy\:ConsoleLogLevel=Debug
 preference.show.console.onError=true

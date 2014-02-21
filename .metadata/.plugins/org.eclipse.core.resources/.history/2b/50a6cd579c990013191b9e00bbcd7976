@@ -1,0 +1,29 @@
+var curWindow = Ti.UI.currentWindow;
+
+var navWin = Ti.UI.iOS.createNavigationWindow({
+	window: curWindow
+});
+
+
+var crud = require('CRUD');
+
+
+
+//Main Code
+curWindow.add(fName, email, age, phone);
+navWin.open();
+
+
+//Add event listener for save button
+save.addEventListener("click", function(e) {
+	// if (action == 'edit') {
+    	// var update_data = {index:st_index, title:st_title, st_title: st_title, st_desc: st_desc, st_id: st_id, st_date: st_date};
+		// Ti.App.fireEvent("doUpdateRow",update_data);    
+	// }
+// 
+ 	// if (action == 'add') {
+    	// var add_data = {index:st_index, title:st_title, st_title: st_title, st_desc: st_desc, st_date: st_date};
+		// Ti.App.fireEvent("doAppendData",add_data);    
+  	// }
+  	navWin.close();
+});

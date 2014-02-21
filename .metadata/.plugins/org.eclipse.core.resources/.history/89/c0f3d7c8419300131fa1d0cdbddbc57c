@@ -1,6 +1,0 @@
-var curWin = Ti.UI.currentWindow;
-
-var remote = require('remoteAPImem');
-
-//Main Code
-curWin.open();

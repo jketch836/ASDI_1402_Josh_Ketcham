@@ -1,6 +1,6 @@
 =run
 Android\ Emulator\ Process\:ConsoleLogLevel=Info
-LAST_LAUNCH_TIMESTAMP=1392661536375
+LAST_LAUNCH_TIMESTAMP=1392928370244
 asd_week1_rich\:launchMode=run
 asd_week1_rich\:launchShortcut=com.appcelerator.titanium.mobile.ui.ios.simulator.iphone.launchShortcut.iPhone Retina (3.5 inch)
 asdi.lab1\:launchMode=run
@@ -18,3 +18,5 @@ preference.studio.perspective.version=103
 reddittest\:ConsoleLogLevel=Debug
 reddittest\:launchMode=run
 reddittest\:launchShortcut=com.appcelerator.titanium.mobile.ui.ios.simulator.ipad.launchShortcut.iPad
+test\:launchMode=run
+test\:launchShortcut=com.appcelerator.titanium.mobile.ui.ios.simulator.iphone.launchShortcut.iPhone Retina (4 inch 64-bit)

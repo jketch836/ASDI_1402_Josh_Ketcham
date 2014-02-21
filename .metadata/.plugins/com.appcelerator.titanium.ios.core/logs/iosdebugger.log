@@ -1,56 +1,43 @@
-Logger started at: Sunday, February 16, 2014 5:22:24 PM EST
+Logger started at: Wednesday, February 19, 2014 3:03:43 PM EST
 Component: com.appcelerator.titanium.ios.core
 Version: 1.0.0.1388991145
-[22:24.92] Sent: >21*1392589344089*version<
-[22:24.93] Recv: >1392589344089*2*3.2.0.GA<
-[22:24.94] Sent: >36*1392589344090*option*monitorXHR*true<
-[22:24.94] Recv: >1392589344090<
-[22:24.95] Sent: >45*1392589344091*option*suspendOnFirstLine*false<
-[22:24.95] Recv: >1392589344091<
-[22:24.95] Sent: >46*1392589344092*option*suspendOnExceptions*false<
-[22:24.96] Recv: >1392589344092<
-[22:24.96] Sent: >41*1392589344093*option*suspendOnErrors*true<
-[22:24.97] Recv: >1392589344093<
-[22:24.97] Sent: >43*1392589344094*option*suspendOnKeywords*true<
-[22:24.98] Recv: >1392589344094<
-[22:24.98] Sent: >45*1392589344095*option*bypassConstructors*false<
-[22:24.98] Recv: >1392589344095<
-[22:24.99] Sent: >44*1392589344096*option*stepFiltersEnabled*true<
-[22:24.99] Recv: >1392589344096<
-[22:24.99] Sent: >30*1392589344097*detailFormatters<
-[22:24.100] Recv: >1392589344097<
-[22:24.100] Sent: >20*1392589344098*enable<
-[22:24.101] Recv: >1392589344098<
-[22:24.103] Recv: >threads*created*0*kroll$1<
-[22:24.105] Recv: >log*out*[DEBUG] Analytics is enabled = YES<
-[22:24.105] Recv: >log*out*[DEBUG] Loading: /Users/jketch/Library/Application Support/iPhone Simulator/7.0.3-64/Applications/45162E79-1DE4-40A7-AD09-4EB45BC5424F/asdi.lab3.app/app.js, Resource: app_js<
-[22:24.105] Recv: >scripts*created*335599904|app:/app.js||1|95<
-[22:24.105] Recv: >resumed*0*started<
-[22:24.106] Recv: >log*out*[DEBUG] Include url: file:///Users/jketch/Library/Application%20Support/iPhone%20Simulator/7.0.3-64/Applications/45162E79-1DE4-40A7-AD09-4EB45BC5424F/asdi.lab3.app/CRUD.js<
-[22:24.107] Recv: >log*out*[DEBUG] Loading: /Users/jketch/Library/Application Support/iPhone Simulator/7.0.3-64/Applications/45162E79-1DE4-40A7-AD09-4EB45BC5424F/asdi.lab3.app/CRUD.js, Resource: CRUD_js<
-[22:24.108] Recv: >scripts*created*335601184|app:/CRUD.js||1|106<
-[22:24.117] Recv: >log*out*[DEBUG] Loading: /Users/jketch/Library/Application Support/iPhone Simulator/7.0.3-64/Applications/45162E79-1DE4-40A7-AD09-4EB45BC5424F/asdi.lab3.app/_app_props_.json, Resource: _app_props__json<
-[22:24.119] Recv: >log*out*[debug] Data rows:fname<
-[22:24.119] Recv: >log*out*[debug] Data rows:email<
-[22:24.119] Recv: >log*out*[debug] Data rows:age<
-[22:24.120] Recv: >log*out*[debug] Data rows:phone<
-[22:24.121] Recv: >log*out*[object TiDatabaseResultSet]<
-[22:24.121] Recv: >suspended*0*exception*app:/CRUD.js*53<
-[22:24.121] Sent: >22*1392589344099*frames*0<
-[22:24.122] Recv: >1392589344099*0|||app:/CRUD.js|53|false|0|0*1|||app:/app.js|10|false|0|0<
-[22:29.736] Sent: >11**stepOver*0<
-[22:29.737] Recv: >resumed*0*stepOver<
-[22:29.738] Recv: >log*out*[ERROR] Script Error {
-    backtrace = "#00 () at :0";
-    line = 53;
-    message = "'undefined' is not a function (evaluating 'Ti.UI.currentWindow()')";
-    name = TypeError;
-    sourceId = 335601184;
-    sourceURL = "file:///Users/jketch/Library/Application%20Support/iPhone%20Simulator/7.0.3-64/Applications/45162E79-1DE4-40A7-AD09-4EB45BC5424F/asdi.lab3.app/CRUD.js";
-}<
-[22:29.739] Recv: >suspended*0*breakpoint*app:/app.js*13<
-[22:29.739] Sent: >22*1392589344100*frames*0<
-[22:29.739] Recv: >1392589344100*0|||app:/app.js|13|false|0|0<
-[22:39.317] Sent: >34*1392589344101*variables*0*frame[0]<
-[22:39.318] Recv: >1392589344101*sData|null|wv|<null>*crud|undefined|wv|undefined*info|object|wnov|[object Array]*age|undefined|wv|undefined*curWin|undefined|wv|undefined*db|object|nov|[object TiDatabase]*saveBTN|undefined|wv|undefined*dataRows|object|nov|[object TiDatabaseResultSet]*tableData|undefined|wv|undefined*email|undefined|wv|undefined*fName|undefined|wv|undefined*phone|undefined|wv|undefined*console|object|nov|[object TiConsole]*mainWin|object|nov|[object TiUIWindow]*nWin|object|nov|[object TiUIiOSNavWindow]<
+[3:43.816] Sent: >21*1392840223817*version<
+[3:43.817] Recv: >1392840223817*2*3.2.0.GA<
+[3:43.818] Sent: >44*1392840223818*option*stepFiltersEnabled*true<
+[3:43.818] Recv: >1392840223818<
+[3:43.818] Sent: >36*1392840223819*option*monitorXHR*true<
+[3:43.819] Recv: >1392840223819<
+[3:43.819] Sent: >45*1392840223820*option*suspendOnFirstLine*false<
+[3:43.819] Recv: >1392840223820<
+[3:43.819] Sent: >46*1392840223821*option*suspendOnExceptions*false<
+[3:43.820] Recv: >1392840223821<
+[3:43.820] Sent: >41*1392840223822*option*suspendOnErrors*true<
+[3:43.820] Recv: >1392840223822<
+[3:43.820] Sent: >43*1392840223823*option*suspendOnKeywords*true<
+[3:43.821] Recv: >1392840223823<
+[3:43.821] Sent: >45*1392840223824*option*bypassConstructors*false<
+[3:43.821] Recv: >1392840223824<
+[3:43.821] Sent: >44*1392840223825*option*stepFiltersEnabled*true<
+[3:43.822] Recv: >1392840223825<
+[3:43.822] Sent: >30*1392840223826*detailFormatters<
+[3:43.822] Recv: >1392840223826<
+[3:43.822] Sent: >20*1392840223827*enable<
+[3:43.823] Recv: >1392840223827<
+[3:43.824] Recv: >threads*created*0*kroll$1<
+[3:43.825] Recv: >log*out*[DEBUG] Analytics is enabled = YES<
+[3:43.826] Recv: >log*out*[DEBUG] Loading: /Users/jketch/Library/Application Support/iPhone Simulator/7.0.3-64/Applications/F0A6ECE6-8C40-4390-BE2D-5047853DF0F6/asdi.lab3.app/app.js, Resource: app_js<
+[3:43.826] Recv: >scripts*created*328260096|app:/app.js||1|79<
+[3:43.826] Recv: >resumed*0*started<
+[3:43.922] Recv: >log*out*[WARN] OPEN ABORTED. _handleOpen returned NO<
+[3:43.931] Recv: >log*out*[DEBUG] Application booted in 143.907964 ms<
+[3:43.932] Recv: >threads*created*1*kroll$2<
+[3:43.932] Recv: >log*out*[DEBUG] Loading: /Users/jketch/Library/Application Support/iPhone Simulator/7.0.3-64/Applications/F0A6ECE6-8C40-4390-BE2D-5047853DF0F6/asdi.lab3.app/CRUD.js, Resource: CRUD_js<
+[3:43.934] Recv: >scripts*created*328261472|app:/CRUD.js||1|197<
+[3:43.935] Recv: >resumed*1*started<
+[3:43.936] Recv: >log*out*[DEBUG] Loading: /Users/jketch/Library/Application Support/iPhone Simulator/7.0.3-64/Applications/F0A6ECE6-8C40-4390-BE2D-5047853DF0F6/asdi.lab3.app/_app_props_.json, Resource: _app_props__json<
+[3:43.937] Recv: >suspended*1*exception*app:/CRUD.js*52<
+[3:43.937] Sent: >22*1392840223828*frames*1<
+[3:43.938] Recv: >1392840223828*0|||app:/CRUD.js|52|false|0|0<
+[3:44.385] Sent: >34*1392840223829*variables*1*frame[0]<
+[3:44.386] Recv: >1392840223829*pushData|object|v|[object Function]*curWin|object|nov|[object TiUIWindow]*db|object|nov|[object TiDatabase]*theData|object|wnov|[object Array]*addBTN|undefined|wv|undefined*contactTable|undefined|wv|undefined*sData|null|wv|<null>*console|object|nov|[object TiConsole]<
 ----------End of file----------

@@ -1,0 +1,20 @@
+//Create Window
+var mainWin = Ti.UI.createWindow({
+	backgroundColor:"#999",
+	title:"Contacts",
+  	//Set Bar Color
+	barColor:'#D4D4D4',
+	url: 'CRUD.js'
+});
+
+
+//Here's the nav group that will hold them both...
+var nWin = Ti.UI.iOS.createNavigationWindow({
+  window: mainWin
+});
+
+
+
+
+//This is the main window of the application
+nWin.open();

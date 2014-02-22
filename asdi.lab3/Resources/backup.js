@@ -1,414 +1,834 @@
 // APP.JS
-// var mainWin = Ti.UI.createWindow({
-// title: 'Contacts',
-// backgroundColor: '#fff'
-// });
-//
-// var nWin = Ti.UI.iOS.createNavigationWindow({
-// window: mainWin
-// });
-//
-// var crud = require('CRUD');
-//
-// var addContact = Ti.UI.createButton({
-// height: '15dp',
-// width:  '15dp',
-// backgroundImage: 'add.png'
-// });
-// mainWin.setRightNavButton(addContact);
-//
-// addContact.addEventListener('click', function(){
-// var addContacts = require('addContact');
-// // var addContactWin = Ti.UI.createWindow({
-// // title: 'Add New Contact',
-// // backgroundColor: '#F8F8FF',
-// // url: 'addContact.js'
-// // });
-// // mainWin.open(addContactWin);
-// });
-//
-//
-// var tableData = Ti.UI.createTableView({
-// top: 0,
-// editable: true
-// });
-// tableData.setData(crud.buildRows);
-//
-// tableData.addEventListener('click', function(a){
-// //Get stored data in dataRows
-// var presentRow = db.execute('SELECT * fROM contact WHERE id=?', a.dataRows.id);
-//
-// var id = presentRow.fieldByName('id');
-// var fName = presentRow.fieldByName('fName');
-// var age = presentRow.fieldByName('age');
-// var phone = presentRow.fieldByName('phone');
-// var email = presentRow.fieldByName('email');
-//
-// var ContactWin = Ti.UI.createWindow({
-// title: fName,
-// backgroundColor: '#F8F8FF',
-// url: 'editContact'
-// });
-// });
-//
-//
-// //Main Code
-// mainWin.add(tableData);
-// nWin.open();
+	// var mainWin = Ti.UI.createWindow({
+		// backgroundColor:"#999",
+		// title:"Contacts",
+		// barColor:'#D4D4D4',
+		// url: 'CRUD.js'
+	// });
+	// 
+	// 
+	// var nWin = Ti.UI.iOS.createNavigationWindow({
+	  // window: mainWin
+	// });
+	// 
+	// 
+	// //Main Code
+	// nWin.open();
+
+
 
 //CRUD.JS
-// var db = Ti.Database.open('contact');
-// var sData = Ti.App.Properties.getString('sData');
-// db.execute('CREATE TABLE IF NOT EXISTS contact (id INTEGER PRIMARY KEY, fname TEXT, email TEXT, age INTEGER, phone INTEGER)');
-//
-// var buildRows = function(){
-// // Ti.API.info('Create Empty Array');
-// var some_info = [];
-//
-// // Ti.API.info('Grab the data');
-// var dataRows = db.execute('SELECT * FROM contact');
-//
-// Ti.API.info('Loop through the data');
-// while (dataRows.isValidRow()) {
-// // Ti.API.info('Loop!');
-//
-// var fName = dataRows.fieldByName('fName');
-// var email = dataRows.fieldByName('email');
-// var age = dataRows.fieldByName('age');
-// var phone = dataRows.fieldByName('phone');
-//
-// // Ti.API.info('Push data');
-//
-// some_info.push({
-// title: dataRows.fName,
-// id: dataRows.fieldByName('id')
-// });
-// // Ti.API.info('Next!');
-//
-// dataRows.next();
-// };
-// Ti.API.info('Some info is:' + some_info);
-// return some_info;
-// };
-//
-// exports.buildRows;
-//
-//
-// var save = function () {
-// var inputContact = {};
-// inputContact.fName = fName.value;
-// inputContact.email = email.value;
-// inputContact.age = age.value;
-// inputContact.phone = phone.value;
-// // Ti.API.info(inputContact);
-// if (inputContact.fName == '' && inputContact.phone == '') {
-// alert('Please Enter Full Name and Phone Number');
-// } else if (inputContact.fName == '') {
-// alert('Please Enter Name');
-// } else if (inputContact.phone == '') {
-// alert('Please Enter Phone Number');
-// } else {
-// //Clear Feilds and drop Keyboard
-// fName.value = '';
-// email.value = '';
-// age.value = '';
-// phone.value = '';
-//
-// fName.blur();
-// email.blur();
-// age.blur();
-// phone.blur();
-// }
-// db.execute('INSERT INTO contact (fname, email, phone, age) VALUES (?,?,?,?)', inputContact.fName, inputContact.email, inputContact.age, inputContact.phone);
-// };
-//
-// exports.save;
-//
-//
-// var edit = function(){
-// //Get stored data in dataRows
-// var presentRow = db.execute('SELECT * fROM contact WHERE id=?', dataRows.id);
-//
-// var id = presentRow.fieldByName('id');
-// var fName = presentRow.fieldByName('fName');
-// var age = presentRow.fieldByName('age');
-// var phone = presentRow.fieldByName('phone');
-// var email = presentRow.fieldByName('email');
-//
-// var inputContact = {};
-// inputContact.fName = fName.value;
-// inputContact.email = email.value;
-// inputContact.age = age.value;
-// inputContact.phone = phone.value;
-//
-// if (inputContact.fName === '' || inputContact.phone === '') {
-// alert('Please Enter Name and Phone Number');
-// } else if (inputContact.fName === '') {
-// alert('Please Enter Name');
-// } else if (inputContact.phone === '') {
-// alert('Please Enter Phone Number');
-// } else {
-//
-// //Clear Feilds and drop Keyboard
-// fName.value = '';
-// email.value = '';
-// age.value = '';
-// phone.value = '';
-//
-// fName.blur();
-// email.blur();
-// age.blur();
-// phone.blur();
-// db.execute('UPDATE contact SET fname=?, email=?, age=?, phone=? WHERE id=?', inputContact.fName, inputContact.email, inputContact.age, inputContact.phone);
-// }
-// };
-//
-// var deleteOk = function (){
-// db.execute("DELETE contact SET fname=?, email=?, age=?, phone=? WHERE id = ?", inputContact.fName, inputContact.email, inputContact.age, inputContact.phone);
-// };
+	// var curWin = Ti.UI.currentWindow;
+	// 
+	// var db = Ti.Database.open('contact');
+	// var sData = Ti.App.Properties.getString('sData');
+	// db.execute('CREATE TABLE IF NOT EXISTS contact (id INTEGER PRIMARY KEY, fName TEXT, email TEXT, age INTEGER, phone INTEGER)');
+	// 
+	// // Ti.API.debug("Data rows:" + dataRows.getFieldName(1));
+	// // Ti.API.debug("Data rows:" + dataRows.getFieldName(2));
+	// // Ti.API.debug("Data rows:" + dataRows.getFieldName(3));
+	// // Ti.API.debug("Data rows:" + dataRows.getFieldName(4));
+	// 
+	// 
+	// function pushData(){
+	// // Ti.API.info('Create Empty Array');
+	// 	
+		// var some_info = [];
+	// 	
+	// // Ti.API.info('Grab the data');
+	// 
+		// var dataRows = db.execute('SELECT * FROM contact');
+	// 
+	// // Ti.API.info('Loop through the data');
+		// while (dataRows.isValidRow()) {
+	// 		
+	// // Ti.API.info('Loop!');
+	// 
+			// var fullName_add = dataRows.fieldByName('fName');
+			// var email_add = dataRows.fieldByName('email');	
+			// var phone_add = dataRows.fieldByName('phone');
+			// var age_add = dataRows.fieldByName('age');
+			// var id = dataRows.fieldByName('id');
+	// 		
+	// // Ti.API.info('Push data');
+			// some_info.push({
+				// title: fullName_add,
+				// id: id
+			// });
+	// 		
+	// // Ti.API.info('Next!');
+			// dataRows.next();
+		// };
+	// 	
+	// // Ti.API.info('Some info is:' + some_info);
+	// 
+		// return some_info;
+	// };
+	// var theData = pushData();
+	// 
+	// // exports.data = pushData();
+	// 
+	// 
+	// var addBTN = Ti.UI.createButton({
+		// systemButton:Ti.UI.iPhone.SystemButton.ADD
+	// });
+	// 	
+	// addBTN.addEventListener('click', function() {
+		// var addContactWin = Ti.UI.createWindow({
+			// title: 'Insert Contact Info',
+			// backgroundColor: '#fff',
+			// // url: 'contactInfo.js',
+			// barColor:'#D4D4D4'
+		// });
+	// 	
+		// var navWin = Ti.UI.iOS.createNavigationWindow({
+			// window: addContactWin
+		// });
+	// 
+		// var cancel = Ti.UI.createButton({
+			// systemButton:Ti.UI.iPhone.SystemButton.CANCEL
+		// });
+		// addContactWin.setLeftNavButton(cancel);
+	// 	
+			// cancel.addEventListener('click', function(){
+				// navWin.close();
+			// });
+	// 	
+	// 	
+		// var fName = Ti.UI.createTextField({
+		    // top: '75dp',
+		    // center: 0,    
+		    // height: 50,
+		    // width: 250,
+		    // color: '#000',    
+		    // hintText: 'Full Name',
+		    // autocorret: false,
+		    // // value: '',
+		    // font:{fontSize:15, fontWeight:'bold', fontFamily:'Helvetica'},
+		    // borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+		    // borderColor: "#000"
+		// });
+	// 	
+		// var email = Ti.UI.createTextField({
+		    // top: '133dp',
+		    // center: 0,    
+		    // height: 50,
+		    // width: 250,
+		    // color: '#000',    
+		    // hintText: 'Email Address',
+		    // autocorret: false,
+		    // // value: '',
+		    // font:{fontSize:15, fontWeight:'bold', fontFamily:'Helvetica'},
+		    // borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+		    // borderColor: "#000"
+		// });
+	// 	
+		// var age = Ti.UI.createTextField({
+		    // top:'190dp',
+		    // right: 35,
+		    // height: 50,
+		    // width: 75,
+		    // color: '#000',
+		    // hintText: 'Age',
+		    // // value: '',	    
+		    // font:{fontSize:15, fontWeight:'bold', fontFamily:'Helvetica'},
+		    // borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+		    // borderColor: "#000",
+		    // keyboardType: Ti.UI.KEYBOARD_NUMBER_PAD
+		// });
+	// 	
+		// var phone = Ti.UI.createTextField({
+		    // top:'190dp',
+		    // left: 35,
+		    // height: 50,
+		    // width: 145,
+		    // color: '#000',
+		    // // value: '',	    
+		    // hintText: 'Phone Number',
+		    // font:{fontSize:15, fontWeight:'bold', fontFamily:'Helvetica'},
+		    // borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+		    // borderColor: "#000",
+		    // keyboardType: Ti.UI.KEYBOARD_PHONE_PAD
+		// });
+	// 	
+	// 	
+		// var saveBTN = Ti.UI.createButton({
+			// systemButton:Ti.UI.iPhone.SystemButton.SAVE
+		// });
+		// addContactWin.setRightNavButton(saveBTN);
+	// 	
+		// saveBTN.addEventListener('click', function(){
+			// Ti.API.info('Going through loop');
+	// 			
+				// if (fName.value == '' && phone.value == '' && email.value == '') {
+					// alert('Please Enter Full Name, Phone Number, and eMail');
+				// } else if (fName.value == '') {
+					// alert('Please Enter Name');
+				// } else if (phone.value == '') {
+					// alert('Please Enter Phone Number');
+				// } else if (email.value == '') {
+					// alert('Please Enter Email Address');
+				// } else {
+	// 				
+			// Ti.API.info('all set');
+	// 				
+				// var inputContact = {};
+				 	// inputContact.fName_add = fName.value;
+					// inputContact.email_add = email.value;
+					// inputContact.age_add = age.value;
+					// inputContact.phone_add = phone.value;
+	// 				
+			// Ti.API.info('inserting data to table');
+	// 		
+				// db.execute('INSERT INTO contact (fName, email, phone, age) VALUES (?,?,?,?)', inputContact.fName_add, inputContact.email_add, inputContact.age_add, inputContact.phone_add);
+	// 			
+			// // Ti.API.info('stringing info');	
+	// // 		
+				// // var contactInfo = escape(JSON.stringify(inputContact));
+	// 				
+			// Ti.API.info('pushing data to table');
+	// 		
+				// contactTable.setData(pushData());
+	// 		
+					// Ti.API.info('keyboard going down');		
+	// 			 
+				 		// fName.blur();
+				 		// email.blur();
+				 		// age.blur();
+				 		// phone.blur();
+	// 			 			
+			// Ti.API.info('clearing values');
+				 		// //Clearing Feilds and drop Keyboard
+				 		// fName.value = '';
+				 		// email.value = '';
+				 		// age.value = '';
+				 		// phone.value = '';
+	// 			 		
+				 		// alert('Contact is saved!!');
+				 		// navWin.close();
+				// }
+		// });
+	// 
+		// //Main Code
+		// addContactWin.add(fName, email, age, phone);
+		// navWin.open();
+	// });
+	// 				
+	// // the table view
+		// var contactTable = Titanium.UI.createTableView({
+			// // data:some_info,
+			// editable:true,
+			// font: {fontStyle: 'Helvetica', fontSize: '14dp'}
+		// });
+	// contactTable.setData(theData);
+	// 
+	// // create table view eventlistener
+	// contactTable.addEventListener('click', function(a){
+		// var contactWin = Ti.UI.createWindow({
+			// title: 'Contact Info',
+			// backgroundColor: '#fff',
+			// // url: 'editContact.js',
+			// barColor:'#D4D4D4'
+		// });
+	// 	
+		// var navWin = Ti.UI.iOS.createNavigationWindow({
+			// window: contactWin
+		// });
+	// 
+	// 
+		// var cancel = Ti.UI.createButton({
+			// systemButton:Ti.UI.iPhone.SystemButton.CANCEL
+		// });
+		// contactWin.setLeftNavButton(cancel);
+	// 	
+			// cancel.addEventListener('click', function(){
+				// navWin.close();
+			// });
+	// 				
+		// var editBTN = Ti.UI.createButton({
+			// systemButton:Ti.UI.iPhone.SystemButton.EDIT
+		// });
+		// contactWin.setRightNavButton(editBTN);
+	// 	
+			// editBTN.addEventListener('click', function(){
+	// 			
+				// var editContactWin = Ti.UI.createWindow({
+					// title: 'Edit Contact Info',
+					// backgroundColor: '#fff',
+					// barColor:'#D4D4D4'
+					// });
+	// 			
+				// var fName = Ti.UI.createTextField({
+				    // top: '75dp',
+				    // center: 0,    
+				    // height: 50,
+				    // width: 250,
+				    // color: '#000',    
+				    // hintText: 'Full Name',
+				    // autocorret: false,
+				    // // value: '',
+				    // font:{fontSize:15, fontWeight:'bold', fontFamily:'Helvetica'},
+				    // borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+				    // borderColor: "#000"
+				// });
+	// 			
+				// var email = Ti.UI.createTextField({
+				    // top: '133dp',
+				    // center: 0,    
+				    // height: 50,
+				    // width: 250,
+				    // color: '#000',    
+				    // hintText: 'Email Address',
+				    // autocorret: false,
+				    // // value: '',
+				    // font:{fontSize:15, fontWeight:'bold', fontFamily:'Helvetica'},
+				    // borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+				    // borderColor: "#000"
+				// });
+	// 			
+				// var age = Ti.UI.createTextField({
+				    // top:'190dp',
+				    // right: 35,
+				    // height: 50,
+				    // width: 75,
+				    // color: '#000',
+				    // hintText: 'Age',
+				    // // value: '',	    
+				    // font:{fontSize:15, fontWeight:'bold', fontFamily:'Helvetica'},
+				    // borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+				    // borderColor: "#000",
+				    // keyboardType: Ti.UI.KEYBOARD_NUMBER_PAD
+				// });
+	// 			
+				// var phone = Ti.UI.createTextField({
+				    // top:'190dp',
+				    // left: 35,
+				    // height: 50,
+				    // width: 145,
+				    // color: '#000',
+				    // // value: '',	    
+				    // hintText: 'Phone Number',
+				    // font:{fontSize:15, fontWeight:'bold', fontFamily:'Helvetica'},
+				    // borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+				    // borderColor: "#000",
+				    // keyboardType: Ti.UI.KEYBOARD_PHONE_PAD
+				// });
+	// 			
+				// var doneBTN = Ti.UI.createButton({
+					// systemButton:Ti.UI.iPhone.SystemButton.DONE
+				// });
+				// doneBTN.addEventListener('click', edit);
+	// 			
+	// 			
+				// var deleteOk = function (){
+					// var alertDialogPTA = Ti.UI.createAlertDialog({
+	    				// title: 'Please try agin',
+	        			// buttonNames: ['Delete', 'Cancel']
+	    			// });	
+	    				// alertDialogPTA.show();
+	//     			
+	    			// alertDialogPTA.addEventListener('click', function(){
+	    				// if(buttonNames === 0) {
+	    					// db.execute('DELETE FROM contact WHERE id=?', id);
+							// contactTable.setData(pushData());
+							// alert('Contact Deleted');
+	    				// } else {
+	    					// null;
+	    				// }
+	//     				
+	    			// });
+				// };
+	// 					
+				// var deleteBTN = Ti.UI.createButton({
+					// top:'220dp',
+					// systemButton:Ti.UI.iPhone.SystemButton.DELETE
+				// });
+				// deleteBTN.addEventListener('click', deleteOk);
+	// 
+	// 			
+			// //Main Code
+			// editContactWin.add(deleteBTN);		
+			// editContactWin.setRightNavButton(doneBTN);
+			// editContactWin.add(fName, email, age, phone);
+		// });
+	// 				
+	// //Main Code
+	// navWin.open();
+	// });
+	// 
+	// 
+	// //Main Code
+	// curWin.setRightNavButton(addBTN);
+	// curWin.add(contactTable);
+	// 
+	// 
+	// function edit () {
+		// Ti.API.info('Going through loop');
+	// 		
+			// if (fName.value == '' && phone.value == '' && email.value == '') {
+				// alert('Please Enter Full Name, Phone Number, and eMail');
+			// } else if (fName.value == '') {
+				// alert('Please Enter Name');
+			// } else if (phone.value == '') {
+				// alert('Please Enter Phone Number');
+			// } else if (email.value == '') {
+				// alert('Please Enter Email Address');
+			// } else {
+	// 		
+		// Ti.API.info('all set');
+	// 		
+			// var inputContact = {};
+				// inputContact.fName_add = fName.value;
+				// inputContact.email_add = email.value;
+				// inputContact.age_add = age.value;
+				// inputContact.phone_add = phone.value;
+	// 		
+		// Ti.API.info('inserting data to table');
+	// 		
+			// db.execute('UPDATE contact SET fname=?, email=?, age=?, phone=? WHERE id=?', inputContact.fName_add, inputContact.email_add, inputContact.age_add, inputContact.phone_add);
+	// 		
+		// // Ti.API.info('stringing info');
+	// // 
+			// // var contactInfo = escape(JSON.stringify(inputContact));
+	// 		
+		// Ti.API.info('pushing data to table');
+	// 		
+			// contactTable.setData(pushData());
+	// 		
+		// Ti.API.info('keyboard going down');
+	// 		
+			// fName.blur();
+			// email.blur();
+			// age.blur();
+			// phone.blur();
+	// 		
+		// Ti.API.info('clearing values');
+			// //Clearing Feilds and drop Keyboard
+			// fName.value = '';
+			// email.value = '';
+			// age.value = '';
+			// phone.value = '';
+	// 			
+			// doneBTN.removeEventListener('click', edit);
+				// editContactWin.close();
+				// alert('Contact has been updated!!');
+			// }
+	// };
+	// exports.edit;
+	
 
-//ADDCONTACTS.JS
-// var addContactWin = Ti.UI.createWindow({
-// title: 'Add New Contact',
-// backgroundColor: '#F8F8FF'
-// });
-//
-// navWin = Ti.UI.iOS.createNavigationWindow({
-// window: addContactWin
-// });
-//
-// var crud = Ti.include('CRUD.js');
-//
-//
-// var save = Ti.UI.createButton({
-// height: '15dp',
-// width:  '15dp',
-// title: 'Save'
-// });
-// addContactWin.setRightNavButton(save);
-//
-// save.addEventListener('click', function(){
-//
-// });
-//
-//
-// var cancel = Ti.UI.createButton({
-// height: '15dp',
-// width:  '15dp',
-// title: 'Cancel'
-// });
-// addContactWin.setLeftNavButton(cancel);
-//
-// cancel.addEventListener('click', function(){
-// var contact = require('app');
-// });
-//
-//
-//
-// var fName = Ti.UI.createTextField({
-// top: '75dp',
-// center: 0,
-// height: 50,
-// width: 250,
-// color: '#000',
-// hintText: 'Full Name',
-// value: '',
-// autocorret: false,
-// font:{fontSize:15, fontWeight:'bold', fontFamily:'Helvetica'},
-// borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
-// borderColor: "#000"
-// });
-//
-// fName.addEventListener('return', function(){
-// fName.blur();
-// });
-//
-//
-// var email = Ti.UI.createTextField({
-// top: '133dp',
-// center: 0,
-// height: 50,
-// width: 250,
-// color: '#000',
-// hintText: 'Email Address',
-// value: '',
-// autocorret: false,
-// font:{fontSize:15, fontWeight:'bold', fontFamily:'Helvetica'},
-// borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
-// borderColor: "#000"
-// });
-//
-// email.addEventListener('return', function(){
-// email.blur();
-// });
-//
-// var age = Ti.UI.createTextField({
-// top:'190dp',
-// right: 35,
-// height: 50,
-// width: 75,
-// color: '#000',
-// hintText: 'Age',
-// value: '',
-// font:{fontSize:15, fontWeight:'bold', fontFamily:'Helvetica'},
-// borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
-// borderColor: "#000",
-// keyboardType: Ti.UI.KEYBOARD_NUMBER_PAD
-// });
-//
-// age.addEventListener('return', function(){
-// age.blur();
-// });
-//
-// var phone = Ti.UI.createTextField({
-// top:'190dp',
-// left: 35,
-// height: 50,
-// width: 145,
-// color: '#000',
-// hintText: 'Phone Number',
-// value: '',
-// font:{fontSize:15, fontWeight:'bold', fontFamily:'Helvetica'},
-// borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
-// borderColor: "#000",
-// keyboardType: Ti.UI.KEYBOARD_PHONE_PAD
-// });
-//
-// phone.addEventListener('return', function(){
-// phone.blur();
-// });
-//
-// var saveBTN = Ti.UI.createButton({
-// title: "Save",
-// top: '250dp',
-// center: 0,
-// systemButton: Ti.UI.iPhone.SystemButton.DONE
-// });
-// saveBTN.addEventListener('click', function(){
-// // var saveData = "test";
-// if (inputContact.fName === '' || inputContact.phone === '') {
-// alert('Please Enter Name and Phone Number');
-// } else if (inputContact.fName === '') {
-// alert('Please Enter Name');
-// } else if (inputContact.phone === '') {
-// alert('Please Enter Phone Number');
-// } else {
-//
-// var inputContact = {};
-// inputContact.fName = fName.value;
-// inputContact.email = email.value;
-// inputContact.age = age.value;
-// inputContact.phone = phone.value;
-//
-// //Clear Feilds and drop Keyboard
-// fName.value = '';
-// email.value = '';
-// age.value = '';
-// phone.value = '';
-//
-// fName.blur();
-// email.blur();
-// age.blur();
-// phone.blur();
-// db.execute('INSERT INTO contact (fName, email, phone, age) VALUES (?,?,?,?)', fName, email, age, phone);
-// }
-// });
-//
-//
-// //Main Code
-// addContactWin.add(fName, email, age, phone, saveBTN);
-// navWin.open();
 
-var save = function() {
-	Ti.API.info('Going through loop');
+//CONTACTINFO.JS
+	// Ti.UI.setBackgourndColor('white');
+	// 
+	// var curWindow = Ti.UI.currentWindow;
+	// 	
+	// var navWin = Ti.UI.iOS.createNavigationWindow({
+		// window: curWindow
+	// });
+	// 
+	// var crud = require('CRUD');
+	// 
+	// var cancel = Ti.UI.createButton({
+			// systemButton:Ti.UI.iPhone.SystemButton.CANCEL
+		// });
+		// addContactWin.setLeftNavButton(cancel);
+	// 	
+			// cancel.addEventListener('click', function(){
+				// navWin.close();
+			// });
+	// 	
+	// 	
+		// var fName = Ti.UI.createTextField({
+		    // top: '75dp',
+		    // center: 0,    
+		    // height: 50,
+		    // width: 250,
+		    // color: '#000',    
+		    // hintText: 'Full Name',
+		    // autocorret: false,
+		    // // value: '',
+		    // font:{fontSize:15, fontWeight:'bold', fontFamily:'Helvetica'},
+		    // borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+		    // borderColor: "#000"
+		// });
+	// 	
+		// var email = Ti.UI.createTextField({
+		    // top: '133dp',
+		    // center: 0,    
+		    // height: 50,
+		    // width: 250,
+		    // color: '#000',    
+		    // hintText: 'Email Address',
+		    // autocorret: false,
+		    // // value: '',
+		    // font:{fontSize:15, fontWeight:'bold', fontFamily:'Helvetica'},
+		    // borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+		    // borderColor: "#000"
+		// });
+	// 	
+		// var age = Ti.UI.createTextField({
+		    // top:'190dp',
+		    // right: 35,
+		    // height: 50,
+		    // width: 75,
+		    // color: '#000',
+		    // hintText: 'Age',
+		    // // value: '',	    
+		    // font:{fontSize:15, fontWeight:'bold', fontFamily:'Helvetica'},
+		    // borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+		    // borderColor: "#000",
+		    // keyboardType: Ti.UI.KEYBOARD_NUMBER_PAD
+		// });
+	// 	
+		// var phone = Ti.UI.createTextField({
+		    // top:'190dp',
+		    // left: 35,
+		    // height: 50,
+		    // width: 145,
+		    // color: '#000',
+		    // // value: '',	    
+		    // hintText: 'Phone Number',
+		    // font:{fontSize:15, fontWeight:'bold', fontFamily:'Helvetica'},
+		    // borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+		    // borderColor: "#000",
+		    // keyboardType: Ti.UI.KEYBOARD_PHONE_PAD
+		// });
+	// 	
+	// 	
+		// var saveBTN = Ti.UI.createButton({
+			// systemButton:Ti.UI.iPhone.SystemButton.SAVE
+		// });
+		// addContactWin.setRightNavButton(saveBTN);
+	// 	
+		// saveBTN.addEventListener('click', function(){
+			// crud.save;
+			// navWin.close();
+		// });
+	// 
+		// //Main Code
+		// curWindow.add(fName, email, age, phone);
+		// navWin.open();
+		
 
-		if (fName.value == '' && phone.value == '' && email.value == '') {
-			alert('Please Enter Full Name, Phone Number, and eMail');
-		} else if (fName.value == '') {
-			alert('Please Enter Name');
-		} else if (phone.value == '') {
-			alert('Please Enter Phone Number');
-		} else if (email.value == '') {
-			alert('Please Enter Email Address');
-		} else {
 
-	Ti.API.info('all set');
+//EDITCONTACT.JS
+	// var curContactWin = Ti.UI.currentWindow();
+	// 
+	// navWin = Ti.UI.iOS.createNavigationWindow({
+		// window : curContactWin
+	// });
+	// 
+	// var crud = require('CRUD');
+	// 
+	// var id = a.dataRows.id;
+	// 
+	// db.execute('SELECT * FROM contact WHERE id=?', id);
+	// 
+	// 
+	// var cancel = Ti.UI.createButton({
+		// systemButton : Ti.UI.iPhone.SystemButton.CANCEL
+	// });
+	// cancel.addEventListener('click', function() {
+		// navWin.close();
+	// });
+	// 
+	// 
+	// var editBTN = Ti.UI.createButton({
+		// systemButton : Ti.UI.iPhone.SystemButton.EDIT
+	// });
+	// editBTN.addEventListener('click', function() {
+	// 
+		// var editContactWin = Ti.UI.createWindow({
+			// title : 'Edit Contact Info',
+			// backgroundColor : '#fff',
+			// barColor : '#D4D4D4'
+		// });
+	// 
+		// var fName = Ti.UI.createTextField({
+			// top : '75dp',
+			// center : 0,
+			// height : 50,
+			// width : 250,
+			// color : '#000',
+			// hintText : 'Full Name',
+			// autocorret : false,
+			// // value: '',
+			// font : 
+			// {
+				// fontSize : 15,
+				// fontWeight : 'bold',
+				// fontFamily : 'Helvetica'
+			// },
+			// borderStyle : Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+			// borderColor : "#000"
+		// });
+	// 
+		// var email = Ti.UI.createTextField({
+			// top : '133dp',
+			// center : 0,
+			// height : 50,
+			// width : 250,
+			// color : '#000',
+			// hintText : 'Email Address',
+			// autocorret : false,
+			// // value: '',
+			// font : 
+			// {
+				// fontSize : 15,
+				// fontWeight : 'bold',
+				// fontFamily : 'Helvetica'
+			// },
+			// borderStyle : Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+			// borderColor : "#000"
+		// });
+	// 
+		// var age = Ti.UI.createTextField({
+			// top : '190dp',
+			// right : 35,
+			// height : 50,
+			// width : 75,
+			// color : '#000',
+			// hintText : 'Age',
+			// // value: '',
+			// font : 
+			// {
+				// fontSize : 15,
+				// fontWeight : 'bold',
+				// fontFamily : 'Helvetica'
+			// },
+			// borderStyle : Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+			// borderColor : "#000",
+			// keyboardType : Ti.UI.KEYBOARD_NUMBER_PAD
+		// });
+	// 
+		// var phone = Ti.UI.createTextField({
+			// top : '190dp',
+			// left : 35,
+			// height : 50,
+			// width : 145,
+			// color : '#000',
+			// // value: '',
+			// hintText : 'Phone Number',
+			// font : 
+			// {
+				// fontSize : 15,
+				// fontWeight : 'bold',
+				// fontFamily : 'Helvetica'
+			// },
+			// borderStyle : Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+			// borderColor : "#000",
+			// keyboardType : Ti.UI.KEYBOARD_PHONE_PAD
+		// });
+	// 
+		// var doneBTN = Ti.UI.createButton({
+			// systemButton : Ti.UI.iPhone.SystemButton.DONE
+		// });
+		// doneBTN.addEventListener('click', crud.edit);
+	// 
+	// 
+		// var deleteBTN = Ti.UI.createButton({
+			// top : '220dp',
+			// systemButton : Ti.UI.iPhone.SystemButton.DELETE
+		// });
+		// deleteBTN.addEventListener('click', crud.deleteOk);
+	// 
+		// //Main Code
+		// editContactWin.add(deleteBTN);
+		// editContactWin.setRightNavButton(doneBTN);
+		// editContactWin.add(fName, email, age, phone);
+	// });
+	// 
+	// 
+	// //Main Code
+	// curContactWin.setRightNavButton(editBTN);
+	// curContactWin.setLeftNavButton(cancel);
+	// navWin.open();
+	
 
-		var inputContact = {};
+
+var save = function (){
+	
+Ti.API.info('Going through loop');
+				
+	if (fName.value == '' && phone.value == '' && email.value == '') {
+		alert('Please Enter Full Name, Phone Number, and eMail');
+	} else if (fName.value == '') {
+		alert('Please Enter Name');
+	} else if (phone.value == '') {
+		alert('Please Enter Phone Number');
+	} else if (email.value == '') {
+		alert('Please Enter Email Address');
+	} else {		
+Ti.API.info('all set');
+					
+	var inputContact = {};
 		inputContact.fName_add = fName.value;
 		inputContact.email_add = email.value;
 		inputContact.age_add = age.value;
 		inputContact.phone_add = phone.value;
-
-	Ti.API.info('inserting data to table');
-
-		db.execute('INSERT INTO contact (fName, email, phone, age) VALUES (?,?,?,?)', inputContact.fName_add, inputContact.email_add, inputContact.age_add, inputContact.phone_add);
-
-	// Ti.API.info('stringing info');
-// 
-		// var contactInfo = escape(JSON.stringify(inputContact));
-
-	Ti.API.info('pushing data to table');
-
-		contactTable.setData(pushData());
-
-	Ti.API.info('keyboard going down');
-
-		fName.blur();
-		email.blur();
-		age.blur();
-		phone.blur();
-
-	Ti.API.info('clearing values');
-		//Clearing Feilds and drop Keyboard
-		fName.value = '';
-		email.value = '';
-		age.value = '';
-		phone.value = '';
-
-		alert(contactInfo + ' is saved!!');
+					
+Ti.API.info('inserting data to table');
+			
+	db.execute('INSERT INTO contact (fName, email, phone, age) VALUES (?,?,?,?)', inputContact.fName_add, inputContact.email_add, inputContact.age_add, inputContact.phone_add);
+					
+Ti.API.info('pushing data to table');
+			
+	contactTable.setData(pushData());
+			
+Ti.API.info('keyboard going down');		
+				 
+	fName.blur();
+	email.blur();
+	age.blur();
+	phone.blur();
+				 			
+Ti.API.info('clearing values');
+	//Clearing Feilds and drop Keyboard
+	fName.value = '';
+	email.value = '';
+	age.value = '';
+	phone.value = '';
+				 		
+	alert('Contact is saved!!');
 	}
 };
-// exports.save;
 
-// var edit = function(){
-// //Get stored data in dataRows
-// var presentRow = db.execute('SELECT * fROM contact WHERE id=?', dataRows.id);
-//
-// var id = presentRow.fieldByName('id');
-// var fName = presentRow.fieldByName('fName');
-// var age = presentRow.fieldByName('age');
-// var phone = presentRow.fieldByName('phone');
-// var email = presentRow.fieldByName('email');
-//
-// var inputContact = {};
-// inputContact.fName = fName.value;
-// inputContact.email = email.value;
-// inputContact.age = age.value;
-// inputContact.phone = phone.value;
-//
-// if (inputContact.fName === '' || inputContact.phone === '') {
-// alert('Please Enter Name and Phone Number');
-// } else if (inputContact.fName === '') {
-// alert('Please Enter Name');
-// } else if (inputContact.phone === '') {
-// alert('Please Enter Phone Number');
-// } else {
-//
-// //Clear Feilds and drop Keyboard
-// fName.value = '';
-// email.value = '';
-// age.value = '';
-// phone.value = '';
-//
-// fName.blur();
-// email.blur();
-// age.blur();
-// phone.blur();
-// db.execute('UPDATE contact SET fname=?, email=?, age=?, phone=? WHERE id=?', inputContact.fName, inputContact.email, inputContact.age, inputContact.phone);
-// }
-// };
-//
-// var deleteOk = function (){
-// db.execute("DELETE contact SET fname=?, email=?, age=?, phone=? WHERE id = ?", inputContact.fName, inputContact.email, inputContact.age, inputContact.phone);
-// };
+exports.save = save();
+
+
+
+
+
+var edit = function () {
+			Ti.API.info('Going through loop');
+				
+					fName.value = theInfo.full_name;
+					phone.value = theInfo.phone;
+					email.value = theInfo.email;
+					age.value =	theInfo.age;
+					
+					if (fName.value == '' && phone.value == '' && email.value == '') {
+						alert('Please Enter Full Name, Phone Number, and eMail');
+					} else if (fName.value == '') {
+						alert('Please Enter Name');
+					} else if (phone.value == '') {
+						alert('Please Enter Phone Number');
+					} else if (email.value == '') {
+						alert('Please Enter Email Address');
+					} else {
+					
+				Ti.API.info('all set');
+				
+				var inputContact = {
+					inputfName: fName.value,
+					inputPhone: phone.value,
+					inputEmail: email.value,
+					inputAge: age.value
+				};
+						
+				Ti.API.info('inserting data to table');
+					
+					db.execute("UPDATE contact SET fname=?, email=?, age=?, phone=? WHERE id=?", inputContact.inputfName, inputContact.inputPhone, inputContact.inputEmail, inputContact.inputAge, id);
+					
+				// Ti.API.info('stringing info');
+			// 
+					// var contactInfo = escape(JSON.stringify(inputContact));
+					
+				Ti.API.info('pushing data to table');
+					
+					contactTable.setData(pushData());
+					
+				Ti.API.info('keyboard going down');
+					
+					fName.blur();
+					email.blur();
+					age.blur();
+					phone.blur();
+					
+				Ti.API.info('clearing values');
+					//Clearing Feilds and drop Keyboard
+					fName.value = '';
+					email.value = '';
+					age.value = '';
+					phone.value = '';
+
+					}
+				editnav.close();
+				contactNav.close();
+				alert('Contact has been updated!!');
+	};
+
+	var deleteOk = function (){
+				var alertDialogPTA = Ti.UI.createAlertDialog({
+    				title: 'Please try agin',
+        			buttonNames: ['Delete']
+    			});	
+    				alertDialogPTA.show();
+    			
+    			alertDialogPTA.addEventListener('click', function(){
+    					db.execute('DELETE FROM contact WHERE id=?', id);
+						contactTable.setData(pushData());
+						alert('Contact Deleted');
+    			});		
+    			
+
+
+function(){
+				Ti.API.info('Going through loop');
+				
+					fName.value = theInfo.full_name;
+					phone.value = theInfo.phone;
+					email.value = theInfo.email;
+					age.value =	theInfo.age;
+					
+					if (fName.value == '' && phone.value == '' && email.value == '') {
+						alert('Please Enter Full Name, Phone Number, and eMail');
+					} else if (fName.value == '') {
+						alert('Please Enter Name');
+					} else if (phone.value == '') {
+						alert('Please Enter Phone Number');
+					} else if (email.value == '') {
+						alert('Please Enter Email Address');
+					} else {
+					
+				Ti.API.info('all set');
+				
+				var inputContact = {
+					inputfName: fName.value,
+					inputPhone: phone.value,
+					inputEmail: email.value,
+					inputAge: age.value
+				};
+						
+				Ti.API.info('inserting data to table');
+					
+					db.execute("UPDATE contact SET fname=?, email=?, age=?, phone=? WHERE id=?", inputContact.inputfName, inputContact.inputPhone, inputContact.inputEmail, inputContact.inputAge, id);
+					
+				// Ti.API.info('stringing info');
+			// 
+					// var contactInfo = escape(JSON.stringify(inputContact));
+					
+				Ti.API.info('pushing data to table');
+					
+					contactTable.setData(pushData());
+					
+				Ti.API.info('keyboard going down');
+					
+					fName.blur();
+					email.blur();
+					age.blur();
+					phone.blur();
+					
+				Ti.API.info('clearing values');
+					//Clearing Feilds and drop Keyboard
+					fName.value = '';
+					email.value = '';
+					age.value = '';
+					phone.value = '';
+
+					}
+				editnav.close();
+				contactNav.close();
+				alert('Contact has been updated!!');
+			});

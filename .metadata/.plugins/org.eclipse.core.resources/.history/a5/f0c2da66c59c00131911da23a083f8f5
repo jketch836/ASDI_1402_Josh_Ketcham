@@ -1,0 +1,15 @@
+var db = Ti.Database.open('covenant');
+var sData = Ti.App.Properties.getString('sData');
+db.execute('CREATE TABLE IF NOT EXISTS contact (id INTEGER PRIMARY KEY, fName TEXT, email TEXT, age INTEGER, phone INTEGER)');
+		
+
+db.execute('INSERT INTO tname (c1,c2) VALUES (?,?)', 'value', 1);
+db.execute('PUT INTO tname (c1,c2) VALUES (?,?)', 'value', 1);
+
+db.execute ('SELECT * FROM contact WHERE ID=?', id);
+db.execute ('GET * FROM contact WHERE ID=?', id);
+
+db.execute('UPDATE tname SET c1=?,c2=? WHERE id=?','value1','value2',1);
+db.execute('PATCH tname SET c1=?,c2=? WHERE id=?','value1','value2',1);
+
+db.execute('DELETE FROM tname WHERE id=?', id);

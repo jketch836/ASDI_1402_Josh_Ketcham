@@ -3,50 +3,34 @@ var curWin = Ti.UI.currentWindow;
 var db = Ti.Database.open('contact');
 var sData = Ti.App.Properties.getString('sData');
 db.execute('CREATE TABLE IF NOT EXISTS contact (id INTEGER PRIMARY KEY, fName TEXT, email TEXT, age INTEGER, phone INTEGER)');
-
-// Ti.API.debug("Data rows:" + dataRows.getFieldName(1));
-// Ti.API.debug("Data rows:" + dataRows.getFieldName(2));
-// Ti.API.debug("Data rows:" + dataRows.getFieldName(3));
-// Ti.API.debug("Data rows:" + dataRows.getFieldName(4));
-
+		
 
 function pushData(){
-// Ti.API.info('Create Empty Array');
 	
 	var some_info = [];
-	
-// Ti.API.info('Grab the data');
 
 	var dataRows = db.execute('SELECT * FROM contact');
 
-// Ti.API.info('Loop through the data');
 	while (dataRows.isValidRow()) {
-		
-// Ti.API.info('Loop!');
 
 		var fullName_add = dataRows.fieldByName('fName');
 		var email_add = dataRows.fieldByName('email');	
 		var phone_add = dataRows.fieldByName('phone');
 		var age_add = dataRows.fieldByName('age');
 		var id = dataRows.fieldByName('id');
-		
-// Ti.API.info('Push data');
+
 		some_info.push({
 			title: fullName_add,
 			id: id
 		});
-		
-// Ti.API.info('Next!');
+
 		dataRows.next();
 	};
-	
-// Ti.API.info('Some info is:' + some_info);
 
 	return some_info;
 };
 var theData = pushData();
 
-// exports.data = pushData();
 
 
 var addBTN = Ti.UI.createButton({
@@ -61,7 +45,7 @@ addBTN.addEventListener('click', function() {
 		barColor:'#D4D4D4'
 	});
 	
-	var navWin = Ti.UI.iOS.createNavigationWindow({
+	var addNav = Ti.UI.iOS.createNavigationWindow({
 		window: addContactWin
 	});
 
@@ -71,8 +55,37 @@ addBTN.addEventListener('click', function() {
 	addContactWin.setLeftNavButton(cancel);
 	
 		cancel.addEventListener('click', function(){
-			navWin.close();
+			addNav.close();
+			addContactWin.close();
 		});
+	
+	var fName_label = Ti.UI.createLabel({
+		top: '55dp',
+	    left: 35, 
+		text: 'Full Name: ',
+		font:{fontSize: 16, fontWeight:'bold', fontFamily:'Helvetica'}
+	});
+	
+	var email_label = Ti.UI.createLabel({
+		top: '130dp',
+	    left: 35, 
+		text: 'Email: ',
+		font:{fontSize: 16, fontWeight:'bold', fontFamily:'Helvetica'}
+	});
+	
+	var phone_label = Ti.UI.createLabel({
+		top: '205dp',
+	    left: 35, 
+		text: 'Phone Number: ',
+		font:{fontSize: 16, fontWeight:'bold', fontFamily:'Helvetica'}
+	});
+	
+	var age_label = Ti.UI.createLabel({
+		top: '205dp',
+	    right: 70, 
+		text: 'Age: ',
+		font:{fontSize: 16, fontWeight:'bold', fontFamily:'Helvetica'}
+	});
 	
 	
 	var fName = Ti.UI.createTextField({
@@ -81,63 +94,57 @@ addBTN.addEventListener('click', function() {
 	    height: 50,
 	    width: 250,
 	    color: '#000',    
-	    hintText: 'Full Name',
+	    hintText: 'John Smith',
 	    autocorret: false,
 	    // value: '',
-	    font:{fontSize:15, fontWeight:'bold', fontFamily:'Helvetica'},
+	    font:{fontSize: 14, fontWeight:'bold', fontFamily:'Helvetica'},
 	    borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
 	    borderColor: "#000"
 	});
 	
 	var email = Ti.UI.createTextField({
-	    top: '133dp',
+	    top: '150dp',
 	    center: 0,    
 	    height: 50,
 	    width: 250,
 	    color: '#000',    
-	    hintText: 'Email Address',
+	    hintText: 'abced@asdf.com',
 	    autocorret: false,
 	    // value: '',
-	    font:{fontSize:15, fontWeight:'bold', fontFamily:'Helvetica'},
+	    font:{fontSize: 14, fontWeight:'bold', fontFamily:'Helvetica'},
 	    borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
 	    borderColor: "#000"
 	});
 	
-	var age = Ti.UI.createTextField({
-	    top:'190dp',
-	    right: 35,
+	var phone = Ti.UI.createTextField({
+	    top:'225dp',
+	    left: 35,
 	    height: 50,
-	    width: 75,
+	    width: 145,
 	    color: '#000',
-	    hintText: 'Age',
+	    hintText: '123-123-1234',
 	    // value: '',	    
-	    font:{fontSize:15, fontWeight:'bold', fontFamily:'Helvetica'},
+	    font:{fontSize: 14, fontWeight:'bold', fontFamily:'Helvetica'},
 	    borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
 	    borderColor: "#000",
 	    keyboardType: Ti.UI.KEYBOARD_PHONE_PAD
 	});
 	
-	var phone = Ti.UI.createTextField({
-	    top:'190dp',
-	    left: 35,
+	var age = Ti.UI.createTextField({
+	    top:'225dp',
+	    right: 35,
 	    height: 50,
-	    width: 145,
+	    width: 75,
 	    color: '#000',
 	    // value: '',	    
-	    hintText: 'Phone Number',
-	    font:{fontSize:15, fontWeight:'bold', fontFamily:'Helvetica'},
+	    hintText: '18',
+	    font:{fontSize: 14, fontWeight:'bold', fontFamily:'Helvetica'},
 	    borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
 	    borderColor: "#000",
 	    keyboardType: Ti.UI.KEYBOARD_NUMBER_PAD 
 	});
 	
-	
-	var saveBTN = Ti.UI.createButton({
-		systemButton:Ti.UI.iPhone.SystemButton.SAVE
-	});
-	addContactWin.setRightNavButton(saveBTN);
-	
-	saveBTN.addEventListener('click', function(){
+	var save = function (){
 		Ti.API.info('Going through loop');
 			
 			if (fName.value == '' && phone.value == '' && email.value == '') {
@@ -155,8 +162,9 @@ addBTN.addEventListener('click', function() {
 			var inputContact = {};
 			 	inputContact.fName_add = fName.value;
 				inputContact.email_add = email.value;
-				inputContact.age_add = age.value;
 				inputContact.phone_add = phone.value;
+				inputContact.age_add = age.value;
+
 				
 		Ti.API.info('inserting data to table');
 		
@@ -168,39 +176,51 @@ addBTN.addEventListener('click', function() {
 				
 		Ti.API.info('pushing data to table');
 		
-			contactTable.setData(pushData());
+			insertData = pushData();		
+			contactTable.setData(insertData);
 		
-				Ti.API.info('keyboard going down');		
-			 
-			 		fName.blur();
-			 		email.blur();
-			 		age.blur();
-			 		phone.blur();
 			 			
-		Ti.API.info('clearing values');
+		Ti.API.info('clearing values and keyboard going down');
 			 		//Clearing Feilds and drop Keyboard
 			 		fName.value = '';
 			 		email.value = '';
-			 		age.value = '';
 			 		phone.value = '';
-			 		
+			 		age.value = '';
+			 		fName.blur();
+			 		email.blur();
+			 		phone.blur();
+			 		age.blur();
+		
 			 		alert('Contact is saved!!');
-			 		navWin.close();
+			 		addNav.close();
+			 		addContactWin.close();
 			}
+	};
+	
+	var saveBTN = Ti.UI.createButton({
+		systemButton:Ti.UI.iPhone.SystemButton.SAVE
 	});
+	addContactWin.setRightNavButton(saveBTN);
+	
+	saveBTN.addEventListener('click', save);
 
-	//Main Code
+	//addContact Main Code
+	addContactWin.add(fName_label, email_label, phone_label, age_label);
 	addContactWin.add(fName, email, age, phone);
-	navWin.open();
+	addNav.open();
 });
+		
+		
 				
 // the table view
 	var contactTable = Titanium.UI.createTableView({
 		// data:some_info,
 		editable:true,
-		font: {fontStyle: 'Helvetica', fontSize: '14dp'}
+		font: {fontStyle: 'Helvetica', fontSize: '10dp'}
 	});
 contactTable.setData(theData);
+
+
 
 // create table view eventlistener
 contactTable.addEventListener('click', function(a){
@@ -211,16 +231,12 @@ contactTable.addEventListener('click', function(a){
 		barColor:'#D4D4D4'
 	});
 	
-	var navWin = Ti.UI.iOS.createNavigationWindow({
+	var contactNav = Ti.UI.iOS.createNavigationWindow({
 		window: contactWin
 	});
 
-<<<<<<< HEAD
 	var id = a.rowData.id;
-	// var fullNAME = a.rowData.fNAme;
-	// var phoneNUM = a.rowData.phone;
-	// var emailADD = a.rowData.email;
-	// var ageNUM = a.rowData.age;
+
 	var contactInfo = db.execute('SELECT * FROM contact WHERE ID=?', id);
 
 	var theInfo = {
@@ -259,20 +275,14 @@ contactTable.addEventListener('click', function(a){
 	});	
 	
 	
-=======
-	// var id = dataRows.fieldByName('id');
-// 	
-	// db.execute('SELECT * FROM contact WHERE id=?',id);
-
-
->>>>>>> parent of 739d9da... ASDI_LAB3_LOCAL_STORAGE_P3
 	var cancel = Ti.UI.createButton({
 		systemButton:Ti.UI.iPhone.SystemButton.CANCEL
 	});
 	contactWin.setLeftNavButton(cancel);
 	
 		cancel.addEventListener('click', function(){
-			navWin.close();
+			contactNav.close();
+			contactWin.close();
 		});
 				
 	var editBTN = Ti.UI.createButton({
@@ -280,6 +290,7 @@ contactTable.addEventListener('click', function(a){
 	});
 	contactWin.setRightNavButton(editBTN);
 	
+		
 		editBTN.addEventListener('click', function(){
 			
 			var editContactWin = Ti.UI.createWindow({
@@ -288,82 +299,108 @@ contactTable.addEventListener('click', function(a){
 				barColor:'#D4D4D4'
 				});
 			
+			var editnav = Ti.UI.iOS.createNavigationWindow({
+				window: editContactWin
+			});
+			
+			
+			var fName_label = Ti.UI.createLabel({
+				top: '55dp',
+			    left: 35, 
+				text: 'Full Name: ',
+				font:{fontSize: 16, fontWeight:'bold', fontFamily:'Helvetica'}
+			});
+			
+			var email_label = Ti.UI.createLabel({
+				top: '130dp',
+			    left: 35, 
+				text: 'Email: ',
+				font:{fontSize: 16, fontWeight:'bold', fontFamily:'Helvetica'}
+			});
+			
+			var phone_label = Ti.UI.createLabel({
+				top: '205dp',
+			    left: 35, 
+				text: 'Phone Number: ',
+				font:{fontSize: 16, fontWeight:'bold', fontFamily:'Helvetica'}
+			});
+			
+			var age_label = Ti.UI.createLabel({
+				top: '205dp',
+			    right: 70, 
+				text: 'Age: ',
+				font:{fontSize: 16, fontWeight:'bold', fontFamily:'Helvetica'}
+			});
+			
+			
 			var fName = Ti.UI.createTextField({
 			    top: '75dp',
 			    center: 0,    
 			    height: 50,
 			    width: 250,
 			    color: '#000',    
-			    hintText: 'Full Name',
 			    autocorret: false,
-			    // value: '',
-			    font:{fontSize:15, fontWeight:'bold', fontFamily:'Helvetica'},
+			    value: theInfo.full_name,
+			    font:{fontSize: 14, fontWeight:'bold', fontFamily:'Helvetica'},
 			    borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
 			    borderColor: "#000"
 			});
 			
 			var email = Ti.UI.createTextField({
-			    top: '133dp',
+			    top: '150dp',
 			    center: 0,    
 			    height: 50,
 			    width: 250,
 			    color: '#000',    
-			    hintText: 'Email Address',
 			    autocorret: false,
-			    // value: '',
-			    font:{fontSize:15, fontWeight:'bold', fontFamily:'Helvetica'},
+			    value: theInfo.email_Add,
+			    font:{fontSize: 14, fontWeight:'bold', fontFamily:'Helvetica'},
 			    borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
 			    borderColor: "#000"
 			});
 			
-			var age = Ti.UI.createTextField({
-			    top:'190dp',
-			    right: 35,
+			var phone = Ti.UI.createTextField({
+			    top:'225dp',
+			    left: 35,
 			    height: 50,
-			    width: 75,
+			    width: 145,
 			    color: '#000',
-			    hintText: 'Age',
-			    // value: '',	    
-			    font:{fontSize:15, fontWeight:'bold', fontFamily:'Helvetica'},
+			    value: theInfo.phone_Num,	    
+			    font:{fontSize: 14, fontWeight:'bold', fontFamily:'Helvetica'},
 			    borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
 			    borderColor: "#000",
 			    keyboardType: Ti.UI.KEYBOARD_PHONE_PAD 
 			});
 			
-			var phone = Ti.UI.createTextField({
-			    top:'190dp',
-			    left: 35,
+			var age = Ti.UI.createTextField({
+			    top:'225dp',
+			    right: 35,
 			    height: 50,
-			    width: 145,
+			    width: 75,
 			    color: '#000',
-			    // value: '',	    
-			    hintText: 'Phone Number',
-			    font:{fontSize:15, fontWeight:'bold', fontFamily:'Helvetica'},
+			    value: theInfo.age_date,
+			    font:{fontSize: 14, fontWeight:'bold', fontFamily:'Helvetica'},
 			    borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
 			    borderColor: "#000",
 			    keyboardType: Ti.UI.KEYBOARD_NUMBER_PAD
 			});
 			
-			var doneBTN = Ti.UI.createButton({
-				systemButton:Ti.UI.iPhone.SystemButton.DONE
-			});
-			doneBTN.addEventListener('click', edit);
 			
-			
-			var deleteOk = function (){
+    		var deleteOk = function (){
 				var alertDialogPTA = Ti.UI.createAlertDialog({
-    				title: 'Please try agin',
+    				title: 'Are You Sure?',
         			buttonNames: ['Delete', 'Cancel']
     			});	
-<<<<<<< HEAD
     			alertDialogPTA.show();    			
     				alertDialogPTA.addEventListener('click', function(a){
 	    				if(a.index === 0){
 	    					db.execute('DELETE FROM contact WHERE id=?', id);
 							contactTable.setData(pushData());
-							alert('Contact Deleted');
+							alert('Contact is Deleted');
 							editnav.close();
+							editContactWin.close();
 							contactNav.close();
+							contactWin.close();
 	    				} else { 
 	    					null;
 	    				}
@@ -401,25 +438,17 @@ var edit = function () {
 			} else {
 					
 		Ti.API.info('all set');
-=======
-    				alertDialogPTA.show();
-    			
-    			alertDialogPTA.addEventListener('click', function(){
-    				if(buttonNames === 0) {
-    					db.execute('DELETE FROM contact WHERE id=?', id);
-						contactTable.setData(pushData());
-						alert('Contact Deleted');
-    				} else {
-    					null;
-    				}
-    				
-    			});	
->>>>>>> parent of 739d9da... ASDI_LAB3_LOCAL_STORAGE_P3
 				
+			var inputContact = {
+				inputfName: fName.value,
+				inputEmail: email.value,
+				inputPhone: phone.value,
+				inputAge: age.value
 			};
+						
+		Ti.API.info('inserting data to table');
 					
-<<<<<<< HEAD
-			db.execute("UPDATE contact SET fName=?, email=?, age=?, phone=? WHERE id=?", inputContact.inputfName, inputContact.inputPhone, inputContact.inputEmail, inputContact.inputAge, id);
+			db.execute("UPDATE contact SET fName=?, email=?, age=?, phone=? WHERE id=?", inputContact.inputfName, inputContact.inputEmail, inputContact.inputPhone, inputContact.inputAge, id);
 					
 		// Ti.API.info('stringing info');
 // 
@@ -453,80 +482,23 @@ var edit = function () {
 			
 			var doneBTN = Ti.UI.createButton({
 				systemButton:Ti.UI.iPhone.SystemButton.DONE
-=======
-			var deleteBTN = Ti.UI.createButton({
-				top:'220dp',
-				systemButton:Ti.UI.iPhone.SystemButton.DELETE
->>>>>>> parent of 739d9da... ASDI_LAB3_LOCAL_STORAGE_P3
 			});
-			deleteBTN.addEventListener('click', deleteOk);
+			doneBTN.addEventListener('click', edit);
 
-			
-		//Main Code
-		editContactWin.add(deleteBTN);		
-		editContactWin.setRightNavButton(doneBTN);
-		editContactWin.add(fName, email, age, phone);
-	});
 				
+    			//editContactWin Main Code
+				editContactWin.add(deleteBTN);		
+				editContactWin.setRightNavButton(doneBTN);
+				editContactWin.add(fName_label, email_label, phone_label, age_label);				
+				editContactWin.add(fName, email, age, phone);
+				editnav.open();
+		});
 //Main Code
-navWin.open();
+contactWin.add(nameView, phoneView, emailView, ageView);
+contactNav.open();
 });
 
 
 //Main Code
 curWin.setRightNavButton(addBTN);
 curWin.add(contactTable);
-
-
-function edit () {
-	Ti.API.info('Going through loop');
-		
-		if (fName.value == '' && phone.value == '' && email.value == '') {
-			alert('Please Enter Full Name, Phone Number, and eMail');
-		} else if (fName.value == '') {
-			alert('Please Enter Name');
-		} else if (phone.value == '') {
-			alert('Please Enter Phone Number');
-		} else if (email.value == '') {
-			alert('Please Enter Email Address');
-		} else {
-		
-	Ti.API.info('all set');
-		
-		var inputContact = {};
-			inputContact.fName_add = fName.value;
-			inputContact.email_add = email.value;
-			inputContact.age_add = age.value;
-			inputContact.phone_add = phone.value;
-		
-	Ti.API.info('inserting data to table');
-		
-		db.execute('UPDATE contact SET fname=?, email=?, age=?, phone=? WHERE id=?', inputContact.fName_add, inputContact.email_add, inputContact.age_add, inputContact.phone_add);
-		
-	// Ti.API.info('stringing info');
-// 
-		// var contactInfo = escape(JSON.stringify(inputContact));
-		
-	Ti.API.info('pushing data to table');
-		
-		contactTable.setData(pushData());
-		
-	Ti.API.info('keyboard going down');
-		
-		fName.blur();
-		email.blur();
-		age.blur();
-		phone.blur();
-		
-	Ti.API.info('clearing values');
-		//Clearing Feilds and drop Keyboard
-		fName.value = '';
-		email.value = '';
-		age.value = '';
-		phone.value = '';
-			
-		doneBTN.removeEventListener('click', edit);
-			editContactWin.close();
-			alert('Contact has been updated!!');
-		}
-};

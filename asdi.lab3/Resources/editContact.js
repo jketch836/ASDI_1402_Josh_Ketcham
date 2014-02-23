@@ -159,13 +159,13 @@ var crud = require('CRUD');
 				font : {fontWeight:'bold',fontSize:18, fontFamily:'Helvetica'},
 				color : '#EE2C2C'
 			});
-			deleteBTN.addEventListener('click', deleteOk);
+			deleteBTN.addEventListener('click', crud.del);
 	
 	
 			var doneBTN = Ti.UI.createButton({
 				systemButton:Ti.UI.iPhone.SystemButton.DONE
 			});
-			doneBTN.addEventListener('click', crud.edit);
+			doneBTN.addEventListener('click', crud.update);
 
 				
     			//editContactWin Main Code

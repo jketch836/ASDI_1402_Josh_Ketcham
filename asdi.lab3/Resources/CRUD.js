@@ -126,7 +126,7 @@ addBTN.addEventListener('click', function() {
 	    font:{fontSize: 14, fontWeight:'bold', fontFamily:'Helvetica'},
 	    borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
 	    borderColor: "#000",
-	    keyboardType: Ti.UI.KEYBOARD_NUMBER_PAD
+	    keyboardType: Ti.UI.KEYBOARD_PHONE_PAD
 	});
 	
 	var age = Ti.UI.createTextField({
@@ -140,7 +140,7 @@ addBTN.addEventListener('click', function() {
 	    font:{fontSize: 14, fontWeight:'bold', fontFamily:'Helvetica'},
 	    borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
 	    borderColor: "#000",
-	    keyboardType: Ti.UI.KEYBOARD_PHONE_PAD
+	    keyboardType: Ti.UI.KEYBOARD_NUMBER_PAD 
 	});
 	
 	var save = function (){
@@ -233,15 +233,22 @@ contactTable.addEventListener('click', function(a){
 	});
 
 	var id = a.rowData.id;
-	var contactInfo = db.execute ('SELECT * FROM contact WHERE ID=?', id);
+	// var fullNAME = a.rowData.fNAme;
+	// var phoneNUM = a.rowData.phone;
+	// var emailADD = a.rowData.email;
+	// var ageNUM = a.rowData.age;
+	var contactInfo = db.execute('SELECT * FROM contact WHERE ID=?', id);
 
 	var theInfo = {
 		full_name: contactInfo.fieldByName('fName'),
 		phone_Num: contactInfo.fieldByName('phone'),
 		email_Add: contactInfo.fieldByName('email'),
-		age_date: contactInfo.fieldByName('age'),
-		id: contactInfo.fieldByName('id')
+		age_date: contactInfo.fieldByName('age')
 	};	
+		console.log ('Email' + theInfo.email_Add);
+		console.log ('age' + theInfo.age_date);
+		console.log ('phone' + theInfo.phone_Num);
+		
 		
 	var nameView = Ti.UI.createLabel({
 		top: '75dp',
@@ -252,7 +259,7 @@ contactTable.addEventListener('click', function(a){
 	var phoneView = Ti.UI.createLabel({
 	    top:'175dp',
 	    left: 35,
-		text: 'Age: ' + theInfo.phone_Num
+		text: 'Phone: ' + theInfo.phone_Num
 	});
 	
 	var emailView = Ti.UI.createLabel({
@@ -264,7 +271,7 @@ contactTable.addEventListener('click', function(a){
 	var ageView = Ti.UI.createLabel({
 	    top:'225dp',
 	    left: 35,
-		text: 'Phone: ' + theInfo.age_date
+		text: 'Age: ' + theInfo.age_date
 	});	
 	
 	
@@ -361,7 +368,7 @@ contactTable.addEventListener('click', function(a){
 			    font:{fontSize: 14, fontWeight:'bold', fontFamily:'Helvetica'},
 			    borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
 			    borderColor: "#000",
-			    keyboardType: Ti.UI.KEYBOARD_NUMBER_PAD
+			    keyboardType: Ti.UI.KEYBOARD_PHONE_PAD 
 			});
 			
 			var age = Ti.UI.createTextField({
@@ -374,7 +381,7 @@ contactTable.addEventListener('click', function(a){
 			    font:{fontSize: 14, fontWeight:'bold', fontFamily:'Helvetica'},
 			    borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
 			    borderColor: "#000",
-			    keyboardType: Ti.UI.KEYBOARD_PHONE_PAD
+			    keyboardType: Ti.UI.KEYBOARD_NUMBER_PAD
 			});
 			
 			
@@ -412,10 +419,10 @@ contactTable.addEventListener('click', function(a){
 var edit = function () {
 		Ti.API.info('Going through loop');
 				
-			fName.value = theInfo.full_name;
-			phone.value = theInfo.phone_Num;
-			email.value = theInfo.email_Add;
-			age.value =	theInfo.age_date;
+			// fName.value = theInfo.full_name;
+			// phone.value = theInfo.phone_Num;
+			// email.value = theInfo.email_Add;
+			// age.value =	theInfo.age_date;
 					
 			if (fName.value == '' && phone.value == '' && email.value == '') {
 				alert('Please Enter Full Name, Phone Number, and eMail');
@@ -438,7 +445,7 @@ var edit = function () {
 						
 		Ti.API.info('inserting data to table');
 					
-			db.execute("UPDATE contact SET fname=?, email=?, age=?, phone=? WHERE id=?", inputContact.inputfName, inputContact.inputPhone, inputContact.inputEmail, inputContact.inputAge, id);
+			db.execute("UPDATE contact SET fName=?, email=?, age=?, phone=? WHERE id=?", inputContact.inputfName, inputContact.inputPhone, inputContact.inputEmail, inputContact.inputAge, id);
 					
 		// Ti.API.info('stringing info');
 // 
@@ -462,6 +469,9 @@ var edit = function () {
 			
 			doneBTN.removeEventListener('click', edit);
 				editnav.close();
+				editContactWin.close();
+				contactNav.close();
+				contactWin.close();
 				alert('Contact has been updated!!');
 			}
 	};

@@ -1,58 +1,115 @@
 var curContactWin = Ti.UI.currentWindow();
 
-var contactNav = Ti.UI.iOS.createNavigationWindow({
+navWin = Ti.UI.iOS.createNavigationWindow({
 	window : curContactWin
 });
 
 var crud = require('CRUD');
 
-	var contactInfo = db.execute('SELECT * FROM contact WHERE ID=?', id);
+var id = a.dataRows.id;
 
-	var theInfo = {
-		full_name: contactInfo.fieldByName('fName'),
-		phone_Num: contactInfo.fieldByName('phone'),
-		email_Add: contactInfo.fieldByName('email'),
-		age_date: contactInfo.fieldByName('age'),
-		id: contactInfo.fieldByName('id')
-	};	
-		
-	var nameView = Ti.UI.createLabel({
-		top: '75dp',
-	    left: 35,
-		text: 'Name: ' + theInfo.full_name
+db.execute('SELECT * FROM contact WHERE id=?', id);
+
+
+var cancel = Ti.UI.createButton({
+	systemButton : Ti.UI.iPhone.SystemButton.CANCEL
+});
+cancel.addEventListener('click', function() {
+	navWin.close();
+});
+
+
+var editBTN = Ti.UI.createButton({
+	systemButton : Ti.UI.iPhone.SystemButton.EDIT
+});
+editBTN.addEventListener('click', function() {
+
+	var editContactWin = Ti.UI.createWindow({
+		title : 'Edit Contact Info',
+		backgroundColor : '#fff',
+		barColor : '#D4D4D4'
 	});
-	
-	var phoneView = Ti.UI.createLabel({
-	    top:'175dp',
-	    left: 35,
-		text: 'Age: ' + theInfo.phone_Num
+
+	var fName = Ti.UI.createTextField({
+		top : '75dp',
+		center : 0,
+		height : 50,
+		width : 250,
+		color : '#000',
+		hintText : 'Full Name',
+		autocorret : false,
+		// value: '',
+		font : 
+		{
+			fontSize : 15,
+			fontWeight : 'bold',
+			fontFamily : 'Helvetica'
+		},
+		borderStyle : Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+		borderColor : "#000"
 	});
-	
-	var emailView = Ti.UI.createLabel({
-	    top:'125dp',
-	    left: 35,
-		text: 'eMail: ' + theInfo.email_Add
+
+	var email = Ti.UI.createTextField({
+		top : '133dp',
+		center : 0,
+		height : 50,
+		width : 250,
+		color : '#000',
+		hintText : 'Email Address',
+		autocorret : false,
+		// value: '',
+		font : 
+		{
+			fontSize : 15,
+			fontWeight : 'bold',
+			fontFamily : 'Helvetica'
+		},
+		borderStyle : Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+		borderColor : "#000"
 	});
-	
-	var ageView = Ti.UI.createLabel({
-	    top:'225dp',
-	    left: 35,
-		text: 'Phone: ' + theInfo.age_date
-	});	
-	
-	
-	var cancel = Ti.UI.createButton({
-		systemButton:Ti.UI.iPhone.SystemButton.CANCEL
+
+	var age = Ti.UI.createTextField({
+		top : '190dp',
+		right : 35,
+		height : 50,
+		width : 75,
+		color : '#000',
+		hintText : 'Age',
+		// value: '',
+		font : 
+		{
+			fontSize : 15,
+			fontWeight : 'bold',
+			fontFamily : 'Helvetica'
+		},
+		borderStyle : Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+		borderColor : "#000",
+		keyboardType : Ti.UI.KEYBOARD_NUMBER_PAD
 	});
-	contactWin.setLeftNavButton(cancel);
-	
-		cancel.addEventListener('click', function(){
-			contactNav.close();
-		});
-				
-	var editBTN = Ti.UI.createButton({
-		systemButton:Ti.UI.iPhone.SystemButton.EDIT
+
+	var phone = Ti.UI.createTextField({
+		top : '190dp',
+		left : 35,
+		height : 50,
+		width : 145,
+		color : '#000',
+		// value: '',
+		hintText : 'Phone Number',
+		font : 
+		{
+			fontSize : 15,
+			fontWeight : 'bold',
+			fontFamily : 'Helvetica'
+		},
+		borderStyle : Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+		borderColor : "#000",
+		keyboardType : Ti.UI.KEYBOARD_PHONE_PAD
 	});
+
+	var doneBTN = Ti.UI.createButton({
+		systemButton : Ti.UI.iPhone.SystemButton.DONE
+	});
+<<<<<<< HEAD
 	contactWin.setRightNavButton(editBTN);
 	
 		
@@ -175,6 +232,25 @@ var crud = require('CRUD');
 				editContactWin.add(fName, email, age, phone);
 				editnav.open();
 		});
+=======
+	doneBTN.addEventListener('click', crud.edit);
+
+
+	var deleteBTN = Ti.UI.createButton({
+		top : '220dp',
+		systemButton : Ti.UI.iPhone.SystemButton.DELETE
+	});
+	deleteBTN.addEventListener('click', crud.deleteOk);
+
+	//Main Code
+	editContactWin.add(deleteBTN);
+	editContactWin.setRightNavButton(doneBTN);
+	editContactWin.add(fName, email, age, phone);
+});
+
+
+>>>>>>> parent of 739d9da... ASDI_LAB3_LOCAL_STORAGE_P3
 //Main Code
-curContactWin.add(nameView, phoneView, emailView, ageView);
-contactNav.open();
+curContactWin.setRightNavButton(editBTN);
+curContactWin.setLeftNavButton(cancel);
+navWin.open();

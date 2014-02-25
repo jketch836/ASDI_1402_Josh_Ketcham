@@ -26,7 +26,7 @@ function insertData() {
 		var id = rowInfo.fieldByName('id');
 
 		dataInfo.push({
-			title : name + level,
+			title : name + level + division + acheive,
 			id : id
 		});
 
@@ -45,8 +45,7 @@ exports.savefunc = function() {
 // data.execute ('SELECT * FROM covenant WHERE ID=?', id);
 // 
 // 
-// 
-// 
+//
 // 
 // 
 // var editFunc = function() {

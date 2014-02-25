@@ -1,0 +1,64 @@
+// var grimCov = Ti.include('RemoteListView.js');
+// var fav = Ti.include('favorites.js');
+
+var data = Ti.Database.open('covenant');
+var wowData = Ti.App.Properties.getString('wowData');
+data.execute('CREATE TABLE IF NOT EXISTS covenant (id INTEGER PRIMARY KEY, name TEXT, division TEXT, level TEXT, acheive TEXT)');
+
+function insertData() {
+
+	var dataInfo = [];
+
+	var rowInfo = data.execute('SELECT * FROM covenant');
+
+	while (rowInfo.isValidRow()) {
+
+		var name = rowInfo.fieldByName('name');
+		var division = rowInfo.fieldByName('division');
+		var level = rowInfo.fieldByName('level');
+		var acheive = rowInfo.fieldByName('acheive');
+		var id = rowInfo.fieldByName('id');
+
+		dataInfo.push({
+			title : name + level,
+			id : id
+		});
+
+		rowInfo.next();
+	};
+
+	return dataInfo;
+};
+var guildData = insertData();
+
+exports.savefunc = function() {
+	data.execute('INSERT INTO covenant (name, division, level, acheive) VALUES (?, ?, ?, ?)', name, division, level, acheive);
+	// fav.sectionList.setItems(guildData);
+};
+
+// data.execute ('SELECT * FROM covenant WHERE ID=?', id);
+//
+// data.execute('UPDATE covenant SET c1=?,c2=? WHERE id=?','value1','value2',1);
+//
+// data.execute('DELETE FROM covenant WHERE id=?', id);
+
+var editFunc = function() {
+	var deleteDIA = Ti.UI.createAlertDialog({
+		title : 'Are You Sure?',
+		buttonNames : [ 'Cancel', 'Delete']
+	});
+	deleteDIA.show();
+	deleteDIA.addEventListener('click', function(a) {
+		if (a.index === 1) {
+			db.execute('DELETE FROM covenant WHERE id=?', id);
+			
+			alert('Member is Deleted');
+		}
+
+	});
+};
+
+var editBTN = Ti.UI.createButton({
+	style : Ti.UI.iPhone.SystemButtonStyle.EDIT,
+});
+deleteBTN.addEventListener('click', editFunc);

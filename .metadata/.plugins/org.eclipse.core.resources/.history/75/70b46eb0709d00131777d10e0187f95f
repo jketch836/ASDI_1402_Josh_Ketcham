@@ -1,0 +1,7 @@
+var exists = db.execute('SELECT contact FROM contact');
+var array = [];
+	
+while (exists.isValidRow()){
+array.push(exists.fieldByName('contact'));
+exists.next
+}

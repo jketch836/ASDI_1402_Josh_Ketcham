@@ -1,0 +1,34 @@
+// created tab group
+var theTabs = Titanium.UI.createTabGroup();
+
+
+// created character tab and toon window
+var toonWin = Titanium.UI.createWindow({  
+    title:'Grim Covanent Members',
+    backgroundColor:'#fff',
+    url: 'remoteAPI.js'
+});
+var toonTab = Titanium.UI.createTab({  
+    image:'toon.png',
+    title:'Grim Cov Mem',
+    window: toonWin
+});
+
+
+// created favorite tab and fav window
+var favWin = Titanium.UI.createWindow({  
+    title:'Favorite Toons',
+    backgroundColor:'#fff',
+    // url: 'CrudFile.js'
+});
+var favTab = Titanium.UI.createTab({  
+    image:'fav.png',
+    title:'Favorite Characters',
+    window: favWin
+});
+
+
+//Main Code
+theTabs.addTab(toonTab);  
+theTabs.addTab(favTab);  
+theTabs.open();

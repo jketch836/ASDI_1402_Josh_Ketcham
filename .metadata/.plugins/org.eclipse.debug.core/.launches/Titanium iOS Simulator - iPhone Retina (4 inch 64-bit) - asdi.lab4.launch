@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="com.appcelerator.titanium.mobile.ui.ios.simulator.launchConfigurationType">
+<stringAttribute key="ATTR_LOG_LEVEL" value="Info"/>
 <stringAttribute key="ATTR_PROJECT_NAME" value="asdi.lab4"/>
 <stringAttribute key="device_id" value="iPhone Retina (4 inch 64-bit)"/>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">

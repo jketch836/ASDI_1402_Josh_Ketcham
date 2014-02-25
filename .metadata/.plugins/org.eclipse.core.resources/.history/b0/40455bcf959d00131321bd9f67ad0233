@@ -1,0 +1,11 @@
+var favoritesWin = Ti.UI.createWindow({
+	height : '470dp',
+	width : 320
+});
+
+var characterScroll = Ti.UI.createScrollView({
+	layout : 'vertical',
+	height : '470dp',
+	width : 320,
+	showVerticalScrollIndicator : true
+}); 

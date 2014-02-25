@@ -1,33 +1,33 @@
 // created tab group
-var theTabs = Titanium.UI.createTabGroup();
-
+var theTabs = Ti.UI.createTabGroup();
 
 // created character tab and toon window
-var toonWin = Titanium.UI.createWindow({  
-    title:'List of Characters',
-    backgroundColor:'#fff',
-    url: 'remoteAPI.js'
+var toonWin = Ti.UI.createWindow({
+	title : 'Council of Judgement Members',
+	backgroundColor : '#fff',
+	url : 'remoteAPI.js'
 });
-var toonTab = Titanium.UI.createTab({  
-    image:'toon.png',
-    title:'Grim Covanent Toons',
-    window: toonWin
+var toonTab = Ti.UI.createTab({
+	image : 'toon.png',
+	title : 'Council Members',
+	window : toonWin
 });
-
 
 // created favorite tab and fav window
-var favWin = Titanium.UI.createWindow({  
-    title:'Favorite Toons',
-    backgroundColor:'#fff'
+var favWin = Ti.UI.createWindow({
+	height : '470dp',
+	width : 320,
+	title : 'Favorite Members',
+	backgroundColor : '#fff',
+	url : 'favorites.js'
 });
-var favTab = Titanium.UI.createTab({  
-    image:'fav.png',
-    title:'Favorite Characters',
-    window: favWin
+var favTab = Ti.UI.createTab({
+	image : 'fav.png',
+	title : 'Favorite Members',
+	window : favWin
 });
-
 
 //Main Code
-theTabs.addTab(toonTab);  
-theTabs.addTab(favTab);  
+theTabs.addTab(toonTab);
+theTabs.addTab(favTab);
 theTabs.open();

@@ -1,0 +1,10 @@
+//before INSERT TABLE
+
+var exists = db.execute('SELECT contact FROM contact');
+var fNameArray = [];
+var emailArray = [];	
+while (exists.isValidRow()){
+fNameArray.push(exists.fieldByName('fName'));
+emailArray.push(exists.fieldByName('email'));
+exists.next();
+}

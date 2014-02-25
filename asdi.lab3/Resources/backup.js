@@ -412,3 +412,15 @@ var save = function() {
 // var deleteOk = function (){
 // db.execute("DELETE contact SET fname=?, email=?, age=?, phone=? WHERE id = ?", inputContact.fName, inputContact.email, inputContact.age, inputContact.phone);
 // };
+
+
+//before INSERT TABLE
+
+var exists = db.execute('SELECT contact FROM contact');
+var fNameArray = [];
+var emailArray = [];	
+while (exists.isValidRow()){
+fNameArray.push(exists.fieldByName('fName'));
+emailArray.push(exists.fieldByName('email'));
+exists.next();
+}

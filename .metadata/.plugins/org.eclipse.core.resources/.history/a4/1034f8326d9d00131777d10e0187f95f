@@ -1,0 +1,1 @@
+var exists = db.execute('SELECT fName FROM contact');

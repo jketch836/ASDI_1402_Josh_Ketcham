@@ -168,11 +168,7 @@ addBTN.addEventListener('click', function() {
 				
 		Ti.API.info('inserting data to table');
 		
-			db.execute('INSERT INTO contact (fName, email, phone, age) VALUES (?,?,?,?)', inputContact.fName_add, inputContact.email_add, inputContact.age_add, inputContact.phone_add);
-			
-		// Ti.API.info('stringing info');	
-// 		
-			// var contactInfo = escape(JSON.stringify(inputContact));
+			db.execute('INSERT INTO contact (fName, email, phone, age) VALUES (?,?,?,?)', inputContact.fName_add, inputContact.email_add, inputContact.phone_add, inputContact.age_add);
 				
 		Ti.API.info('pushing data to table');
 		
@@ -181,7 +177,6 @@ addBTN.addEventListener('click', function() {
 		
 			 			
 		Ti.API.info('clearing values and keyboard going down');
-			 		//Clearing Feilds and drop Keyboard
 			 		fName.value = '';
 			 		email.value = '';
 			 		phone.value = '';
@@ -331,7 +326,7 @@ contactTable.addEventListener('click', function(a){
 				text: 'Age: ',
 				font:{fontSize: 16, fontWeight:'bold', fontFamily:'Helvetica'}
 			});
-			
+			// Ti.API.DEBUG('The info is ' + theInfo);
 			
 			var fName = Ti.UI.createTextField({
 			    top: '75dp',
@@ -387,12 +382,12 @@ contactTable.addEventListener('click', function(a){
 			
 			
     		var deleteOk = function (){
-				var alertDialogPTA = Ti.UI.createAlertDialog({
+				var deleteDIA = Ti.UI.createAlertDialog({
     				title: 'Are You Sure?',
         			buttonNames: ['Delete', 'Cancel']
     			});	
-    			alertDialogPTA.show();    			
-    				alertDialogPTA.addEventListener('click', function(a){
+    			deleteDIA.show();    			
+    				deleteDIA.addEventListener('click', function(a){
 	    				if(a.index === 0){
 	    					db.execute('DELETE FROM contact WHERE id=?', id);
 							contactTable.setData(pushData());
@@ -420,13 +415,18 @@ contactTable.addEventListener('click', function(a){
 			
 
 var edit = function () {
-		Ti.API.info('Going through loop');
-				
-			// fName.value = theInfo.full_name;
-			// phone.value = theInfo.phone_Num;
-			// email.value = theInfo.email_Add;
-			// age.value =	theInfo.age_date;
-					
+		Ti.API.info('all set');
+		
+			var inputContact = {
+				inputfName: fName.value,
+				inputEmail: email.value,
+				inputPhone: phone.value,
+				inputAge: age.value
+			};
+	
+	console.log(' this contact is:' + inputContact);
+		Ti.API.info('Going through loop');	
+						
 			if (fName.value == '' && phone.value == '' && email.value == '') {
 				alert('Please Enter Full Name, Phone Number, and eMail');
 			} else if (fName.value == '') {
@@ -436,45 +436,27 @@ var edit = function () {
 			} else if (email.value == '') {
 				alert('Please Enter Email Address');
 			} else {
-					
-		Ti.API.info('all set');
-				
-			var inputContact = {
-				inputfName: fName.value,
-				inputEmail: email.value,
-				inputPhone: phone.value,
-				inputAge: age.value
-			};
 						
-		Ti.API.info('inserting data to table');
+		Ti.API.info('updating table data');
 					
-			db.execute("UPDATE contact SET fName=?, email=?, age=?, phone=? WHERE id=?", inputContact.inputfName, inputContact.inputEmail, inputContact.inputPhone, inputContact.inputAge, id);
+			db.execute("UPDATE contact SET fName=?, email=?, age=?, phone=? WHERE id=?", inputContact.inputfName, inputContact.inputEmail, inputContact.inputAge, inputContact.inputPhone, id);
 					
-		// Ti.API.info('stringing info');
-// 
-			// var contactInfo = escape(JSON.stringify(inputContact));
-					
-		Ti.API.info('pushing data to table');
+		Ti.API.info('pushing updated data to table');
 				
 			insertData = pushData();		
 			contactTable.setData(insertData);
 					
-		Ti.API.info('clearing values and keyboard going down');
-			//Clearing Feilds and drop Keyboard
+		Ti.API.info('keys');
 			fName.value = '';
 			email.value = '';
 			phone.value = '';
-			age.value = '';	
-			fName.blur();
-			email.blur();
-			phone.blur();
-			age.blur();
+			age.value = '';
 			
 			doneBTN.removeEventListener('click', edit);
 				editnav.close();
 				editContactWin.close();
 				contactNav.close();
-				contactWin.close();
+				// contactWin.close();
 				alert('Contact has been updated!!');
 			}
 	};

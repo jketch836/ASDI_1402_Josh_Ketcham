@@ -1,4 +1,0 @@
-
-var db = Ti.Database.open('contact');
-var sData = Ti.App.Properties.getString('sData');
-db.execute('CREATE TABLE IF NOT EXISTS contact (id INTEGER PRIMARY KEY, fName TEXT, email TEXT, age INTEGER, phone INTEGER)');

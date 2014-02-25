@@ -1,0 +1,13 @@
+var cWin = Ti.UI.currentWindow();
+
+var characterScroll = Ti.UI.createScrollView({
+	layout : 'vertical',
+	height : '470dp',
+	width : 320,
+	showVerticalScrollIndicator : true
+});
+
+
+//Main Code
+cWin.add(characterScroll);
+cWin.open(); 

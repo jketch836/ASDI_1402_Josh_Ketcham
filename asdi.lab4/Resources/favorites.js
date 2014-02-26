@@ -1,6 +1,10 @@
-// var crud = Ti.include('CrudFile.js');
+var crud = require('CrudFile');
 
-var cWin = Ti.UI.currentWindow;
+var fWin = Ti.UI.createWindow({
+	top : 65,
+	height : Ti.UI.setHeight,
+	width : Ti.UI.setWidth
+});
 
 var picTabard = Ti.UI.createImageView({
 	height : Ti.UI.setHeight,
@@ -8,122 +12,92 @@ var picTabard = Ti.UI.createImageView({
 	image : 'guild_tabard.png'
 });
 
-var characterScroll = Ti.UI.createScrollView({
-	layout : 'vertical',
-	height : '470dp',
-	width : 320,
-	showVerticalScrollIndicator : true
-});
-	
-favListTemplate = {
-	properties : 
-	{
-		top : 20,
-		height : 60
-	},
-	childTemplates : 
-	[
-		{
-			type : "Ti.UI.Label",
-			bindId : 'name',
-			properties : 
-			{
-				color : "black",
-				font : 
-				{
-					fontSize : 18,
-					fontFamily : "Arial",
-					fontWeight : "bold"
-				},
-				left : 20,
-				top : 5
-			}
-		}, 
-		{
-			type : "Ti.UI.Label",
-			bindId : 'division',
-			properties : 
-			{
-				color : "black",
-				font : 
-				{
-					fontSize : 14,
-					fontFamily : "Arial"
-				},
-				right : 25,
-				top : 10
-			},
-		}, 
-		{
-			type : "Ti.UI.Label",
-			bindId : 'level',
-			properties : 
-			{
-				color : "grey",
-				font : 
-				{
-					fontSize : 14,
-					fontFamily : "Arial"
-				},
-				left : 20,
-				top : 40
-			}
-		}, 
-		{
-			type : "Ti.UI.Label",
-			bindId : 'acheive',
-			properties : 
-			{
-				color : "black",
-				font : 
-				{
-					fontSize : 14,
-					fontFamily : "Arial"
-				},
-				right : 125,
-				top : 40
-			},
-		}
-	]
-};
-
-//API Object Info
-var sectionList = Ti.UI.createListSection({
-});
-var savedListView = Ti.UI.createListView({
-	top : 20,
+var saveMem = Titanium.UI.createTableView({
 	opacity : .8,
-	templates : {
-		'defaultTemplate' : favListTemplate
-	},
-	defaultItemTemplate : 'defaultTemplate'
+	// text : level,
+	font : {
+		fontStyle : 'Helvetica',
+		fontSize : '12dp'
+	}
 });
+
+saveMem.addEventListener('click', function() {
+	var savedWin = Ti.UI.createWindow({
+		// title : name,
+		backgroundColor : '#fff'
+	});
+
+	var saveNav = Ti.UI.iOS.createNavigationWindow({
+		window : savedWin
+	});
+
+	var cancel = Ti.UI.createButton({
+		systemButton : Ti.UI.iPhone.SystemButton.CANCEL
+	});
+	savedWin.setLeftNavButton(cancel);
+
+	cancel.addEventListener('click', function() {
+		saveNav.close();
+		savedWin.close();
+	});
+	
+	// var nameView = Ti.UI.createLabel({
+		// top : '75dp',
+		// left : 35,
+		// text : 'Name: ' + name
+	// });
 // 
-// var data = [];
-// data.push({
-			// properties : {
-				// name : name,
-				// level : level,
-				// acheive : acheive,
-				// division : division
-			// },
-			// name : {
-				// text : name
-			// },
-			// level : {
-				// text : 'LVL: ' + level
-			// },
-			// acheive : {
-				// text : 'Points: ' + acheive
-			// },
-			// division : {
-				// text : division
-			// }
-		// });
+	// var lvlView = Ti.UI.createLabel({
+		// top : '175dp',
+		// left : 35,
+		// text : 'Level: ' + level
+	// });
 // 
-// // Main Code
-// sectionList.setItems(data);
-savedListView.sections = [sectionList];
-characterScroll.add(savedListView);
-cWin.add(characterScroll);
-cWin.open();
+	// var achView = Ti.UI.createLabel({
+		// top : '125dp',
+		// left : 35,
+		// text : 'Acheivment Points: ' + acheive
+	// });
+// 
+	// var divView = Ti.UI.createLabel({
+		// top : '225dp',
+		// left : 35,
+		// text : 'Class: ' + division
+	// });
+
+	var editBTN = Ti.UI.createButton({
+		systemButton : Ti.UI.iPhone.SystemButton.EDIT
+	});
+	// editBTN.addEventListener('click', crud.edit);
+	editBTN.addEventListener('click', editFunc);
+
+	savedWin.setRightNavButton(editBTN);
+	// savedWin.add(nameView, lvlView, achView, divView);
+	saveNav.open();
+});
+
+// Main Code
+saveMem.setData(crud.guildData);
+fWin.add(picTabard, saveMem);
+fWin.open();
+
+
+function editFunc () {
+	var editDIA = Ti.UI.createAlertDialog({
+		title : 'Edit/Delete',
+		buttonNames : ['Edit', 'Delete', 'Cancel']
+	});
+	editDIA.show();
+	editDIA.addEventListener('click', function(b) {
+		if (b.index === 0) {
+			crud.data.execute('UPDATE council SET name, division, level, acheive WHERE id=?', name, division, level, acheive,id);
+		} else if (b.index === 1) {
+			crud.data.execute('DELETE FROM council WHERE id=?', id);
+			crud.guildData;
+			saveNav.close();
+			savedWin.close();
+			alert(name + ' is Deleted');
+		} else {null;
+		}
+	});
+};

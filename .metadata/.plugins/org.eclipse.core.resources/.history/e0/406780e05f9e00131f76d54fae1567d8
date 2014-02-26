@@ -1,0 +1,37 @@
+var remote = require('remoteAPI');
+var favorite = require('favorites');
+// created tab group
+var theTabs = Ti.UI.createTabGroup();
+
+// created character tab and toon window
+var toonWin = Ti.UI.createWindow({
+	title : 'Council of Judgement Members',
+	backgroundColor : '#fff',
+	url : remote
+});
+var toonTab = Ti.UI.createTab({
+	image : 'toon.png',
+	title : 'Council Members',
+	window : toonWin
+});
+
+// toonWin.add(remote);
+
+// created favorite tab and fav window
+var favWin = Ti.UI.createWindow({
+	title : 'Favorite Members',
+	backgroundColor : '#fff',
+	url : favorite
+});
+var favTab = Ti.UI.createTab({
+	image : 'fav.png',
+	title : 'Favorite Members',
+	window : favWin
+});
+
+// favWin.add(favorite);
+
+//Main Code
+theTabs.addTab(toonTab);
+theTabs.addTab(favTab);
+theTabs.open();

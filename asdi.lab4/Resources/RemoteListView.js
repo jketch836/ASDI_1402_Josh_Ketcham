@@ -1,12 +1,13 @@
-var crudSave = require('CrudFile');
+var crud = require('CrudFile');
 
 exports.remote = function() {
-	// console.log('Start');
+	console.log('Start');
 	var json = JSON.parse(this.responseText);
 
 	var win = Ti.UI.createWindow({
-		height : '480dp',
-		width : 320
+		top : 65,
+		height : Ti.UI.setHeight,
+		width : Ti.UI.setWidth
 	});
 
 	var picTabard = Ti.UI.createImageView({
@@ -14,97 +15,12 @@ exports.remote = function() {
 		width : Ti.UI.setWidth,
 		image : 'guild_tabard.png'
 	});
-
-	var characterScroll = Ti.UI.createScrollView({
-		layout : 'vertical',
-		height : '480dp',
-		width : 320,
-		showVerticalScrollIndicator : true
-	});
-
-	wowListTemplate = {
-		properties : 
-		{
-			// top : 20,
-			height : 60
-		},
-		childTemplates : 
-		[
-			{
-				type : "Ti.UI.Label",
-				bindId : 'name',
-				properties : 
-				{
-					color : "black",
-					font : 
-					{
-						fontSize : 18,
-						fontFamily : "Arial",
-						fontWeight : "bold"
-					},
-					left : 20,
-					top : 5
-				}
-			}, 
-			{
-				type : "Ti.UI.Label",
-				bindId : 'division',
-				properties : 
-				{
-					color : "black",
-					font : 
-					{
-						fontSize : 14,
-						fontFamily : "Arial"
-					},
-					right : 25,
-					top : 10
-				},
-			}, 
-			{
-				type : "Ti.UI.Label",
-				bindId : 'level',
-				properties : 
-				{
-					color : "grey",
-					font : 
-					{
-						fontSize : 14,
-						fontFamily : "Arial"
-					},
-					left : 20,
-					top : 40
-				}
-			}, 
-			{
-				type : "Ti.UI.Label",
-				bindId : 'acheive',
-				properties : 
-				{
-					color : "black",
-					font : 
-					{
-						fontSize : 14,
-						fontFamily : "Arial"
-					},
-					right : 125,
-					top : 40
-				},
-			}
-		]
-	};
-
-	//API Object Info
-	var secList = Ti.UI.createListSection({
-	});
-	var apiListView = Ti.UI.createListView({
-		top : 20,
-		opacity : .8,
-		templates : {
-			'defaultTemplate' : wowListTemplate
-		},
-		defaultItemTemplate : 'defaultTemplate'
-	});
+	// var searchbar = Ti.UI.createSearchBar({
+	// top : 20,
+	// hintText : 'Search',
+	// barColor : '#000080',
+	// showCancel : false
+	// });
 
 	var data = [];
 
@@ -154,48 +70,76 @@ exports.remote = function() {
 		}
 
 		data.push({
-			properties : {
-				name : name,
-				level : level,
-				acheive : acheive,
-				division : division
-			},
-			name : {
-				text : name
-			},
-			level : {
-				text : 'LVL: ' + level
-			},
-			acheive : {
-				text : 'Points: ' + acheive
-			},
-			division : {
-				text : division
-			}
+			title : name,
+			text : level
 		});
 	};
 
-	apiListView.addEventListener('itemclick', function() {
-		// Ti.API.info('Save Begin');
-		var saveDia = Ti.UI.createAlertDialog({
-			title : 'Save Member?',
-			buttonNames : ['Cancel', 'Save']
-		});
-		saveDia.addEventListener('click', function(c) {
-			if (c.index === 1) {
-				crudSave.savefunc();
-				alert('Member is Saved');
-			} else {
-				null;
-			}
-		});
-		saveDia.show();
+	var memTable = Titanium.UI.createTableView({
+		opacity : .8,
+		text : level,
+		font : {
+			fontStyle : 'Helvetica',
+			fontSize : '12dp'
+		}
 	});
 
-	secList.setItems(data);
-	apiListView.sections = [secList];
-	characterScroll.add(apiListView);
-	win.add(picTabard, characterScroll);
+	memTable.addEventListener('click', function() {
+		var memWin = Ti.UI.createWindow({
+			title : name,
+			backgroundColor : '#fff'
+		});
+
+		var memWinNav = Ti.UI.iOS.createNavigationWindow({
+			window : memWin
+		});
+
+		var cancelBTN = Ti.UI.createButton({
+			systemButton : Ti.UI.iPhone.SystemButton.CANCEL
+		});
+
+		cancelBTN.addEventListener('click', function() {
+			memWinNav.close();
+			memWin.close();
+		});
+
+		var nameView = Ti.UI.createLabel({
+			top : '75dp',
+			left : 35,
+			text : 'Name: ' + name
+		});
+
+		var lvlView = Ti.UI.createLabel({
+			top : '175dp',
+			left : 35,
+			text : 'Level: ' + level
+		});
+
+		var achView = Ti.UI.createLabel({
+			top : '125dp',
+			left : 35,
+			text : 'Acheivment Points: ' + acheive
+		});
+
+		var divView = Ti.UI.createLabel({
+			top : '225dp',
+			left : 35,
+			text : 'Class: ' + division
+		});
+
+		var saveBTN = Ti.UI.createButton({
+			systemButton : Ti.UI.iPhone.SystemButton.EDIT
+		});
+		saveBTN.addEventListener('click', crud.saveFunc);
+		
+		memWin.setRightNavButton(saveBTN);
+		memWin.setLeftNavButton(cancelBTN);
+		memWin.add(nameView, lvlView, achView, divView);
+		memWinNav.open();
+	});
+
+	memTable.setData(data);
+	win.add(picTabard, memTable);
 	win.open();
-	// console.log('End');
+	console.log('End');
 };

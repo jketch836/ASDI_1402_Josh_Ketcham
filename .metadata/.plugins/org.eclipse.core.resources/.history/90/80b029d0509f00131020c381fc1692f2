@@ -1,0 +1,24 @@
+var table = require('RemoteTableView');
+var memSave = require('favorites');
+
+// created tab group
+var theTabs = Ti.UI.createTabGroup();
+
+// created character tab
+var toonTab = Ti.UI.createTab({
+	image : 'toon.png',
+	title : 'Council Members',
+	window : table.fWin
+});
+
+// created favorite tab
+var favTab = Ti.UI.createTab({
+	image : 'fav.png',
+	title : 'Favorite Members',
+	window : memSave.fWin
+});
+
+//Main Code
+theTabs.addTab(toonTab);
+theTabs.addTab(favTab);
+theTabs.open();

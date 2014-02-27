@@ -5,16 +5,16 @@
 		<item value="false" key="isRegEx"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="wholeword"/>
-		<item value="contactWin" key="selection"/>
+		<item value="cons" key="selection"/>
 		<list key="findhistory">
+			<item value="cons"/>
+			<item value="con"/>
 			<item value="contactWin"/>
 			<item value="rowData"/>
 			<item value="editContactWin"/>
 			<item value="addContactWin"/>
 			<item value="curWindow"/>
 			<item value="curWin"/>
-			<item value="form"/>
-			<item value="character"/>
 		</list>
 	</section>
 </section>

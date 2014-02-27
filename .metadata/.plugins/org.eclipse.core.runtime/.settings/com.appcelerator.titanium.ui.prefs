@@ -2,7 +2,7 @@
 <<<<<<<=HEAD
 >>>>>>>=parent of 739d9da... ASDI_LAB3_LOCAL_STORAGE_P3
 Android\ Emulator\ Process\:ConsoleLogLevel=Info
-LAST_LAUNCH_TIMESTAMP=1393383781341
+LAST_LAUNCH_TIMESTAMP=1393464396388
 asd_week1_rich\:launchMode=run
 asd_week1_rich\:launchShortcut=com.appcelerator.titanium.mobile.ui.ios.simulator.iphone.launchShortcut.iPhone Retina (3.5 inch)
 asdi.lab1\:launchMode=run
@@ -13,6 +13,7 @@ asdi.lab2\:launchShortcut=com.appcelerator.titanium.mobile.ui.ios.simulator.ipho
 asdi.lab3\:ConsoleLogLevel=Debug
 asdi.lab3\:launchMode=run
 asdi.lab3\:launchShortcut=com.appcelerator.titanium.mobile.ui.android.device.launchShortcut
+asdi.lab4\:ConsoleLogLevel=Debug
 asdi.lab4\:launchMode=run
 asdi.lab4\:launchShortcut=com.appcelerator.titanium.mobile.ui.ios.simulator.iphone.launchShortcut.iPhone Retina (4 inch 64-bit)
 eclipse.preferences.version=1

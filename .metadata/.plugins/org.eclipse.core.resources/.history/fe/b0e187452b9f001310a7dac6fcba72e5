@@ -1,0 +1,44 @@
+// var api = require('remoteAPI');
+var memSave = require('favorites');
+
+var toonWin = Ti.UI.createWindow({
+	title : 'Council of Judgement Members',
+	backgroundColor : '#fff'
+});
+
+var toonImage = Ti.UI.createImageView({
+	hieght : '30dp',
+	width : '30dp',
+	image : 'toon.png'
+});
+var toonLink = Ti.UI.createView({
+	bottom : '0dp',
+	width : '175dp',
+	height : '60dp',
+	left : '0dp',
+	backgroundColor : '#333',
+	image : toonImage,
+	url : 'remoteAPI.js'
+});
+
+var toonText = Ti.UI.createLabel({
+	text : 'Council Members',
+	font : {
+		fontStyle : 'Helvetica',
+		fontSize : '10dp'
+	},
+	color : '#fff'
+});
+toonLink.add(toonText);
+toonWin.add(toonLink);
+
+// var close = function() {
+// toonWin.close();
+//
+// };
+//
+// favTab.addEventListener('click', close);
+//Main Code
+theTabs.addTab(toonTab);
+theTabs.addTab(favTab);
+toonWin.open();

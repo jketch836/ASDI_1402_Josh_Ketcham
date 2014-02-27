@@ -1,43 +1,100 @@
-Logger started at: Wednesday, February 19, 2014 3:03:43 PM EST
+Logger started at: Wednesday, February 26, 2014 4:59:40 PM EST
 Component: com.appcelerator.titanium.ios.core
 Version: 1.0.0.1388991145
-[3:43.816] Sent: >21*1392840223817*version<
-[3:43.817] Recv: >1392840223817*2*3.2.0.GA<
-[3:43.818] Sent: >44*1392840223818*option*stepFiltersEnabled*true<
-[3:43.818] Recv: >1392840223818<
-[3:43.818] Sent: >36*1392840223819*option*monitorXHR*true<
-[3:43.819] Recv: >1392840223819<
-[3:43.819] Sent: >45*1392840223820*option*suspendOnFirstLine*false<
-[3:43.819] Recv: >1392840223820<
-[3:43.819] Sent: >46*1392840223821*option*suspendOnExceptions*false<
-[3:43.820] Recv: >1392840223821<
-[3:43.820] Sent: >41*1392840223822*option*suspendOnErrors*true<
-[3:43.820] Recv: >1392840223822<
-[3:43.820] Sent: >43*1392840223823*option*suspendOnKeywords*true<
-[3:43.821] Recv: >1392840223823<
-[3:43.821] Sent: >45*1392840223824*option*bypassConstructors*false<
-[3:43.821] Recv: >1392840223824<
-[3:43.821] Sent: >44*1392840223825*option*stepFiltersEnabled*true<
-[3:43.822] Recv: >1392840223825<
-[3:43.822] Sent: >30*1392840223826*detailFormatters<
-[3:43.822] Recv: >1392840223826<
-[3:43.822] Sent: >20*1392840223827*enable<
-[3:43.823] Recv: >1392840223827<
-[3:43.824] Recv: >threads*created*0*kroll$1<
-[3:43.825] Recv: >log*out*[DEBUG] Analytics is enabled = YES<
-[3:43.826] Recv: >log*out*[DEBUG] Loading: /Users/jketch/Library/Application Support/iPhone Simulator/7.0.3-64/Applications/F0A6ECE6-8C40-4390-BE2D-5047853DF0F6/asdi.lab3.app/app.js, Resource: app_js<
-[3:43.826] Recv: >scripts*created*328260096|app:/app.js||1|79<
-[3:43.826] Recv: >resumed*0*started<
-[3:43.922] Recv: >log*out*[WARN] OPEN ABORTED. _handleOpen returned NO<
-[3:43.931] Recv: >log*out*[DEBUG] Application booted in 143.907964 ms<
-[3:43.932] Recv: >threads*created*1*kroll$2<
-[3:43.932] Recv: >log*out*[DEBUG] Loading: /Users/jketch/Library/Application Support/iPhone Simulator/7.0.3-64/Applications/F0A6ECE6-8C40-4390-BE2D-5047853DF0F6/asdi.lab3.app/CRUD.js, Resource: CRUD_js<
-[3:43.934] Recv: >scripts*created*328261472|app:/CRUD.js||1|197<
-[3:43.935] Recv: >resumed*1*started<
-[3:43.936] Recv: >log*out*[DEBUG] Loading: /Users/jketch/Library/Application Support/iPhone Simulator/7.0.3-64/Applications/F0A6ECE6-8C40-4390-BE2D-5047853DF0F6/asdi.lab3.app/_app_props_.json, Resource: _app_props__json<
-[3:43.937] Recv: >suspended*1*exception*app:/CRUD.js*52<
-[3:43.937] Sent: >22*1392840223828*frames*1<
-[3:43.938] Recv: >1392840223828*0|||app:/CRUD.js|52|false|0|0<
-[3:44.385] Sent: >34*1392840223829*variables*1*frame[0]<
-[3:44.386] Recv: >1392840223829*pushData|object|v|[object Function]*curWin|object|nov|[object TiUIWindow]*db|object|nov|[object TiDatabase]*theData|object|wnov|[object Array]*addBTN|undefined|wv|undefined*contactTable|undefined|wv|undefined*sData|null|wv|<null>*console|object|nov|[object TiConsole]<
+[59:41.16] Sent: >21*1393451980996*version<
+[59:41.17] Recv: >1393451980996*2*3.2.0.GA<
+[59:41.31] Sent: >20*1393451980997*update<
+[59:41.31] Recv: >1393451980997*3.2.0.GA<
+[59:41.32] Sent: >44*1393451980998*option*stepFiltersEnabled*true<
+[59:41.32] Recv: >1393451980998<
+[59:41.32] Sent: >36*1393451980999*option*monitorXHR*true<
+[59:41.33] Recv: >1393451980999<
+[59:41.33] Sent: >45*1393451981000*option*suspendOnFirstLine*false<
+[59:41.33] Recv: >1393451981000<
+[59:41.33] Sent: >46*1393451981001*option*suspendOnExceptions*false<
+[59:41.33] Recv: >1393451981001<
+[59:41.33] Sent: >41*1393451981002*option*suspendOnErrors*true<
+[59:41.34] Recv: >1393451981002<
+[59:41.34] Sent: >43*1393451981003*option*suspendOnKeywords*true<
+[59:41.34] Recv: >1393451981003<
+[59:41.34] Sent: >45*1393451981004*option*bypassConstructors*false<
+[59:41.35] Recv: >1393451981004<
+[59:41.35] Sent: >44*1393451981005*option*stepFiltersEnabled*true<
+[59:41.35] Recv: >1393451981005<
+[59:41.35] Sent: >30*1393451981006*detailFormatters<
+[59:41.35] Recv: >1393451981006<
+[59:41.36] Sent: >20*1393451981007*enable<
+[59:41.36] Recv: >1393451981007<
+[59:41.37] Recv: >threads*created*0*kroll$1<
+[59:41.39] Recv: >log*out*[DEBUG] Analytics is enabled = YES<
+[59:41.40] Recv: >log*out*[DEBUG] Loading: /Users/jketch/Library/Application Support/iPhone Simulator/7.0.3-64/Applications/1F4E0061-4F22-4C0F-82A4-0692D60119C2/asdi.lab4.app/app.js, Resource: app_js<
+[59:41.40] Recv: >scripts*created*335833472|app:/app.js||1|42<
+[59:41.41] Recv: >resumed*0*started<
+[59:41.41] Recv: >log*out*[DEBUG] Loading: /Users/jketch/Library/Application Support/iPhone Simulator/7.0.3-64/Applications/1F4E0061-4F22-4C0F-82A4-0692D60119C2/asdi.lab4.app/favorites.js, Resource: favorites_js<
+[59:41.41] Recv: >scripts*created*335833408|app:/favorites.js||1|27<
+[59:41.41] Recv: >log*out*[DEBUG] Loading: /Users/jketch/Library/Application Support/iPhone Simulator/7.0.3-64/Applications/1F4E0061-4F22-4C0F-82A4-0692D60119C2/asdi.lab4.app/CrudFile.js, Resource: CrudFile_js<
+[59:41.41] Recv: >scripts*created*335835104|app:/CrudFile.js||1|167<
+[59:41.95] Recv: >log*out*[DEBUG] Loading: /Users/jketch/Library/Application Support/iPhone Simulator/7.0.3-64/Applications/1F4E0061-4F22-4C0F-82A4-0692D60119C2/asdi.lab4.app/_app_props_.json, Resource: _app_props__json<
+[59:41.96] Recv: >log*out*[INFO] Start row Mage look<
+[59:41.97] Recv: >log*out*[INFO] Happiez<
+[59:41.97] Recv: >log*out*[INFO] 1<
+[59:41.97] Recv: >log*out*[INFO] End row 1 look<
+[59:41.97] Recv: >log*out*[INFO] =========================<
+[59:41.97] Recv: >log*out*[INFO] Start row Mage look<
+[59:41.97] Recv: >log*out*[INFO] Happiez<
+[59:41.97] Recv: >log*out*[INFO] 2<
+[59:41.97] Recv: >log*out*[INFO] End row 2 look<
+[59:41.98] Recv: >log*out*[INFO] =========================<
+[59:41.98] Recv: >log*out*[INFO] (
+        {
+        id = 1;
+        title = "Happiez      Mage      26.0";
+    },
+        {
+        id = 2;
+        title = "Happiez      Mage      26.0";
+    }
+)<
+[59:41.149] Recv: >log*out*[WARN] OPEN ABORTED. _handleOpen returned NO<
+[59:41.160] Recv: >log*out*[DEBUG] Application booted in 525.936007 ms<
+[59:41.167] Recv: >threads*created*1*kroll$2<
+[59:41.168] Recv: >log*out*[DEBUG] Loading: /Users/jketch/Library/Application Support/iPhone Simulator/7.0.3-64/Applications/1F4E0061-4F22-4C0F-82A4-0692D60119C2/asdi.lab4.app/remoteAPI.js, Resource: remoteAPI_js<
+[59:41.169] Recv: >scripts*created*336090880|app:/remoteAPI.js||1|20<
+[59:41.170] Recv: >resumed*1*started<
+[59:41.170] Recv: >log*out*[DEBUG] Loading: /Users/jketch/Library/Application Support/iPhone Simulator/7.0.3-64/Applications/1F4E0061-4F22-4C0F-82A4-0692D60119C2/asdi.lab4.app/RemoteTableView.js, Resource: RemoteTableView_js<
+[59:41.170] Recv: >scripts*created*336090784|app:/RemoteTableView.js||1|113<
+[59:41.170] Recv: >log*out*[DEBUG] Loading: /Users/jketch/Library/Application Support/iPhone Simulator/7.0.3-64/Applications/1F4E0061-4F22-4C0F-82A4-0692D60119C2/asdi.lab4.app/CrudFile.js, Resource: CrudFile_js<
+[59:41.170] Recv: >scripts*created*336090688|app:/CrudFile.js||1|167<
+[59:41.171] Recv: >log*out*[INFO] Start row Mage look<
+[59:41.171] Recv: >log*out*[INFO] Happiez<
+[59:41.171] Recv: >log*out*[INFO] 1<
+[59:41.171] Recv: >log*out*[INFO] End row 1 look<
+[59:41.171] Recv: >log*out*[INFO] =========================<
+[59:41.171] Recv: >log*out*[INFO] Start row Mage look<
+[59:41.171] Recv: >log*out*[INFO] Happiez<
+[59:41.171] Recv: >log*out*[INFO] 2<
+[59:41.172] Recv: >log*out*[INFO] End row 2 look<
+[59:41.172] Recv: >log*out*[INFO] =========================<
+[59:41.172] Recv: >log*out*[INFO] (
+        {
+        id = 1;
+        title = "Happiez      Mage      26.0";
+    },
+        {
+        id = 2;
+        title = "Happiez      Mage      26.0";
+    }
+)<
+[59:41.743] Recv: >log*out*[INFO] Start<
+[59:41.747] Recv: >suspended*1*exception*app:/RemoteTableView.js*8<
+[59:41.749] Sent: >22*1393451981008*frames*1<
+[59:41.749] Recv: >1393451981008*0|||app:/RemoteTableView.js|8|false|0|0<
+[59:45.636] Sent: >34*1393451981009*variables*1*frame[0]<
+[59:45.636] Recv: >1393451981009*this|object|no|[object TiNetworkHTTPClientResult]*level|undefined|wl|undefined*name|undefined|wl|undefined*arguments|object|opnl|[object Arguments]*json|object|ol|[object Object]*division|undefined|wl|undefined*acheive|undefined|wl|undefined*__OXP|object|ol|[object Object]*crud|object|ol|[object Object]*module|object|ol|[object Object]*exports|object|ol|[object Object]*ListView|object|ov|[object Object]*covanentURL|string|wv|"http://us.battle.net/api/wow/guild/the-venture-co/The%20Council%20of%20judgement?fields=members"*remoteError|object|rv|[object Error]*xhr|object|nov|[object TiNetworkClient]*console|object|nov|[object TiConsole]<
+[1:14.777] Sent: >45*1393451981010*eval*1*frame[0]*RemoteTableView<
+[1:14.778] Recv: >1393451981010*exception*Can't find variable: RemoteTableView<
+[2:24.747] Sent: >33*1393451981011*eval*1*frame[0]*var<
+[2:24.748] Recv: >1393451981011*exception*Parse error<
+[33:3.265] Sent: >37*1393451981012*eval*1*frame[0]*members<
+[33:47.775] Sent: >38*1393451981013*eval*1*frame[0]*saveFunc<
 ----------End of file----------

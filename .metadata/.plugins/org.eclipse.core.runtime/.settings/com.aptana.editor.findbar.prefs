@@ -1,3 +1,3 @@
-FIND_BAR_DECORATOR_FIND_ENTRIES=\#\n\#Wed Feb 26 16\:48\:54 EST 2014\n8\=form\n7\=curWin\n6\=curWindow\n5\=addContactWin\n4\=editContactWin\n3\=rowData\n2\=contactWin\n1\=con\n0\=cons\n
-FIND_BAR_DECORATOR_REPLACE_ENTRIES=\#\n\#Fri Feb 21 15\:32\:17 EST 2014\n9\=object_data\n8\=data\n7\=objectData\n6\=aTable\n5\=books\n4\=curWin\n3\=addContactWin\n2\=curWindow\n1\=editContactWin\n0\=curContactWin\n
+FIND_BAR_DECORATOR_FIND_ENTRIES=\#\n\#Thu Feb 27 09\:26\:19 EST 2014\n6\=editContactWin\n5\=rowData\n4\=contactWin\n3\=con\n2\=cons\n1\=tableWin\n0\=win\n7\=addContactWin\n
+FIND_BAR_DECORATOR_REPLACE_ENTRIES=\#\n\#Thu Feb 27 08\:39\:08 EST 2014\n9\=data\n8\=objectData\n7\=aTable\n6\=books\n5\=curWin\n4\=addContactWin\n3\=curWindow\n2\=editContactWin\n10\=object_data\n1\=curContactWin\n0\=tableWin\n
 eclipse.preferences.version=1

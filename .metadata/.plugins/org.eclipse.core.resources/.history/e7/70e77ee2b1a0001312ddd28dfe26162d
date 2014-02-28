@@ -1,0 +1,71 @@
+var mWin = Ti.UI.createWindow({
+	title : 'The Council of Judgement',
+	backgroundColor : '#fff'
+});
+
+var mWinNav = Ti.UI.iOS.createNavigationWindow({
+	window : mWin
+});
+
+var councilView = Ti.UI.createView({
+	backgroundColor : "#c48c1b",
+	opacity : .8,
+	height : '50dp',
+	width : '160dp',
+	bottom : '0dp',
+	left : 0,
+	file : 'remoteAPI.js'
+});
+
+var councilLabel = Ti.UI.createLabel({
+	text : "Council Mem",
+	font : {
+		fontSize : 12,
+		fontFamily : "Helvetica",
+		fontWeight : "bold"
+	},
+	color : "#fff",
+	center : 0,
+	file : 'remoteAPI.js'
+});
+councilView.add(councilLabel);
+
+councilView.addEventListener('click', function() {
+	var remote = require('remoteAPI');
+});
+
+
+
+
+var favView = Ti.UI.createView({
+	backgroundColor : "#00008D",
+	opacity : .8,
+	height : '50dp',
+	width : '160dp',
+	bottom : '0dp',
+	right : 0,
+	file : 'favorites.js'
+});
+
+var favLabel = Ti.UI.createLabel({
+	text : "Favorites",
+	font : {
+		fontSize : 12,
+		fontFamily : "Helvetica",
+		fontWeight : "bold"
+	},
+	color : "#fff",
+	center : 0,
+	file : 'favorites.js'
+});
+favView.add(favLabel);
+
+favView.addEventListener('click', function() {
+	var fav = require('favorites');
+	
+});
+
+
+//Mian Code
+mWin.add(councilView, favView);
+mWinNav.open();

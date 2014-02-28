@@ -2,19 +2,19 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="true" key="wrap"/>
-		<item value="false" key="casesensitive"/>
 		<item value="false" key="isRegEx"/>
+		<item value="false" key="casesensitive"/>
 		<item value="false" key="wholeword"/>
-		<item value="win" key="selection"/>
+		<item value="console.log" key="selection"/>
 		<list key="findhistory">
+			<item value="console.log"/>
+			<item value="// exports.select = function(a) {&#x0A;&#x09;// var id = a.rowData.id;&#x0A;&#x09;// input = {};&#x0A;&#x09;// input.gname = name;&#x0A;&#x09;// input.div = division;&#x0A;&#x09;// input.lvl = level;&#x0A;&#x09;// input.ach = acheive;&#x0A;&#x09;// input.id = id;&#x0A;&#x09;// data.execute(&apos;SELECT * FROM council WHERE ID=?&apos;, id);&#x0A;// };"/>
+			<item value="Ti.API.Info"/>
 			<item value="win"/>
 			<item value="tableWin"/>
 			<item value="cons"/>
 			<item value="con"/>
 			<item value="contactWin"/>
-			<item value="rowData"/>
-			<item value="editContactWin"/>
-			<item value="addContactWin"/>
 		</list>
 	</section>
 </section>

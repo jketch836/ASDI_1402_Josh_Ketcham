@@ -4,3 +4,5 @@
 1393256938130	Move 1 resources to 'Resources'
 1393272580608	Rename resource 'listView.js'
 1393431404467	Rename resource 'RemoteListView.js'
+1393615578772	Rename resource 'RemoteTableView.js'
+1393623193682	Move 'remoteAPI.js' to 'Resources'

@@ -1,12 +1,11 @@
-var crud = require('CrudFile');
+var table = require('RemoteTableView');
 
 var guildInfoURL = 'http://us.battle.net/api/wow/guild/the-venture-co/The%20Council%20of%20judgement?fields=members';
 
 var remoteResponse = function() {
 	var json = JSON.parse(this.responseText);
-
+	var data = [];
 	for (var i = 0; i < json.members.length; i++) {
-		// console.log("loop " + i);
 		name = json.members[i].character.name;
 		division = json.members[i].character['class'];
 		level = json.members[i].character.level;
@@ -50,19 +49,26 @@ var remoteResponse = function() {
 				division = 'Null';
 				break;
 		}
-
-//		Ti.API.info("name: " + name);
-	//	Ti.API.info("division: " + division);
-//		Ti.API.info("level: " + level);
-//		Ti.API.info("acheive: " + acheive);
-
-
-		//Inserting api data into local database
-		crud.saveFunc(name, division, level, acheive);
 		
-	};
+		var row = Ti.UI.createTableViewRow({
+			name : name,
+			level : level,
+			acheive : acheive,
+			division : division,
+			title : name + "         " + division
+		});
+	
+		// Ti.API.info("name: " + name);
+		// Ti.API.info("division: " + division);
+		// Ti.API.info("level: " + level);
+		// Ti.API.info("acheive: " + acheive);
 
+		data.push(row);
+
+	};
+		table.memTable.setData(data);
 };
+
 
 var remoteError = function(e) {
 	Ti.API.debug("Status: " + this.status);

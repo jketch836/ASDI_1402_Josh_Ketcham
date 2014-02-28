@@ -1,7 +1,6 @@
 var table = require('RemoteTableView');
 var memSave = require('favorites');
 var remote = require('remoteAPI');
-
 // created tab group
 var theTabs = Ti.UI.createTabGroup();
 
@@ -13,8 +12,8 @@ var toonTab = Ti.UI.createTab({
 
 // created favorite tab
 var favTab = Ti.UI.createTab({
-	title : 'Comments',
-	window : memSave.comWin
+	title : 'Favorite Members',
+	window : memSave.fWin
 });
 
 //Main Code

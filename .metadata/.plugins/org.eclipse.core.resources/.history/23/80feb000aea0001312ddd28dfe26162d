@@ -1,0 +1,26 @@
+var table = require('RemoteTableView');
+
+
+var aboutGuildView = Ti.UI.createView({
+	backgroundColor: "#c48c1b",
+	borderRadius: 10,
+	opacity: .8,
+	height: '50dp',
+	width: '100dp',
+	bottom: '0dp',
+	center: 0,
+	file: 'remoteAPIguild.js'
+});
+
+var aboutGuildLabel = Ti.UI.createLabel({
+	text: "About the Council",
+	font: {fontSize: 24, fontFamily: "Helvetica", fontWeight: "bold"},
+	color: "#fff",
+	center: 0,
+	file: 'remoteAPIguild.js'
+});
+aboutGuildView.add(aboutGuildLabel);
+
+aboutGuildView.addEventListener('click', function(){
+	var remote2 = require('remoteAPIguild');
+});

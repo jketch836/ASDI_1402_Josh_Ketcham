@@ -1,0 +1,112 @@
+var crud = require('CrudFile');
+
+var comWin = Ti.UI.createWindow({
+	title : 'Comments',
+	backgroundColor : '#fff'
+});
+exports.comWin = comWin;
+
+var picTabard = Ti.UI.createImageView({
+	height : Ti.UI.setHeight,
+	width : Ti.UI.setWidth,
+	image : 'guild_tabard.png'
+});
+
+var comment = Ti.UI.createTextField({
+	top : 0,
+	left : 0,
+	width : 250,
+	height : 40,
+	borderRadius : 5,
+	borderColor : '#000',
+	hintText : 'Comments',
+	textAlign : 'center',
+	font : {
+		fontSize : 18,
+		fontWeight : 'bold'
+	},
+	keyboardType : Ti.UI.KEYBOARD_DEFAULT,
+	returnKeyType : Ti.UI.RETURNKEY_DEFAULT
+});
+
+//Submit button
+var commBTN = Ti.UI.createButton({
+	title : 'Submit',
+	top : 5,
+	right : 10,
+	style : Ti.UI.iPhone.SystemButtonStyle.ACTION,
+});
+
+var saveMem = Titanium.UI.createTableView({
+	top : 45,
+	font : {
+		fontStyle : 'Helvetica',
+		fontSize : '12dp'
+	},
+	opacity : .8
+});
+
+saveMem.addEventListener('click', function(e) {
+	var memWin = Ti.UI.createWindow({
+		title : e.rowData.name,
+		backgroundColor : '#fff'
+	});
+
+	var memWinNav = Ti.UI.iOS.createNavigationWindow({
+		window : memWin
+	});
+
+	var cancelBTN = Ti.UI.createButton({
+		systemButton : Ti.UI.iPhone.SystemButton.CANCEL
+	});
+
+	cancelBTN.addEventListener('click', function() {
+		memWinNav.close();
+		memWin.close();
+	});
+
+	var comView = Ti.UI.createLabel({
+		top : '75dp',
+		left : 35,
+		text : 'Name: ' + e.rowData.name
+	});
+	
+	var saveBTN = Ti.UI.createButton({
+		systemButton : Ti.UI.iPhone.SystemButton.SAVE
+	});
+	saveBTN.addEventListener('click', function() {
+		memWin.close();
+		memWinNav.close();
+		alert(name + " is saved");
+	});
+
+	var deleteBTN = Ti.UI.createButton({
+		top : 10,
+		center : 0,
+		title : "Delete",
+		style : Ti.UI.iPhone.SystemButtonStyle.ACTION,
+		font : {
+			fontWeight : 'bold',
+			fontSize : 18,
+			fontFamily : 'Helvetica'
+		},
+		color : '#EE2C2C'
+	});
+	deleteBTN.addEventListener('click', function() {
+		memWin.close();
+		memWinNav.close();
+		alert(name + " is deleted");
+	});
+
+	memWin.setRightNavButton(saveBTN);
+	memWin.setLeftNavButton(cancelBTN);
+	memWin.add(deleteBTN);
+	memWin.add(comView);
+	memWinNav.open();
+});
+
+// Main Code
+saveMem.setData();
+
+comWin.add(picTabard, comment, commBTN, saveMem);
+comWin.open();

@@ -1,0 +1,102 @@
+var crud = require('CrudFile');
+
+var comWin = Ti.UI.createWindow({
+	title : 'Comments',
+	backgroundColor : '#fff'
+});
+exports.comWin = comWin;
+
+var picTabard = Ti.UI.createImageView({
+	height : Ti.UI.setHeight,
+	width : Ti.UI.setWidth,
+	image : 'guild_tabard.png'
+});
+
+
+var saveMem = Titanium.UI.createTableView({
+	font : {
+		fontStyle : 'Helvetica',
+		fontSize : '12dp'
+	},
+	opacity : .8
+});
+
+saveMem.addEventListener('click', function(e) {
+	var memWin = Ti.UI.createWindow({
+		title : e.rowData.name,
+		backgroundColor : '#fff'
+	});
+
+	var memWinNav = Ti.UI.iOS.createNavigationWindow({
+		window : memWin
+	});
+
+	var cancelBTN = Ti.UI.createButton({
+		systemButton : Ti.UI.iPhone.SystemButton.CANCEL
+	});
+
+	cancelBTN.addEventListener('click', function() {
+		memWinNav.close();
+		memWin.close();
+	});
+
+	var nameView = Ti.UI.createLabel({
+		top : '75dp',
+		left : 35,
+		text : 'Name: ' + e.rowData.name
+	});
+
+	var achView = Ti.UI.createLabel({
+		top : '125dp',
+		left : 35,
+		text : 'Class: ' + e.rowData.division
+	});
+
+	var lvlView = Ti.UI.createLabel({
+		top : '175dp',
+		left : 35,
+		text : 'Level: ' + e.rowData.level
+	});
+
+	var divView = Ti.UI.createLabel({
+		top : '225dp',
+		left : 35,
+		text : 'Acheivment Points: ' + e.rowData.acheive
+	});
+	var saveBTN = Ti.UI.createButton({
+		systemButton : Ti.UI.iPhone.SystemButton.SAVE
+	});
+	saveBTN.addEventListener('click', function() {
+		memWin.close();
+		memWinNav.close();
+		alert(name + " is saved");
+	});
+
+	var deleteBTN = Ti.UI.createButton({
+		top : 290,
+		center : 0,
+		title : "Delete",
+		style : Ti.UI.iPhone.SystemButtonStyle.ACTION,
+		font : {
+			fontWeight : 'bold',
+			fontSize : 18,
+			fontFamily : 'Helvetica'
+		},
+		color : '#EE2C2C'
+	});
+	deleteBTN.addEventListener('click', function() {
+		memWin.close();
+		memWinNav.close();
+		alert(name + " is deleted");
+	});
+
+	memWin.setRightNavButton(saveBTN);
+	memWin.setLeftNavButton(cancelBTN);
+	memWin.add(nameView, lvlView, achView, divView);
+	memWinNav.open();
+});
+
+// Main Code
+saveMem.setData();
+comWin.add(picTabard, saveMem);
+comWin.open(); 

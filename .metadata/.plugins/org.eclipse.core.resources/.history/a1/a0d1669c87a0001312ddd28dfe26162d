@@ -1,0 +1,65 @@
+var comdata = Ti.Database.open('words');
+var comData = Ti.App.Properties.getString('comData');
+comData.execute('CREATE TABLE IF NOT EXISTS words (id INTEGER PRIMARY KEY, comment TEXT)');
+
+
+function insertedData() {
+	var dataInfo = [];
+
+	var rowInfo = comData.execute('SELECT * FROM words');
+
+	while (rowInfo.isValidRow()) {
+		var comment = rowInfo.fieldByName('comment');
+		var id = rowInfo.fieldByName('id');
+
+		dataInfo.push({
+			title : comment,
+			id : id
+		});
+
+		// Ti.API.info('End row ' + id + ' look');
+// 
+		// Ti.API.info('=========================');
+
+		rowInfo.next();
+	};
+	return dataInfo;
+};
+var comm = insertedData();
+exports.comm = comm;
+
+// console.log(guildData);
+
+
+var saveFunc = function() {
+	input = {};
+	input.com = comment;
+	comData.execute('INSERT INTO words (comment) VALUES (?)', input.com);
+};
+exports.saveFunc = saveFunc;
+
+
+exports.select = function(a) {
+	var id = a.rowData.id;
+	input = {};
+	input.com = comment;
+	input.id = id;
+	comData.execute('SELECT * FROM words WHERE ID=?', id);
+};
+
+
+function editFunc() {
+	input = {};
+	input.com = comment;
+	input.id = id;
+	comData.execute('UPDATE words SET comment WHERE id=?', input.com); 
+	memData;
+};
+exports.edit = editFunc;
+
+
+function delFunc() {
+	comData.execute('DELETE FROM words WHERE id=?', id); 
+	memData;
+};
+exports.del = delFunc;

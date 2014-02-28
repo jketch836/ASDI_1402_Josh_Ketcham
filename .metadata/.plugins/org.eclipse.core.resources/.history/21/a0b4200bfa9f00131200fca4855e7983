@@ -1,0 +1,86 @@
+var data = Ti.Database.open('favorites');
+var favData = Ti.App.Properties.getString('favData');
+data.execute('CREATE TABLE IF NOT EXISTS council (id INTEGER PRIMARY KEY, name TEXT, division TEXT, level TEXT, acheive TEXT, comment TEXT)');
+
+
+function insertedData() {
+	var dataInput = [];
+
+	var rowInput = data.execute('SELECT * FROM favorites');
+
+	while (rowInfo.isValidRow()) {
+		var name = rowInput.fieldByName('name');
+		var division = rowInput.fieldByName('division');
+		var level = rowInput.fieldByName('level');
+		var acheive = rowInput.fieldByName('acheive');
+		var comment = rowInput.fieldByName('comment');
+		var id = rowInput.fieldByName('id');
+
+		dataInput.push({
+			name : name,
+			level : level,
+			acheive : acheive,
+			division : division,
+			comment : comment,
+			title : name + "      " + division + "      " + level,
+			id : id
+		});
+
+		Ti.API.info('End row look');
+
+		Ti.API.info('=========================');
+
+		rowInput.next();
+	};
+	return dataInput;
+};
+var faveData = insertedData();
+exports.favData = favData;
+
+console.log(favData);
+
+
+var savefunc = function(name, division, level, acheive) {
+	input = {};
+	input.gname = name;
+	input.div = division;
+	input.lvl = level;
+	input.ach = acheive;
+	input.com = comment;
+	data.execute('INSERT INTO favorites (name, division, level, acheive, comment) VALUES (?, ?, ?, ?, ?)', input.gname, input.div, input.lvl, input.ach, input.com);
+};
+exports.savefunc = savefunc;
+
+
+exports.select = function(a) {
+	var id = a.rowData.id;
+	input = {};
+	input.gname = name;
+	input.div = division;
+	input.lvl = level;
+	input.ach = acheive;
+	input.com = comment;
+	input.id = id;
+	data.execute('SELECT * FROM favorites WHERE ID=?', id);
+};
+
+
+function editFunc() {
+	input = {};
+	input.gname = name;
+	input.div = division;
+	input.lvl = level;
+	input.ach = acheive;
+	input.com = comment;
+	input.id = id;
+	data.execute('UPDATE favorites SET name, division, level, acheive WHERE id=?', input.gname, input.div, input.lvl, input.ach, input.id); 
+	guildData;
+};
+exports.edit = editFunc;
+
+
+function delFunc() {
+	data.execute('DELETE FROM favorites WHERE id=?', id); 
+	guildData;
+};
+exports.del = delFunc;

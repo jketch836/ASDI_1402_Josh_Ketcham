@@ -1,0 +1,65 @@
+var data = Ti.Database.open('favMem');
+var favMemData = Ti.App.Properties.getString('famMemData');
+memData.execute('CREATE TABLE IF NOT EXISTS favMem (id INTEGER PRIMARY KEY, comment TEXT)');
+
+
+function insertedData() {
+	var dataInfo = [];
+
+	var rowInfo = memData.execute('SELECT * FROM favMem');
+
+	while (rowInfo.isValidRow()) {
+		var comment = rowInfo.fieldByName('comment');
+		var id = rowInfo.fieldByName('id');
+
+		dataInfo.push({
+			title : comment,
+			id : id
+		});
+
+		// Ti.API.info('End row ' + id + ' look');
+// 
+		// Ti.API.info('=========================');
+
+		rowInfo.next();
+	};
+	return dataInfo;
+};
+var memData = insertedData();
+exports.memData = memData;
+
+// console.log(guildData);
+
+
+var saveFunc = function() {
+	input = {};
+	input.com = comment;
+	memData.execute('INSERT INTO favMem (name, division, level, acheive) VALUES (?, ?, ?, ?)', input.gname, input.div, input.lvl, input.ach, input.com);
+};
+exports.saveFunc = saveFunc;
+
+
+exports.select = function(a) {
+	var id = a.rowData.id;
+	input = {};
+	input.com = comment;
+	input.id = id;
+	memData.execute('SELECT * FROM favMem WHERE ID=?', id);
+};
+
+
+function editFunc() {
+	input = {};
+	input.com = comment;
+	input.id = id;
+	memData.execute('UPDATE favMem SET name, division, level, acheive WHERE id=?', input.gname, input.div, input.lvl, input.ach, input.id); 
+	memData;
+};
+exports.edit = editFunc;
+
+
+function delFunc() {
+	memData.execute('DELETE FROM favMem WHERE id=?', id); 
+	memData;
+};
+exports.del = delFunc;

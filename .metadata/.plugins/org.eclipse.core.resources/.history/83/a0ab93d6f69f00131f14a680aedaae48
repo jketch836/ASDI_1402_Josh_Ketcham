@@ -1,0 +1,116 @@
+var crud = require('CrudFile');
+var favCrud = require('favCrud');
+
+var tableWin = Ti.UI.createWindow({
+	title : 'Council Members',
+	backgroundColor : '#fff'
+});
+exports.tableWin = tableWin;
+
+var picTabard = Ti.UI.createImageView({
+	sheight : Ti.UI.setHeight,
+	width : Ti.UI.setWidth,
+	image : 'guild_tabard.png'
+});
+
+var searchbar = Ti.UI.createSearchBar({
+	top : 0,
+	hintText : 'Search',
+	barColor : '#fff'
+});
+
+var memTable = Titanium.UI.createTableView({
+	search : searchbar,
+	font : {
+		fontStyle : 'Helvetica',
+		fontSize : '12dp'
+	},
+	opacity : .8
+});
+
+memTable.addEventListener('click', function(e) {
+	var memWin = Ti.UI.createWindow({
+		title : e.rowData.name,
+		backgroundColor : '#fff'
+	});
+
+	var memWinNav = Ti.UI.iOS.createNavigationWindow({
+		window : memWin
+	});
+
+	var cancelBTN = Ti.UI.createButton({
+		systemButton : Ti.UI.iPhone.SystemButton.CANCEL
+	});
+
+	cancelBTN.addEventListener('click', function() {
+		memWinNav.close();
+		memWin.close();
+	});
+
+	var nameView = Ti.UI.createLabel({
+		top : '75dp',
+		left : 35,
+		text : 'Name: ' + e.rowData.name
+	});
+
+	var achView = Ti.UI.createLabel({
+		top : '125dp',
+		left : 35,
+		text : 'Class: ' + e.rowData.division
+	});
+
+	var lvlView = Ti.UI.createLabel({
+		top : '175dp',
+		left : 35,
+		text : 'Level: ' + e.rowData.level
+	});
+
+	var divView = Ti.UI.createLabel({
+		top : '225dp',
+		left : 35,
+		text : 'Acheivment Points: ' + e.rowData.acheive
+	});
+	var saveBTN = Ti.UI.createButton({
+		systemButton : Ti.UI.iPhone.SystemButton.SAVE
+	});
+	saveBTN.addEventListener('click', function() {
+		favCrud.saveFunc();
+		memWin.close();
+		memWinNav.close();
+		alert(name + " is saved");
+	});
+
+	var deleteBTN = Ti.UI.createButton({
+		top : 290,
+		center : 0,
+		title : "Delete",
+		style : Ti.UI.iPhone.SystemButtonStyle.ACTION,
+		font : {
+			fontWeight : 'bold',
+			fontSize : 18,
+			fontFamily : 'Helvetica'
+		},
+		color : '#EE2C2C'
+	});
+	deleteBTN.addEventListener('click', function() {
+		delFunc();
+		memWin.close();
+		memWinNav.close();
+		alert(name + " is deleted");
+	});
+
+	memWin.setRightNavButton(saveBTN);
+	memWin.setLeftNavButton(cancelBTN);
+	memWin.add(nameView, lvlView, achView, divView);
+	memWinNav.open();
+	console.log(e.rowData.name);
+	console.log(e.rowData.division);
+	console.log(e.rowData.level);
+	console.log(e.rowData.acheive);
+	console.log(e.rowData.title);
+});
+
+//Main Code
+memTable.setData(crud.guildData);
+tableWin.add(picTabard, memTable);
+tableWin.open();
